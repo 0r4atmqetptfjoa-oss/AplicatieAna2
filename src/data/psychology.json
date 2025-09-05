@@ -1,0 +1,3498 @@
+{
+  "questions": [
+    {
+      "id": "PSY-0001",
+      "question": "(Cognitive) Completați seria: 2, 4, 8, 16, ?",
+      "options": [
+        "36",
+        "32",
+        "16",
+        "30"
+      ],
+      "answerIndex": 1,
+      "explanation": "Seria este în progresie geometrică (×2).",
+      "rationales": [
+        "✖ Greșit: '36' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: '32'. Seria este în progresie geometrică (×2).",
+        "✖ Greșit: '16' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '30' — Nu corespunde cadrului/definiției.."
+      ],
+      "topic": "Aptitudini cognitive",
+      "module": "psychology",
+      "difficulty": "hard"
+    },
+    {
+      "id": "PSY-0002",
+      "question": "(Cognitive) Completați seria: 2, 4, 8, 16, ?",
+      "options": [
+        "16",
+        "30",
+        "36",
+        "32"
+      ],
+      "answerIndex": 3,
+      "explanation": "Seria este în progresie geometrică (×2).",
+      "rationales": [
+        "✖ Greșit: '16' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '30' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '36' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: '32'. Seria este în progresie geometrică (×2)."
+      ],
+      "topic": "Aptitudini cognitive",
+      "module": "psychology",
+      "difficulty": "easy"
+    },
+    {
+      "id": "PSY-0003",
+      "question": "(Cognitive) Completați seria: 4, 8, 16, 32, ?",
+      "options": [
+        "62",
+        "32",
+        "68",
+        "64"
+      ],
+      "answerIndex": 3,
+      "explanation": "Seria este în progresie geometrică (×2).",
+      "rationales": [
+        "✖ Greșit: '62' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '32' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '68' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: '64'. Seria este în progresie geometrică (×2)."
+      ],
+      "topic": "Aptitudini cognitive",
+      "module": "psychology",
+      "difficulty": "easy"
+    },
+    {
+      "id": "PSY-0004",
+      "question": "(Cognitive) Completați seria: 8, 16, 32, 64, ?",
+      "options": [
+        "132",
+        "126",
+        "128",
+        "64"
+      ],
+      "answerIndex": 2,
+      "explanation": "Seria este în progresie geometrică (×2).",
+      "rationales": [
+        "✖ Greșit: '132' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '126' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: '128'. Seria este în progresie geometrică (×2).",
+        "✖ Greșit: '64' — Nu corespunde cadrului/definiției.."
+      ],
+      "topic": "Aptitudini cognitive",
+      "module": "psychology",
+      "difficulty": "easy"
+    },
+    {
+      "id": "PSY-0005",
+      "question": "(Cognitive) Completați seria: 16, 32, 64, 128, ?",
+      "options": [
+        "254",
+        "128",
+        "256",
+        "260"
+      ],
+      "answerIndex": 2,
+      "explanation": "Seria este în progresie geometrică (×2).",
+      "rationales": [
+        "✖ Greșit: '254' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '128' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: '256'. Seria este în progresie geometrică (×2).",
+        "✖ Greșit: '260' — Nu corespunde cadrului/definiției.."
+      ],
+      "topic": "Aptitudini cognitive",
+      "module": "psychology",
+      "difficulty": "hard"
+    },
+    {
+      "id": "PSY-0006",
+      "question": "(Cognitive) Completați seria: 16, 32, 64, 128, ?",
+      "options": [
+        "260",
+        "256",
+        "254",
+        "128"
+      ],
+      "answerIndex": 1,
+      "explanation": "Seria este în progresie geometrică (×2).",
+      "rationales": [
+        "✖ Greșit: '260' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: '256'. Seria este în progresie geometrică (×2).",
+        "✖ Greșit: '254' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '128' — Nu corespunde cadrului/definiției.."
+      ],
+      "topic": "Aptitudini cognitive",
+      "module": "psychology",
+      "difficulty": "medium"
+    },
+    {
+      "id": "PSY-0007",
+      "question": "(Cognitive) Completați seria: 64, 128, 256, 512, ?",
+      "options": [
+        "1024",
+        "1022",
+        "1028",
+        "512"
+      ],
+      "answerIndex": 0,
+      "explanation": "Seria este în progresie geometrică (×2).",
+      "rationales": [
+        "✔ Corect: '1024'. Seria este în progresie geometrică (×2).",
+        "✖ Greșit: '1022' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '1028' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '512' — Nu corespunde cadrului/definiției.."
+      ],
+      "topic": "Aptitudini cognitive",
+      "module": "psychology",
+      "difficulty": "easy"
+    },
+    {
+      "id": "PSY-0008",
+      "question": "(Cognitive) Completați seria: 4, 8, 16, 32, ?",
+      "options": [
+        "62",
+        "68",
+        "64",
+        "32"
+      ],
+      "answerIndex": 2,
+      "explanation": "Seria este în progresie geometrică (×2).",
+      "rationales": [
+        "✖ Greșit: '62' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '68' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: '64'. Seria este în progresie geometrică (×2).",
+        "✖ Greșit: '32' — Nu corespunde cadrului/definiției.."
+      ],
+      "topic": "Aptitudini cognitive",
+      "module": "psychology",
+      "difficulty": "hard"
+    },
+    {
+      "id": "PSY-0009",
+      "question": "(Cognitive) Completați seria: 16, 32, 64, 128, ?",
+      "options": [
+        "254",
+        "256",
+        "128",
+        "260"
+      ],
+      "answerIndex": 1,
+      "explanation": "Seria este în progresie geometrică (×2).",
+      "rationales": [
+        "✖ Greșit: '254' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: '256'. Seria este în progresie geometrică (×2).",
+        "✖ Greșit: '128' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '260' — Nu corespunde cadrului/definiției.."
+      ],
+      "topic": "Aptitudini cognitive",
+      "module": "psychology",
+      "difficulty": "medium"
+    },
+    {
+      "id": "PSY-0010",
+      "question": "(Cognitive) Completați seria: 8, 16, 32, 64, ?",
+      "options": [
+        "64",
+        "132",
+        "128",
+        "126"
+      ],
+      "answerIndex": 2,
+      "explanation": "Seria este în progresie geometrică (×2).",
+      "rationales": [
+        "✖ Greșit: '64' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '132' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: '128'. Seria este în progresie geometrică (×2).",
+        "✖ Greșit: '126' — Nu corespunde cadrului/definiției.."
+      ],
+      "topic": "Aptitudini cognitive",
+      "module": "psychology",
+      "difficulty": "hard"
+    },
+    {
+      "id": "PSY-0011",
+      "question": "(Cognitive) Completați seria: 8, 16, 32, 64, ?",
+      "options": [
+        "64",
+        "132",
+        "126",
+        "128"
+      ],
+      "answerIndex": 3,
+      "explanation": "Seria este în progresie geometrică (×2).",
+      "rationales": [
+        "✖ Greșit: '64' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '132' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '126' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: '128'. Seria este în progresie geometrică (×2)."
+      ],
+      "topic": "Aptitudini cognitive",
+      "module": "psychology",
+      "difficulty": "medium"
+    },
+    {
+      "id": "PSY-0012",
+      "question": "(Cognitive) Completați seria: 16, 32, 64, 128, ?",
+      "options": [
+        "260",
+        "254",
+        "256",
+        "128"
+      ],
+      "answerIndex": 2,
+      "explanation": "Seria este în progresie geometrică (×2).",
+      "rationales": [
+        "✖ Greșit: '260' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '254' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: '256'. Seria este în progresie geometrică (×2).",
+        "✖ Greșit: '128' — Nu corespunde cadrului/definiției.."
+      ],
+      "topic": "Aptitudini cognitive",
+      "module": "psychology",
+      "difficulty": "medium"
+    },
+    {
+      "id": "PSY-0013",
+      "question": "(Cognitive) Completați seria: 16, 32, 64, 128, ?",
+      "options": [
+        "256",
+        "254",
+        "260",
+        "128"
+      ],
+      "answerIndex": 0,
+      "explanation": "Seria este în progresie geometrică (×2).",
+      "rationales": [
+        "✔ Corect: '256'. Seria este în progresie geometrică (×2).",
+        "✖ Greșit: '254' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '260' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '128' — Nu corespunde cadrului/definiției.."
+      ],
+      "topic": "Aptitudini cognitive",
+      "module": "psychology",
+      "difficulty": "hard"
+    },
+    {
+      "id": "PSY-0014",
+      "question": "(Cognitive) Completați seria: 8, 16, 32, 64, ?",
+      "options": [
+        "128",
+        "64",
+        "132",
+        "126"
+      ],
+      "answerIndex": 0,
+      "explanation": "Seria este în progresie geometrică (×2).",
+      "rationales": [
+        "✔ Corect: '128'. Seria este în progresie geometrică (×2).",
+        "✖ Greșit: '64' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '132' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '126' — Nu corespunde cadrului/definiției.."
+      ],
+      "topic": "Aptitudini cognitive",
+      "module": "psychology",
+      "difficulty": "medium"
+    },
+    {
+      "id": "PSY-0015",
+      "question": "(Cognitive) Completați seria: 32, 64, 128, 256, ?",
+      "options": [
+        "510",
+        "512",
+        "516",
+        "256"
+      ],
+      "answerIndex": 1,
+      "explanation": "Seria este în progresie geometrică (×2).",
+      "rationales": [
+        "✖ Greșit: '510' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: '512'. Seria este în progresie geometrică (×2).",
+        "✖ Greșit: '516' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '256' — Nu corespunde cadrului/definiției.."
+      ],
+      "topic": "Aptitudini cognitive",
+      "module": "psychology",
+      "difficulty": "hard"
+    },
+    {
+      "id": "PSY-0016",
+      "question": "(Cognitive) Completați seria: 32, 64, 128, 256, ?",
+      "options": [
+        "516",
+        "256",
+        "510",
+        "512"
+      ],
+      "answerIndex": 3,
+      "explanation": "Seria este în progresie geometrică (×2).",
+      "rationales": [
+        "✖ Greșit: '516' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '256' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '510' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: '512'. Seria este în progresie geometrică (×2)."
+      ],
+      "topic": "Aptitudini cognitive",
+      "module": "psychology",
+      "difficulty": "easy"
+    },
+    {
+      "id": "PSY-0017",
+      "question": "(Cognitive) Completați seria: 32, 64, 128, 256, ?",
+      "options": [
+        "510",
+        "256",
+        "516",
+        "512"
+      ],
+      "answerIndex": 3,
+      "explanation": "Seria este în progresie geometrică (×2).",
+      "rationales": [
+        "✖ Greșit: '510' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '256' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '516' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: '512'. Seria este în progresie geometrică (×2)."
+      ],
+      "topic": "Aptitudini cognitive",
+      "module": "psychology",
+      "difficulty": "hard"
+    },
+    {
+      "id": "PSY-0018",
+      "question": "(Cognitive) Completați seria: 2, 4, 8, 16, ?",
+      "options": [
+        "32",
+        "30",
+        "16",
+        "36"
+      ],
+      "answerIndex": 0,
+      "explanation": "Seria este în progresie geometrică (×2).",
+      "rationales": [
+        "✔ Corect: '32'. Seria este în progresie geometrică (×2).",
+        "✖ Greșit: '30' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '16' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '36' — Nu corespunde cadrului/definiției.."
+      ],
+      "topic": "Aptitudini cognitive",
+      "module": "psychology",
+      "difficulty": "easy"
+    },
+    {
+      "id": "PSY-0019",
+      "question": "(Cognitive) Completați seria: 2, 4, 8, 16, ?",
+      "options": [
+        "32",
+        "36",
+        "16",
+        "30"
+      ],
+      "answerIndex": 0,
+      "explanation": "Seria este în progresie geometrică (×2).",
+      "rationales": [
+        "✔ Corect: '32'. Seria este în progresie geometrică (×2).",
+        "✖ Greșit: '36' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '16' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '30' — Nu corespunde cadrului/definiției.."
+      ],
+      "topic": "Aptitudini cognitive",
+      "module": "psychology",
+      "difficulty": "medium"
+    },
+    {
+      "id": "PSY-0020",
+      "question": "(Cognitive) Completați seria: 8, 16, 32, 64, ?",
+      "options": [
+        "126",
+        "128",
+        "64",
+        "132"
+      ],
+      "answerIndex": 1,
+      "explanation": "Seria este în progresie geometrică (×2).",
+      "rationales": [
+        "✖ Greșit: '126' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: '128'. Seria este în progresie geometrică (×2).",
+        "✖ Greșit: '64' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '132' — Nu corespunde cadrului/definiției.."
+      ],
+      "topic": "Aptitudini cognitive",
+      "module": "psychology",
+      "difficulty": "hard"
+    },
+    {
+      "id": "PSY-0021",
+      "question": "(Cognitive) Completați seria: 32, 64, 128, 256, ?",
+      "options": [
+        "512",
+        "510",
+        "256",
+        "516"
+      ],
+      "answerIndex": 0,
+      "explanation": "Seria este în progresie geometrică (×2).",
+      "rationales": [
+        "✔ Corect: '512'. Seria este în progresie geometrică (×2).",
+        "✖ Greșit: '510' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '256' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '516' — Nu corespunde cadrului/definiției.."
+      ],
+      "topic": "Aptitudini cognitive",
+      "module": "psychology",
+      "difficulty": "medium"
+    },
+    {
+      "id": "PSY-0022",
+      "question": "(Cognitive) Completați seria: 16, 32, 64, 128, ?",
+      "options": [
+        "254",
+        "256",
+        "128",
+        "260"
+      ],
+      "answerIndex": 1,
+      "explanation": "Seria este în progresie geometrică (×2).",
+      "rationales": [
+        "✖ Greșit: '254' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: '256'. Seria este în progresie geometrică (×2).",
+        "✖ Greșit: '128' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '260' — Nu corespunde cadrului/definiției.."
+      ],
+      "topic": "Aptitudini cognitive",
+      "module": "psychology",
+      "difficulty": "hard"
+    },
+    {
+      "id": "PSY-0023",
+      "question": "(Cognitive) Completați seria: 32, 64, 128, 256, ?",
+      "options": [
+        "516",
+        "256",
+        "512",
+        "510"
+      ],
+      "answerIndex": 2,
+      "explanation": "Seria este în progresie geometrică (×2).",
+      "rationales": [
+        "✖ Greșit: '516' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '256' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: '512'. Seria este în progresie geometrică (×2).",
+        "✖ Greșit: '510' — Nu corespunde cadrului/definiției.."
+      ],
+      "topic": "Aptitudini cognitive",
+      "module": "psychology",
+      "difficulty": "hard"
+    },
+    {
+      "id": "PSY-0024",
+      "question": "(Cognitive) Completați seria: 8, 16, 32, 64, ?",
+      "options": [
+        "128",
+        "64",
+        "126",
+        "132"
+      ],
+      "answerIndex": 0,
+      "explanation": "Seria este în progresie geometrică (×2).",
+      "rationales": [
+        "✔ Corect: '128'. Seria este în progresie geometrică (×2).",
+        "✖ Greșit: '64' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '126' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '132' — Nu corespunde cadrului/definiției.."
+      ],
+      "topic": "Aptitudini cognitive",
+      "module": "psychology",
+      "difficulty": "easy"
+    },
+    {
+      "id": "PSY-0025",
+      "question": "(Cognitive) Completați seria: 64, 128, 256, 512, ?",
+      "options": [
+        "1024",
+        "512",
+        "1022",
+        "1028"
+      ],
+      "answerIndex": 0,
+      "explanation": "Seria este în progresie geometrică (×2).",
+      "rationales": [
+        "✔ Corect: '1024'. Seria este în progresie geometrică (×2).",
+        "✖ Greșit: '512' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '1022' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '1028' — Nu corespunde cadrului/definiției.."
+      ],
+      "topic": "Aptitudini cognitive",
+      "module": "psychology",
+      "difficulty": "medium"
+    },
+    {
+      "id": "PSY-0026",
+      "question": "(Cognitive) Completați seria: 8, 16, 32, 64, ?",
+      "options": [
+        "64",
+        "126",
+        "132",
+        "128"
+      ],
+      "answerIndex": 3,
+      "explanation": "Seria este în progresie geometrică (×2).",
+      "rationales": [
+        "✖ Greșit: '64' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '126' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '132' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: '128'. Seria este în progresie geometrică (×2)."
+      ],
+      "topic": "Aptitudini cognitive",
+      "module": "psychology",
+      "difficulty": "hard"
+    },
+    {
+      "id": "PSY-0027",
+      "question": "(Cognitive) Completați seria: 32, 64, 128, 256, ?",
+      "options": [
+        "512",
+        "256",
+        "516",
+        "510"
+      ],
+      "answerIndex": 0,
+      "explanation": "Seria este în progresie geometrică (×2).",
+      "rationales": [
+        "✔ Corect: '512'. Seria este în progresie geometrică (×2).",
+        "✖ Greșit: '256' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '516' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '510' — Nu corespunde cadrului/definiției.."
+      ],
+      "topic": "Aptitudini cognitive",
+      "module": "psychology",
+      "difficulty": "medium"
+    },
+    {
+      "id": "PSY-0028",
+      "question": "(Cognitive) Completați seria: 64, 128, 256, 512, ?",
+      "options": [
+        "1022",
+        "1028",
+        "1024",
+        "512"
+      ],
+      "answerIndex": 2,
+      "explanation": "Seria este în progresie geometrică (×2).",
+      "rationales": [
+        "✖ Greșit: '1022' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '1028' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: '1024'. Seria este în progresie geometrică (×2).",
+        "✖ Greșit: '512' — Nu corespunde cadrului/definiției.."
+      ],
+      "topic": "Aptitudini cognitive",
+      "module": "psychology",
+      "difficulty": "hard"
+    },
+    {
+      "id": "PSY-0029",
+      "question": "(Cognitive) Completați seria: 2, 4, 8, 16, ?",
+      "options": [
+        "30",
+        "16",
+        "36",
+        "32"
+      ],
+      "answerIndex": 3,
+      "explanation": "Seria este în progresie geometrică (×2).",
+      "rationales": [
+        "✖ Greșit: '30' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '16' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '36' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: '32'. Seria este în progresie geometrică (×2)."
+      ],
+      "topic": "Aptitudini cognitive",
+      "module": "psychology",
+      "difficulty": "easy"
+    },
+    {
+      "id": "PSY-0030",
+      "question": "(Cognitive) Completați seria: 64, 128, 256, 512, ?",
+      "options": [
+        "512",
+        "1028",
+        "1022",
+        "1024"
+      ],
+      "answerIndex": 3,
+      "explanation": "Seria este în progresie geometrică (×2).",
+      "rationales": [
+        "✖ Greșit: '512' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '1028' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '1022' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: '1024'. Seria este în progresie geometrică (×2)."
+      ],
+      "topic": "Aptitudini cognitive",
+      "module": "psychology",
+      "difficulty": "medium"
+    },
+    {
+      "id": "PSY-0031",
+      "question": "(Cognitive) Completați seria: 64, 128, 256, 512, ?",
+      "options": [
+        "1022",
+        "512",
+        "1028",
+        "1024"
+      ],
+      "answerIndex": 3,
+      "explanation": "Seria este în progresie geometrică (×2).",
+      "rationales": [
+        "✖ Greșit: '1022' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '512' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '1028' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: '1024'. Seria este în progresie geometrică (×2)."
+      ],
+      "topic": "Aptitudini cognitive",
+      "module": "psychology",
+      "difficulty": "hard"
+    },
+    {
+      "id": "PSY-0032",
+      "question": "(Cognitive) Completați seria: 32, 64, 128, 256, ?",
+      "options": [
+        "512",
+        "256",
+        "510",
+        "516"
+      ],
+      "answerIndex": 0,
+      "explanation": "Seria este în progresie geometrică (×2).",
+      "rationales": [
+        "✔ Corect: '512'. Seria este în progresie geometrică (×2).",
+        "✖ Greșit: '256' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '510' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '516' — Nu corespunde cadrului/definiției.."
+      ],
+      "topic": "Aptitudini cognitive",
+      "module": "psychology",
+      "difficulty": "easy"
+    },
+    {
+      "id": "PSY-0033",
+      "question": "(Cognitive) Completați seria: 8, 16, 32, 64, ?",
+      "options": [
+        "126",
+        "128",
+        "132",
+        "64"
+      ],
+      "answerIndex": 1,
+      "explanation": "Seria este în progresie geometrică (×2).",
+      "rationales": [
+        "✖ Greșit: '126' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: '128'. Seria este în progresie geometrică (×2).",
+        "✖ Greșit: '132' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '64' — Nu corespunde cadrului/definiției.."
+      ],
+      "topic": "Aptitudini cognitive",
+      "module": "psychology",
+      "difficulty": "hard"
+    },
+    {
+      "id": "PSY-0034",
+      "question": "(Cognitive) Completați seria: 8, 16, 32, 64, ?",
+      "options": [
+        "126",
+        "128",
+        "64",
+        "132"
+      ],
+      "answerIndex": 1,
+      "explanation": "Seria este în progresie geometrică (×2).",
+      "rationales": [
+        "✖ Greșit: '126' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: '128'. Seria este în progresie geometrică (×2).",
+        "✖ Greșit: '64' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '132' — Nu corespunde cadrului/definiției.."
+      ],
+      "topic": "Aptitudini cognitive",
+      "module": "psychology",
+      "difficulty": "medium"
+    },
+    {
+      "id": "PSY-0035",
+      "question": "(Cognitive) Completați seria: 64, 128, 256, 512, ?",
+      "options": [
+        "1022",
+        "1024",
+        "1028",
+        "512"
+      ],
+      "answerIndex": 1,
+      "explanation": "Seria este în progresie geometrică (×2).",
+      "rationales": [
+        "✖ Greșit: '1022' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: '1024'. Seria este în progresie geometrică (×2).",
+        "✖ Greșit: '1028' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '512' — Nu corespunde cadrului/definiției.."
+      ],
+      "topic": "Aptitudini cognitive",
+      "module": "psychology",
+      "difficulty": "medium"
+    },
+    {
+      "id": "PSY-0036",
+      "question": "(Cognitive) Completați seria: 2, 4, 8, 16, ?",
+      "options": [
+        "30",
+        "32",
+        "36",
+        "16"
+      ],
+      "answerIndex": 1,
+      "explanation": "Seria este în progresie geometrică (×2).",
+      "rationales": [
+        "✖ Greșit: '30' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: '32'. Seria este în progresie geometrică (×2).",
+        "✖ Greșit: '36' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '16' — Nu corespunde cadrului/definiției.."
+      ],
+      "topic": "Aptitudini cognitive",
+      "module": "psychology",
+      "difficulty": "easy"
+    },
+    {
+      "id": "PSY-0037",
+      "question": "(Cognitive) Completați seria: 32, 64, 128, 256, ?",
+      "options": [
+        "516",
+        "510",
+        "512",
+        "256"
+      ],
+      "answerIndex": 2,
+      "explanation": "Seria este în progresie geometrică (×2).",
+      "rationales": [
+        "✖ Greșit: '516' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '510' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: '512'. Seria este în progresie geometrică (×2).",
+        "✖ Greșit: '256' — Nu corespunde cadrului/definiției.."
+      ],
+      "topic": "Aptitudini cognitive",
+      "module": "psychology",
+      "difficulty": "medium"
+    },
+    {
+      "id": "PSY-0038",
+      "question": "(Cognitive) Completați seria: 8, 16, 32, 64, ?",
+      "options": [
+        "64",
+        "126",
+        "132",
+        "128"
+      ],
+      "answerIndex": 3,
+      "explanation": "Seria este în progresie geometrică (×2).",
+      "rationales": [
+        "✖ Greșit: '64' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '126' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '132' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: '128'. Seria este în progresie geometrică (×2)."
+      ],
+      "topic": "Aptitudini cognitive",
+      "module": "psychology",
+      "difficulty": "hard"
+    },
+    {
+      "id": "PSY-0039",
+      "question": "(Cognitive) Completați seria: 2, 4, 8, 16, ?",
+      "options": [
+        "30",
+        "36",
+        "16",
+        "32"
+      ],
+      "answerIndex": 3,
+      "explanation": "Seria este în progresie geometrică (×2).",
+      "rationales": [
+        "✖ Greșit: '30' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '36' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '16' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: '32'. Seria este în progresie geometrică (×2)."
+      ],
+      "topic": "Aptitudini cognitive",
+      "module": "psychology",
+      "difficulty": "medium"
+    },
+    {
+      "id": "PSY-0040",
+      "question": "(Cognitive) Completați seria: 4, 8, 16, 32, ?",
+      "options": [
+        "62",
+        "64",
+        "32",
+        "68"
+      ],
+      "answerIndex": 1,
+      "explanation": "Seria este în progresie geometrică (×2).",
+      "rationales": [
+        "✖ Greșit: '62' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: '64'. Seria este în progresie geometrică (×2).",
+        "✖ Greșit: '32' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '68' — Nu corespunde cadrului/definiției.."
+      ],
+      "topic": "Aptitudini cognitive",
+      "module": "psychology",
+      "difficulty": "hard"
+    },
+    {
+      "id": "PSY-0041",
+      "question": "(Cognitive) Completați seria: 2, 4, 8, 16, ?",
+      "options": [
+        "16",
+        "36",
+        "30",
+        "32"
+      ],
+      "answerIndex": 3,
+      "explanation": "Seria este în progresie geometrică (×2).",
+      "rationales": [
+        "✖ Greșit: '16' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '36' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '30' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: '32'. Seria este în progresie geometrică (×2)."
+      ],
+      "topic": "Aptitudini cognitive",
+      "module": "psychology",
+      "difficulty": "medium"
+    },
+    {
+      "id": "PSY-0042",
+      "question": "(Cognitive) Completați seria: 32, 64, 128, 256, ?",
+      "options": [
+        "510",
+        "516",
+        "512",
+        "256"
+      ],
+      "answerIndex": 2,
+      "explanation": "Seria este în progresie geometrică (×2).",
+      "rationales": [
+        "✖ Greșit: '510' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '516' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: '512'. Seria este în progresie geometrică (×2).",
+        "✖ Greșit: '256' — Nu corespunde cadrului/definiției.."
+      ],
+      "topic": "Aptitudini cognitive",
+      "module": "psychology",
+      "difficulty": "hard"
+    },
+    {
+      "id": "PSY-0043",
+      "question": "(Cognitive) Completați seria: 64, 128, 256, 512, ?",
+      "options": [
+        "1022",
+        "1024",
+        "512",
+        "1028"
+      ],
+      "answerIndex": 1,
+      "explanation": "Seria este în progresie geometrică (×2).",
+      "rationales": [
+        "✖ Greșit: '1022' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: '1024'. Seria este în progresie geometrică (×2).",
+        "✖ Greșit: '512' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '1028' — Nu corespunde cadrului/definiției.."
+      ],
+      "topic": "Aptitudini cognitive",
+      "module": "psychology",
+      "difficulty": "easy"
+    },
+    {
+      "id": "PSY-0044",
+      "question": "(Cognitive) Completați seria: 8, 16, 32, 64, ?",
+      "options": [
+        "132",
+        "64",
+        "126",
+        "128"
+      ],
+      "answerIndex": 3,
+      "explanation": "Seria este în progresie geometrică (×2).",
+      "rationales": [
+        "✖ Greșit: '132' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '64' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '126' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: '128'. Seria este în progresie geometrică (×2)."
+      ],
+      "topic": "Aptitudini cognitive",
+      "module": "psychology",
+      "difficulty": "medium"
+    },
+    {
+      "id": "PSY-0045",
+      "question": "(Cognitive) Completați seria: 2, 4, 8, 16, ?",
+      "options": [
+        "36",
+        "16",
+        "32",
+        "30"
+      ],
+      "answerIndex": 2,
+      "explanation": "Seria este în progresie geometrică (×2).",
+      "rationales": [
+        "✖ Greșit: '36' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '16' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: '32'. Seria este în progresie geometrică (×2).",
+        "✖ Greșit: '30' — Nu corespunde cadrului/definiției.."
+      ],
+      "topic": "Aptitudini cognitive",
+      "module": "psychology",
+      "difficulty": "hard"
+    },
+    {
+      "id": "PSY-0046",
+      "question": "(Cognitive) Completați seria: 32, 64, 128, 256, ?",
+      "options": [
+        "256",
+        "516",
+        "512",
+        "510"
+      ],
+      "answerIndex": 2,
+      "explanation": "Seria este în progresie geometrică (×2).",
+      "rationales": [
+        "✖ Greșit: '256' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '516' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: '512'. Seria este în progresie geometrică (×2).",
+        "✖ Greșit: '510' — Nu corespunde cadrului/definiției.."
+      ],
+      "topic": "Aptitudini cognitive",
+      "module": "psychology",
+      "difficulty": "hard"
+    },
+    {
+      "id": "PSY-0047",
+      "question": "(Cognitive) Completați seria: 64, 128, 256, 512, ?",
+      "options": [
+        "1028",
+        "1024",
+        "512",
+        "1022"
+      ],
+      "answerIndex": 1,
+      "explanation": "Seria este în progresie geometrică (×2).",
+      "rationales": [
+        "✖ Greșit: '1028' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: '1024'. Seria este în progresie geometrică (×2).",
+        "✖ Greșit: '512' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '1022' — Nu corespunde cadrului/definiției.."
+      ],
+      "topic": "Aptitudini cognitive",
+      "module": "psychology",
+      "difficulty": "easy"
+    },
+    {
+      "id": "PSY-0048",
+      "question": "(Cognitive) Completați seria: 8, 16, 32, 64, ?",
+      "options": [
+        "132",
+        "128",
+        "64",
+        "126"
+      ],
+      "answerIndex": 1,
+      "explanation": "Seria este în progresie geometrică (×2).",
+      "rationales": [
+        "✖ Greșit: '132' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: '128'. Seria este în progresie geometrică (×2).",
+        "✖ Greșit: '64' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '126' — Nu corespunde cadrului/definiției.."
+      ],
+      "topic": "Aptitudini cognitive",
+      "module": "psychology",
+      "difficulty": "hard"
+    },
+    {
+      "id": "PSY-0049",
+      "question": "(Cognitive) Completați seria: 64, 128, 256, 512, ?",
+      "options": [
+        "1024",
+        "1022",
+        "512",
+        "1028"
+      ],
+      "answerIndex": 0,
+      "explanation": "Seria este în progresie geometrică (×2).",
+      "rationales": [
+        "✔ Corect: '1024'. Seria este în progresie geometrică (×2).",
+        "✖ Greșit: '1022' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '512' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '1028' — Nu corespunde cadrului/definiției.."
+      ],
+      "topic": "Aptitudini cognitive",
+      "module": "psychology",
+      "difficulty": "medium"
+    },
+    {
+      "id": "PSY-0050",
+      "question": "(Cognitive) Completați seria: 2, 4, 8, 16, ?",
+      "options": [
+        "32",
+        "30",
+        "16",
+        "36"
+      ],
+      "answerIndex": 0,
+      "explanation": "Seria este în progresie geometrică (×2).",
+      "rationales": [
+        "✔ Corect: '32'. Seria este în progresie geometrică (×2).",
+        "✖ Greșit: '30' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '16' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '36' — Nu corespunde cadrului/definiției.."
+      ],
+      "topic": "Aptitudini cognitive",
+      "module": "psychology",
+      "difficulty": "easy"
+    },
+    {
+      "id": "PSY-0051",
+      "question": "(Cognitive) Completați seria: 64, 128, 256, 512, ?",
+      "options": [
+        "1028",
+        "512",
+        "1024",
+        "1022"
+      ],
+      "answerIndex": 2,
+      "explanation": "Seria este în progresie geometrică (×2).",
+      "rationales": [
+        "✖ Greșit: '1028' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '512' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: '1024'. Seria este în progresie geometrică (×2).",
+        "✖ Greșit: '1022' — Nu corespunde cadrului/definiției.."
+      ],
+      "topic": "Aptitudini cognitive",
+      "module": "psychology",
+      "difficulty": "hard"
+    },
+    {
+      "id": "PSY-0052",
+      "question": "(Cognitive) Completați seria: 16, 32, 64, 128, ?",
+      "options": [
+        "254",
+        "128",
+        "260",
+        "256"
+      ],
+      "answerIndex": 3,
+      "explanation": "Seria este în progresie geometrică (×2).",
+      "rationales": [
+        "✖ Greșit: '254' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '128' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '260' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: '256'. Seria este în progresie geometrică (×2)."
+      ],
+      "topic": "Aptitudini cognitive",
+      "module": "psychology",
+      "difficulty": "medium"
+    },
+    {
+      "id": "PSY-0053",
+      "question": "(Cognitive) Completați seria: 8, 16, 32, 64, ?",
+      "options": [
+        "128",
+        "126",
+        "64",
+        "132"
+      ],
+      "answerIndex": 0,
+      "explanation": "Seria este în progresie geometrică (×2).",
+      "rationales": [
+        "✔ Corect: '128'. Seria este în progresie geometrică (×2).",
+        "✖ Greșit: '126' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '64' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '132' — Nu corespunde cadrului/definiției.."
+      ],
+      "topic": "Aptitudini cognitive",
+      "module": "psychology",
+      "difficulty": "hard"
+    },
+    {
+      "id": "PSY-0054",
+      "question": "(Cognitive) Completați seria: 8, 16, 32, 64, ?",
+      "options": [
+        "126",
+        "132",
+        "64",
+        "128"
+      ],
+      "answerIndex": 3,
+      "explanation": "Seria este în progresie geometrică (×2).",
+      "rationales": [
+        "✖ Greșit: '126' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '132' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '64' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: '128'. Seria este în progresie geometrică (×2)."
+      ],
+      "topic": "Aptitudini cognitive",
+      "module": "psychology",
+      "difficulty": "medium"
+    },
+    {
+      "id": "PSY-0055",
+      "question": "(Cognitive) Completați seria: 32, 64, 128, 256, ?",
+      "options": [
+        "512",
+        "516",
+        "256",
+        "510"
+      ],
+      "answerIndex": 0,
+      "explanation": "Seria este în progresie geometrică (×2).",
+      "rationales": [
+        "✔ Corect: '512'. Seria este în progresie geometrică (×2).",
+        "✖ Greșit: '516' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '256' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '510' — Nu corespunde cadrului/definiției.."
+      ],
+      "topic": "Aptitudini cognitive",
+      "module": "psychology",
+      "difficulty": "medium"
+    },
+    {
+      "id": "PSY-0056",
+      "question": "(Cognitive) Completați seria: 8, 16, 32, 64, ?",
+      "options": [
+        "126",
+        "128",
+        "64",
+        "132"
+      ],
+      "answerIndex": 1,
+      "explanation": "Seria este în progresie geometrică (×2).",
+      "rationales": [
+        "✖ Greșit: '126' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: '128'. Seria este în progresie geometrică (×2).",
+        "✖ Greșit: '64' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '132' — Nu corespunde cadrului/definiției.."
+      ],
+      "topic": "Aptitudini cognitive",
+      "module": "psychology",
+      "difficulty": "easy"
+    },
+    {
+      "id": "PSY-0057",
+      "question": "(Cognitive) Completați seria: 16, 32, 64, 128, ?",
+      "options": [
+        "254",
+        "260",
+        "128",
+        "256"
+      ],
+      "answerIndex": 3,
+      "explanation": "Seria este în progresie geometrică (×2).",
+      "rationales": [
+        "✖ Greșit: '254' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '260' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '128' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: '256'. Seria este în progresie geometrică (×2)."
+      ],
+      "topic": "Aptitudini cognitive",
+      "module": "psychology",
+      "difficulty": "easy"
+    },
+    {
+      "id": "PSY-0058",
+      "question": "(Cognitive) Completați seria: 8, 16, 32, 64, ?",
+      "options": [
+        "132",
+        "64",
+        "128",
+        "126"
+      ],
+      "answerIndex": 2,
+      "explanation": "Seria este în progresie geometrică (×2).",
+      "rationales": [
+        "✖ Greșit: '132' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '64' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: '128'. Seria este în progresie geometrică (×2).",
+        "✖ Greșit: '126' — Nu corespunde cadrului/definiției.."
+      ],
+      "topic": "Aptitudini cognitive",
+      "module": "psychology",
+      "difficulty": "easy"
+    },
+    {
+      "id": "PSY-0059",
+      "question": "(Cognitive) Completați seria: 32, 64, 128, 256, ?",
+      "options": [
+        "512",
+        "510",
+        "256",
+        "516"
+      ],
+      "answerIndex": 0,
+      "explanation": "Seria este în progresie geometrică (×2).",
+      "rationales": [
+        "✔ Corect: '512'. Seria este în progresie geometrică (×2).",
+        "✖ Greșit: '510' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '256' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '516' — Nu corespunde cadrului/definiției.."
+      ],
+      "topic": "Aptitudini cognitive",
+      "module": "psychology",
+      "difficulty": "easy"
+    },
+    {
+      "id": "PSY-0060",
+      "question": "(Cognitive) Completați seria: 16, 32, 64, 128, ?",
+      "options": [
+        "260",
+        "256",
+        "254",
+        "128"
+      ],
+      "answerIndex": 1,
+      "explanation": "Seria este în progresie geometrică (×2).",
+      "rationales": [
+        "✖ Greșit: '260' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: '256'. Seria este în progresie geometrică (×2).",
+        "✖ Greșit: '254' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '128' — Nu corespunde cadrului/definiției.."
+      ],
+      "topic": "Aptitudini cognitive",
+      "module": "psychology",
+      "difficulty": "medium"
+    },
+    {
+      "id": "PSY-0061",
+      "question": "(Cognitive) Completați seria: 32, 64, 128, 256, ?",
+      "options": [
+        "512",
+        "256",
+        "510",
+        "516"
+      ],
+      "answerIndex": 0,
+      "explanation": "Seria este în progresie geometrică (×2).",
+      "rationales": [
+        "✔ Corect: '512'. Seria este în progresie geometrică (×2).",
+        "✖ Greșit: '256' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '510' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '516' — Nu corespunde cadrului/definiției.."
+      ],
+      "topic": "Aptitudini cognitive",
+      "module": "psychology",
+      "difficulty": "medium"
+    },
+    {
+      "id": "PSY-0062",
+      "question": "(Cognitive) Completați seria: 16, 32, 64, 128, ?",
+      "options": [
+        "254",
+        "128",
+        "256",
+        "260"
+      ],
+      "answerIndex": 2,
+      "explanation": "Seria este în progresie geometrică (×2).",
+      "rationales": [
+        "✖ Greșit: '254' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '128' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: '256'. Seria este în progresie geometrică (×2).",
+        "✖ Greșit: '260' — Nu corespunde cadrului/definiției.."
+      ],
+      "topic": "Aptitudini cognitive",
+      "module": "psychology",
+      "difficulty": "hard"
+    },
+    {
+      "id": "PSY-0063",
+      "question": "(Cognitive) Completați seria: 4, 8, 16, 32, ?",
+      "options": [
+        "64",
+        "62",
+        "32",
+        "68"
+      ],
+      "answerIndex": 0,
+      "explanation": "Seria este în progresie geometrică (×2).",
+      "rationales": [
+        "✔ Corect: '64'. Seria este în progresie geometrică (×2).",
+        "✖ Greșit: '62' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '32' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '68' — Nu corespunde cadrului/definiției.."
+      ],
+      "topic": "Aptitudini cognitive",
+      "module": "psychology",
+      "difficulty": "easy"
+    },
+    {
+      "id": "PSY-0064",
+      "question": "(Cognitive) Completați seria: 16, 32, 64, 128, ?",
+      "options": [
+        "128",
+        "254",
+        "260",
+        "256"
+      ],
+      "answerIndex": 3,
+      "explanation": "Seria este în progresie geometrică (×2).",
+      "rationales": [
+        "✖ Greșit: '128' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '254' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '260' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: '256'. Seria este în progresie geometrică (×2)."
+      ],
+      "topic": "Aptitudini cognitive",
+      "module": "psychology",
+      "difficulty": "hard"
+    },
+    {
+      "id": "PSY-0065",
+      "question": "(Cognitive) Completați seria: 64, 128, 256, 512, ?",
+      "options": [
+        "1024",
+        "512",
+        "1028",
+        "1022"
+      ],
+      "answerIndex": 0,
+      "explanation": "Seria este în progresie geometrică (×2).",
+      "rationales": [
+        "✔ Corect: '1024'. Seria este în progresie geometrică (×2).",
+        "✖ Greșit: '512' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '1028' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '1022' — Nu corespunde cadrului/definiției.."
+      ],
+      "topic": "Aptitudini cognitive",
+      "module": "psychology",
+      "difficulty": "hard"
+    },
+    {
+      "id": "PSY-0066",
+      "question": "(Cognitive) Completați seria: 8, 16, 32, 64, ?",
+      "options": [
+        "132",
+        "126",
+        "128",
+        "64"
+      ],
+      "answerIndex": 2,
+      "explanation": "Seria este în progresie geometrică (×2).",
+      "rationales": [
+        "✖ Greșit: '132' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '126' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: '128'. Seria este în progresie geometrică (×2).",
+        "✖ Greșit: '64' — Nu corespunde cadrului/definiției.."
+      ],
+      "topic": "Aptitudini cognitive",
+      "module": "psychology",
+      "difficulty": "medium"
+    },
+    {
+      "id": "PSY-0067",
+      "question": "(Cognitive) Completați seria: 32, 64, 128, 256, ?",
+      "options": [
+        "256",
+        "510",
+        "516",
+        "512"
+      ],
+      "answerIndex": 3,
+      "explanation": "Seria este în progresie geometrică (×2).",
+      "rationales": [
+        "✖ Greșit: '256' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '510' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '516' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: '512'. Seria este în progresie geometrică (×2)."
+      ],
+      "topic": "Aptitudini cognitive",
+      "module": "psychology",
+      "difficulty": "medium"
+    },
+    {
+      "id": "PSY-0068",
+      "question": "(Cognitive) Completați seria: 8, 16, 32, 64, ?",
+      "options": [
+        "126",
+        "128",
+        "64",
+        "132"
+      ],
+      "answerIndex": 1,
+      "explanation": "Seria este în progresie geometrică (×2).",
+      "rationales": [
+        "✖ Greșit: '126' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: '128'. Seria este în progresie geometrică (×2).",
+        "✖ Greșit: '64' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '132' — Nu corespunde cadrului/definiției.."
+      ],
+      "topic": "Aptitudini cognitive",
+      "module": "psychology",
+      "difficulty": "medium"
+    },
+    {
+      "id": "PSY-0069",
+      "question": "(Cognitive) Completați seria: 4, 8, 16, 32, ?",
+      "options": [
+        "32",
+        "68",
+        "62",
+        "64"
+      ],
+      "answerIndex": 3,
+      "explanation": "Seria este în progresie geometrică (×2).",
+      "rationales": [
+        "✖ Greșit: '32' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '68' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '62' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: '64'. Seria este în progresie geometrică (×2)."
+      ],
+      "topic": "Aptitudini cognitive",
+      "module": "psychology",
+      "difficulty": "medium"
+    },
+    {
+      "id": "PSY-0070",
+      "question": "(Cognitive) Completați seria: 4, 8, 16, 32, ?",
+      "options": [
+        "32",
+        "64",
+        "68",
+        "62"
+      ],
+      "answerIndex": 1,
+      "explanation": "Seria este în progresie geometrică (×2).",
+      "rationales": [
+        "✖ Greșit: '32' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: '64'. Seria este în progresie geometrică (×2).",
+        "✖ Greșit: '68' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '62' — Nu corespunde cadrului/definiției.."
+      ],
+      "topic": "Aptitudini cognitive",
+      "module": "psychology",
+      "difficulty": "hard"
+    },
+    {
+      "id": "PSY-0071",
+      "question": "(Cognitive) Completați seria: 4, 8, 16, 32, ?",
+      "options": [
+        "62",
+        "68",
+        "64",
+        "32"
+      ],
+      "answerIndex": 2,
+      "explanation": "Seria este în progresie geometrică (×2).",
+      "rationales": [
+        "✖ Greșit: '62' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '68' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: '64'. Seria este în progresie geometrică (×2).",
+        "✖ Greșit: '32' — Nu corespunde cadrului/definiției.."
+      ],
+      "topic": "Aptitudini cognitive",
+      "module": "psychology",
+      "difficulty": "hard"
+    },
+    {
+      "id": "PSY-0072",
+      "question": "(Cognitive) Completați seria: 64, 128, 256, 512, ?",
+      "options": [
+        "1024",
+        "512",
+        "1028",
+        "1022"
+      ],
+      "answerIndex": 0,
+      "explanation": "Seria este în progresie geometrică (×2).",
+      "rationales": [
+        "✔ Corect: '1024'. Seria este în progresie geometrică (×2).",
+        "✖ Greșit: '512' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '1028' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '1022' — Nu corespunde cadrului/definiției.."
+      ],
+      "topic": "Aptitudini cognitive",
+      "module": "psychology",
+      "difficulty": "easy"
+    },
+    {
+      "id": "PSY-0073",
+      "question": "(Cognitive) Completați seria: 16, 32, 64, 128, ?",
+      "options": [
+        "260",
+        "128",
+        "256",
+        "254"
+      ],
+      "answerIndex": 2,
+      "explanation": "Seria este în progresie geometrică (×2).",
+      "rationales": [
+        "✖ Greșit: '260' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '128' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: '256'. Seria este în progresie geometrică (×2).",
+        "✖ Greșit: '254' — Nu corespunde cadrului/definiției.."
+      ],
+      "topic": "Aptitudini cognitive",
+      "module": "psychology",
+      "difficulty": "medium"
+    },
+    {
+      "id": "PSY-0074",
+      "question": "(Cognitive) Completați seria: 64, 128, 256, 512, ?",
+      "options": [
+        "1028",
+        "1022",
+        "1024",
+        "512"
+      ],
+      "answerIndex": 2,
+      "explanation": "Seria este în progresie geometrică (×2).",
+      "rationales": [
+        "✖ Greșit: '1028' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '1022' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: '1024'. Seria este în progresie geometrică (×2).",
+        "✖ Greșit: '512' — Nu corespunde cadrului/definiției.."
+      ],
+      "topic": "Aptitudini cognitive",
+      "module": "psychology",
+      "difficulty": "easy"
+    },
+    {
+      "id": "PSY-0075",
+      "question": "(Cognitive) Completați seria: 2, 4, 8, 16, ?",
+      "options": [
+        "36",
+        "32",
+        "30",
+        "16"
+      ],
+      "answerIndex": 1,
+      "explanation": "Seria este în progresie geometrică (×2).",
+      "rationales": [
+        "✖ Greșit: '36' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: '32'. Seria este în progresie geometrică (×2).",
+        "✖ Greșit: '30' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '16' — Nu corespunde cadrului/definiției.."
+      ],
+      "topic": "Aptitudini cognitive",
+      "module": "psychology",
+      "difficulty": "hard"
+    },
+    {
+      "id": "PSY-0076",
+      "question": "(Cognitive) Completați seria: 4, 8, 16, 32, ?",
+      "options": [
+        "64",
+        "62",
+        "32",
+        "68"
+      ],
+      "answerIndex": 0,
+      "explanation": "Seria este în progresie geometrică (×2).",
+      "rationales": [
+        "✔ Corect: '64'. Seria este în progresie geometrică (×2).",
+        "✖ Greșit: '62' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '32' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '68' — Nu corespunde cadrului/definiției.."
+      ],
+      "topic": "Aptitudini cognitive",
+      "module": "psychology",
+      "difficulty": "hard"
+    },
+    {
+      "id": "PSY-0077",
+      "question": "(Cognitive) Completați seria: 2, 4, 8, 16, ?",
+      "options": [
+        "16",
+        "30",
+        "36",
+        "32"
+      ],
+      "answerIndex": 3,
+      "explanation": "Seria este în progresie geometrică (×2).",
+      "rationales": [
+        "✖ Greșit: '16' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '30' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '36' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: '32'. Seria este în progresie geometrică (×2)."
+      ],
+      "topic": "Aptitudini cognitive",
+      "module": "psychology",
+      "difficulty": "hard"
+    },
+    {
+      "id": "PSY-0078",
+      "question": "(Cognitive) Completați seria: 4, 8, 16, 32, ?",
+      "options": [
+        "64",
+        "62",
+        "68",
+        "32"
+      ],
+      "answerIndex": 0,
+      "explanation": "Seria este în progresie geometrică (×2).",
+      "rationales": [
+        "✔ Corect: '64'. Seria este în progresie geometrică (×2).",
+        "✖ Greșit: '62' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '68' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '32' — Nu corespunde cadrului/definiției.."
+      ],
+      "topic": "Aptitudini cognitive",
+      "module": "psychology",
+      "difficulty": "easy"
+    },
+    {
+      "id": "PSY-0079",
+      "question": "(Cognitive) Completați seria: 64, 128, 256, 512, ?",
+      "options": [
+        "512",
+        "1022",
+        "1028",
+        "1024"
+      ],
+      "answerIndex": 3,
+      "explanation": "Seria este în progresie geometrică (×2).",
+      "rationales": [
+        "✖ Greșit: '512' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '1022' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '1028' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: '1024'. Seria este în progresie geometrică (×2)."
+      ],
+      "topic": "Aptitudini cognitive",
+      "module": "psychology",
+      "difficulty": "hard"
+    },
+    {
+      "id": "PSY-0080",
+      "question": "(Cognitive) Completați seria: 16, 32, 64, 128, ?",
+      "options": [
+        "128",
+        "260",
+        "254",
+        "256"
+      ],
+      "answerIndex": 3,
+      "explanation": "Seria este în progresie geometrică (×2).",
+      "rationales": [
+        "✖ Greșit: '128' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '260' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '254' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: '256'. Seria este în progresie geometrică (×2)."
+      ],
+      "topic": "Aptitudini cognitive",
+      "module": "psychology",
+      "difficulty": "easy"
+    },
+    {
+      "id": "PSY-0081",
+      "question": "(Cognitive) Completați seria: 2, 4, 8, 16, ?",
+      "options": [
+        "32",
+        "16",
+        "30",
+        "36"
+      ],
+      "answerIndex": 0,
+      "explanation": "Seria este în progresie geometrică (×2).",
+      "rationales": [
+        "✔ Corect: '32'. Seria este în progresie geometrică (×2).",
+        "✖ Greșit: '16' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '30' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '36' — Nu corespunde cadrului/definiției.."
+      ],
+      "topic": "Aptitudini cognitive",
+      "module": "psychology",
+      "difficulty": "easy"
+    },
+    {
+      "id": "PSY-0082",
+      "question": "(Cognitive) Completați seria: 16, 32, 64, 128, ?",
+      "options": [
+        "260",
+        "256",
+        "128",
+        "254"
+      ],
+      "answerIndex": 1,
+      "explanation": "Seria este în progresie geometrică (×2).",
+      "rationales": [
+        "✖ Greșit: '260' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: '256'. Seria este în progresie geometrică (×2).",
+        "✖ Greșit: '128' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '254' — Nu corespunde cadrului/definiției.."
+      ],
+      "topic": "Aptitudini cognitive",
+      "module": "psychology",
+      "difficulty": "hard"
+    },
+    {
+      "id": "PSY-0083",
+      "question": "(Cognitive) Completați seria: 16, 32, 64, 128, ?",
+      "options": [
+        "254",
+        "260",
+        "256",
+        "128"
+      ],
+      "answerIndex": 2,
+      "explanation": "Seria este în progresie geometrică (×2).",
+      "rationales": [
+        "✖ Greșit: '254' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '260' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: '256'. Seria este în progresie geometrică (×2).",
+        "✖ Greșit: '128' — Nu corespunde cadrului/definiției.."
+      ],
+      "topic": "Aptitudini cognitive",
+      "module": "psychology",
+      "difficulty": "hard"
+    },
+    {
+      "id": "PSY-0084",
+      "question": "(Cognitive) Completați seria: 16, 32, 64, 128, ?",
+      "options": [
+        "260",
+        "128",
+        "256",
+        "254"
+      ],
+      "answerIndex": 2,
+      "explanation": "Seria este în progresie geometrică (×2).",
+      "rationales": [
+        "✖ Greșit: '260' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '128' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: '256'. Seria este în progresie geometrică (×2).",
+        "✖ Greșit: '254' — Nu corespunde cadrului/definiției.."
+      ],
+      "topic": "Aptitudini cognitive",
+      "module": "psychology",
+      "difficulty": "hard"
+    },
+    {
+      "id": "PSY-0085",
+      "question": "(Cognitive) Completați seria: 8, 16, 32, 64, ?",
+      "options": [
+        "128",
+        "132",
+        "126",
+        "64"
+      ],
+      "answerIndex": 0,
+      "explanation": "Seria este în progresie geometrică (×2).",
+      "rationales": [
+        "✔ Corect: '128'. Seria este în progresie geometrică (×2).",
+        "✖ Greșit: '132' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '126' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '64' — Nu corespunde cadrului/definiției.."
+      ],
+      "topic": "Aptitudini cognitive",
+      "module": "psychology",
+      "difficulty": "easy"
+    },
+    {
+      "id": "PSY-0086",
+      "question": "(Cognitive) Completați seria: 64, 128, 256, 512, ?",
+      "options": [
+        "1028",
+        "512",
+        "1022",
+        "1024"
+      ],
+      "answerIndex": 3,
+      "explanation": "Seria este în progresie geometrică (×2).",
+      "rationales": [
+        "✖ Greșit: '1028' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '512' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '1022' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: '1024'. Seria este în progresie geometrică (×2)."
+      ],
+      "topic": "Aptitudini cognitive",
+      "module": "psychology",
+      "difficulty": "medium"
+    },
+    {
+      "id": "PSY-0087",
+      "question": "(Cognitive) Completați seria: 2, 4, 8, 16, ?",
+      "options": [
+        "30",
+        "36",
+        "32",
+        "16"
+      ],
+      "answerIndex": 2,
+      "explanation": "Seria este în progresie geometrică (×2).",
+      "rationales": [
+        "✖ Greșit: '30' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '36' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: '32'. Seria este în progresie geometrică (×2).",
+        "✖ Greșit: '16' — Nu corespunde cadrului/definiției.."
+      ],
+      "topic": "Aptitudini cognitive",
+      "module": "psychology",
+      "difficulty": "medium"
+    },
+    {
+      "id": "PSY-0088",
+      "question": "(Cognitive) Completați seria: 2, 4, 8, 16, ?",
+      "options": [
+        "36",
+        "32",
+        "30",
+        "16"
+      ],
+      "answerIndex": 1,
+      "explanation": "Seria este în progresie geometrică (×2).",
+      "rationales": [
+        "✖ Greșit: '36' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: '32'. Seria este în progresie geometrică (×2).",
+        "✖ Greșit: '30' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '16' — Nu corespunde cadrului/definiției.."
+      ],
+      "topic": "Aptitudini cognitive",
+      "module": "psychology",
+      "difficulty": "hard"
+    },
+    {
+      "id": "PSY-0089",
+      "question": "(Cognitive) Completați seria: 64, 128, 256, 512, ?",
+      "options": [
+        "512",
+        "1028",
+        "1022",
+        "1024"
+      ],
+      "answerIndex": 3,
+      "explanation": "Seria este în progresie geometrică (×2).",
+      "rationales": [
+        "✖ Greșit: '512' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '1028' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '1022' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: '1024'. Seria este în progresie geometrică (×2)."
+      ],
+      "topic": "Aptitudini cognitive",
+      "module": "psychology",
+      "difficulty": "hard"
+    },
+    {
+      "id": "PSY-0090",
+      "question": "(Cognitive) Completați seria: 16, 32, 64, 128, ?",
+      "options": [
+        "254",
+        "260",
+        "256",
+        "128"
+      ],
+      "answerIndex": 2,
+      "explanation": "Seria este în progresie geometrică (×2).",
+      "rationales": [
+        "✖ Greșit: '254' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: '260' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: '256'. Seria este în progresie geometrică (×2).",
+        "✖ Greșit: '128' — Nu corespunde cadrului/definiției.."
+      ],
+      "topic": "Aptitudini cognitive",
+      "module": "psychology",
+      "difficulty": "hard"
+    },
+    {
+      "id": "PSY-0091",
+      "question": "(Personalitate) Accept ușor feedback-ul critic.",
+      "options": [
+        "Dezacord",
+        "Neutru",
+        "Acord"
+      ],
+      "answerIndex": 2,
+      "explanation": "Răspunsul indică compatibilitate cu profilul necesar (disciplină, stabilitate, leadership).",
+      "rationales": [
+        "✖ Greșit: 'Dezacord' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: 'Neutru' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: 'Acord'. Răspunsul indică compatibilitate cu profilul necesar (disciplină, stabilitate, leadership)."
+      ],
+      "topic": "Personalitate",
+      "module": "psychology",
+      "difficulty": "easy"
+    },
+    {
+      "id": "PSY-0092",
+      "question": "(Personalitate) Prefer sarcini cu reguli clare.",
+      "options": [
+        "Dezacord",
+        "Neutru",
+        "Acord"
+      ],
+      "answerIndex": 2,
+      "explanation": "Răspunsul indică compatibilitate cu profilul necesar (disciplină, stabilitate, leadership).",
+      "rationales": [
+        "✖ Greșit: 'Dezacord' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: 'Neutru' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: 'Acord'. Răspunsul indică compatibilitate cu profilul necesar (disciplină, stabilitate, leadership)."
+      ],
+      "topic": "Personalitate",
+      "module": "psychology",
+      "difficulty": "easy"
+    },
+    {
+      "id": "PSY-0093",
+      "question": "(Personalitate) Îmi planific riguros activitățile.",
+      "options": [
+        "Dezacord",
+        "Neutru",
+        "Acord"
+      ],
+      "answerIndex": 2,
+      "explanation": "Răspunsul indică compatibilitate cu profilul necesar (disciplină, stabilitate, leadership).",
+      "rationales": [
+        "✖ Greșit: 'Dezacord' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: 'Neutru' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: 'Acord'. Răspunsul indică compatibilitate cu profilul necesar (disciplină, stabilitate, leadership)."
+      ],
+      "topic": "Personalitate",
+      "module": "psychology",
+      "difficulty": "easy"
+    },
+    {
+      "id": "PSY-0094",
+      "question": "(Personalitate) Accept ușor feedback-ul critic.",
+      "options": [
+        "Dezacord",
+        "Neutru",
+        "Acord"
+      ],
+      "answerIndex": 2,
+      "explanation": "Răspunsul indică compatibilitate cu profilul necesar (disciplină, stabilitate, leadership).",
+      "rationales": [
+        "✖ Greșit: 'Dezacord' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: 'Neutru' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: 'Acord'. Răspunsul indică compatibilitate cu profilul necesar (disciplină, stabilitate, leadership)."
+      ],
+      "topic": "Personalitate",
+      "module": "psychology",
+      "difficulty": "easy"
+    },
+    {
+      "id": "PSY-0095",
+      "question": "(Personalitate) Îmi planific riguros activitățile.",
+      "options": [
+        "Dezacord",
+        "Neutru",
+        "Acord"
+      ],
+      "answerIndex": 2,
+      "explanation": "Răspunsul indică compatibilitate cu profilul necesar (disciplină, stabilitate, leadership).",
+      "rationales": [
+        "✖ Greșit: 'Dezacord' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: 'Neutru' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: 'Acord'. Răspunsul indică compatibilitate cu profilul necesar (disciplină, stabilitate, leadership)."
+      ],
+      "topic": "Personalitate",
+      "module": "psychology",
+      "difficulty": "easy"
+    },
+    {
+      "id": "PSY-0096",
+      "question": "(Personalitate) Prefer sarcini cu reguli clare.",
+      "options": [
+        "Dezacord",
+        "Neutru",
+        "Acord"
+      ],
+      "answerIndex": 2,
+      "explanation": "Răspunsul indică compatibilitate cu profilul necesar (disciplină, stabilitate, leadership).",
+      "rationales": [
+        "✖ Greșit: 'Dezacord' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: 'Neutru' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: 'Acord'. Răspunsul indică compatibilitate cu profilul necesar (disciplină, stabilitate, leadership)."
+      ],
+      "topic": "Personalitate",
+      "module": "psychology",
+      "difficulty": "easy"
+    },
+    {
+      "id": "PSY-0097",
+      "question": "(Personalitate) Îmi planific riguros activitățile.",
+      "options": [
+        "Dezacord",
+        "Neutru",
+        "Acord"
+      ],
+      "answerIndex": 2,
+      "explanation": "Răspunsul indică compatibilitate cu profilul necesar (disciplină, stabilitate, leadership).",
+      "rationales": [
+        "✖ Greșit: 'Dezacord' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: 'Neutru' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: 'Acord'. Răspunsul indică compatibilitate cu profilul necesar (disciplină, stabilitate, leadership)."
+      ],
+      "topic": "Personalitate",
+      "module": "psychology",
+      "difficulty": "easy"
+    },
+    {
+      "id": "PSY-0098",
+      "question": "(Personalitate) Accept ușor feedback-ul critic.",
+      "options": [
+        "Dezacord",
+        "Neutru",
+        "Acord"
+      ],
+      "answerIndex": 2,
+      "explanation": "Răspunsul indică compatibilitate cu profilul necesar (disciplină, stabilitate, leadership).",
+      "rationales": [
+        "✖ Greșit: 'Dezacord' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: 'Neutru' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: 'Acord'. Răspunsul indică compatibilitate cu profilul necesar (disciplină, stabilitate, leadership)."
+      ],
+      "topic": "Personalitate",
+      "module": "psychology",
+      "difficulty": "easy"
+    },
+    {
+      "id": "PSY-0099",
+      "question": "(Personalitate) Îmi planific riguros activitățile.",
+      "options": [
+        "Dezacord",
+        "Neutru",
+        "Acord"
+      ],
+      "answerIndex": 2,
+      "explanation": "Răspunsul indică compatibilitate cu profilul necesar (disciplină, stabilitate, leadership).",
+      "rationales": [
+        "✖ Greșit: 'Dezacord' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: 'Neutru' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: 'Acord'. Răspunsul indică compatibilitate cu profilul necesar (disciplină, stabilitate, leadership)."
+      ],
+      "topic": "Personalitate",
+      "module": "psychology",
+      "difficulty": "easy"
+    },
+    {
+      "id": "PSY-0100",
+      "question": "(Personalitate) Îmi asum inițiativa în echipă.",
+      "options": [
+        "Dezacord",
+        "Neutru",
+        "Acord"
+      ],
+      "answerIndex": 2,
+      "explanation": "Răspunsul indică compatibilitate cu profilul necesar (disciplină, stabilitate, leadership).",
+      "rationales": [
+        "✖ Greșit: 'Dezacord' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: 'Neutru' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: 'Acord'. Răspunsul indică compatibilitate cu profilul necesar (disciplină, stabilitate, leadership)."
+      ],
+      "topic": "Personalitate",
+      "module": "psychology",
+      "difficulty": "easy"
+    },
+    {
+      "id": "PSY-0101",
+      "question": "(Personalitate) Accept ușor feedback-ul critic.",
+      "options": [
+        "Dezacord",
+        "Neutru",
+        "Acord"
+      ],
+      "answerIndex": 2,
+      "explanation": "Răspunsul indică compatibilitate cu profilul necesar (disciplină, stabilitate, leadership).",
+      "rationales": [
+        "✖ Greșit: 'Dezacord' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: 'Neutru' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: 'Acord'. Răspunsul indică compatibilitate cu profilul necesar (disciplină, stabilitate, leadership)."
+      ],
+      "topic": "Personalitate",
+      "module": "psychology",
+      "difficulty": "easy"
+    },
+    {
+      "id": "PSY-0102",
+      "question": "(Personalitate) Rămân calm în situații de stres ridicat.",
+      "options": [
+        "Dezacord",
+        "Neutru",
+        "Acord"
+      ],
+      "answerIndex": 2,
+      "explanation": "Răspunsul indică compatibilitate cu profilul necesar (disciplină, stabilitate, leadership).",
+      "rationales": [
+        "✖ Greșit: 'Dezacord' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: 'Neutru' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: 'Acord'. Răspunsul indică compatibilitate cu profilul necesar (disciplină, stabilitate, leadership)."
+      ],
+      "topic": "Personalitate",
+      "module": "psychology",
+      "difficulty": "easy"
+    },
+    {
+      "id": "PSY-0103",
+      "question": "(Personalitate) Îmi asum inițiativa în echipă.",
+      "options": [
+        "Dezacord",
+        "Neutru",
+        "Acord"
+      ],
+      "answerIndex": 2,
+      "explanation": "Răspunsul indică compatibilitate cu profilul necesar (disciplină, stabilitate, leadership).",
+      "rationales": [
+        "✖ Greșit: 'Dezacord' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: 'Neutru' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: 'Acord'. Răspunsul indică compatibilitate cu profilul necesar (disciplină, stabilitate, leadership)."
+      ],
+      "topic": "Personalitate",
+      "module": "psychology",
+      "difficulty": "easy"
+    },
+    {
+      "id": "PSY-0104",
+      "question": "(Personalitate) Accept ușor feedback-ul critic.",
+      "options": [
+        "Dezacord",
+        "Neutru",
+        "Acord"
+      ],
+      "answerIndex": 2,
+      "explanation": "Răspunsul indică compatibilitate cu profilul necesar (disciplină, stabilitate, leadership).",
+      "rationales": [
+        "✖ Greșit: 'Dezacord' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: 'Neutru' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: 'Acord'. Răspunsul indică compatibilitate cu profilul necesar (disciplină, stabilitate, leadership)."
+      ],
+      "topic": "Personalitate",
+      "module": "psychology",
+      "difficulty": "easy"
+    },
+    {
+      "id": "PSY-0105",
+      "question": "(Personalitate) Îmi asum inițiativa în echipă.",
+      "options": [
+        "Dezacord",
+        "Neutru",
+        "Acord"
+      ],
+      "answerIndex": 2,
+      "explanation": "Răspunsul indică compatibilitate cu profilul necesar (disciplină, stabilitate, leadership).",
+      "rationales": [
+        "✖ Greșit: 'Dezacord' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: 'Neutru' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: 'Acord'. Răspunsul indică compatibilitate cu profilul necesar (disciplină, stabilitate, leadership)."
+      ],
+      "topic": "Personalitate",
+      "module": "psychology",
+      "difficulty": "easy"
+    },
+    {
+      "id": "PSY-0106",
+      "question": "(Personalitate) Rămân calm în situații de stres ridicat.",
+      "options": [
+        "Dezacord",
+        "Neutru",
+        "Acord"
+      ],
+      "answerIndex": 2,
+      "explanation": "Răspunsul indică compatibilitate cu profilul necesar (disciplină, stabilitate, leadership).",
+      "rationales": [
+        "✖ Greșit: 'Dezacord' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: 'Neutru' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: 'Acord'. Răspunsul indică compatibilitate cu profilul necesar (disciplină, stabilitate, leadership)."
+      ],
+      "topic": "Personalitate",
+      "module": "psychology",
+      "difficulty": "easy"
+    },
+    {
+      "id": "PSY-0107",
+      "question": "(Personalitate) Îmi planific riguros activitățile.",
+      "options": [
+        "Dezacord",
+        "Neutru",
+        "Acord"
+      ],
+      "answerIndex": 2,
+      "explanation": "Răspunsul indică compatibilitate cu profilul necesar (disciplină, stabilitate, leadership).",
+      "rationales": [
+        "✖ Greșit: 'Dezacord' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: 'Neutru' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: 'Acord'. Răspunsul indică compatibilitate cu profilul necesar (disciplină, stabilitate, leadership)."
+      ],
+      "topic": "Personalitate",
+      "module": "psychology",
+      "difficulty": "easy"
+    },
+    {
+      "id": "PSY-0108",
+      "question": "(Personalitate) Accept ușor feedback-ul critic.",
+      "options": [
+        "Dezacord",
+        "Neutru",
+        "Acord"
+      ],
+      "answerIndex": 2,
+      "explanation": "Răspunsul indică compatibilitate cu profilul necesar (disciplină, stabilitate, leadership).",
+      "rationales": [
+        "✖ Greșit: 'Dezacord' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: 'Neutru' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: 'Acord'. Răspunsul indică compatibilitate cu profilul necesar (disciplină, stabilitate, leadership)."
+      ],
+      "topic": "Personalitate",
+      "module": "psychology",
+      "difficulty": "easy"
+    },
+    {
+      "id": "PSY-0109",
+      "question": "(Personalitate) Prefer sarcini cu reguli clare.",
+      "options": [
+        "Dezacord",
+        "Neutru",
+        "Acord"
+      ],
+      "answerIndex": 2,
+      "explanation": "Răspunsul indică compatibilitate cu profilul necesar (disciplină, stabilitate, leadership).",
+      "rationales": [
+        "✖ Greșit: 'Dezacord' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: 'Neutru' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: 'Acord'. Răspunsul indică compatibilitate cu profilul necesar (disciplină, stabilitate, leadership)."
+      ],
+      "topic": "Personalitate",
+      "module": "psychology",
+      "difficulty": "easy"
+    },
+    {
+      "id": "PSY-0110",
+      "question": "(Personalitate) Îmi planific riguros activitățile.",
+      "options": [
+        "Dezacord",
+        "Neutru",
+        "Acord"
+      ],
+      "answerIndex": 2,
+      "explanation": "Răspunsul indică compatibilitate cu profilul necesar (disciplină, stabilitate, leadership).",
+      "rationales": [
+        "✖ Greșit: 'Dezacord' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: 'Neutru' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: 'Acord'. Răspunsul indică compatibilitate cu profilul necesar (disciplină, stabilitate, leadership)."
+      ],
+      "topic": "Personalitate",
+      "module": "psychology",
+      "difficulty": "easy"
+    },
+    {
+      "id": "PSY-0111",
+      "question": "(Personalitate) Accept ușor feedback-ul critic.",
+      "options": [
+        "Dezacord",
+        "Neutru",
+        "Acord"
+      ],
+      "answerIndex": 2,
+      "explanation": "Răspunsul indică compatibilitate cu profilul necesar (disciplină, stabilitate, leadership).",
+      "rationales": [
+        "✖ Greșit: 'Dezacord' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: 'Neutru' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: 'Acord'. Răspunsul indică compatibilitate cu profilul necesar (disciplină, stabilitate, leadership)."
+      ],
+      "topic": "Personalitate",
+      "module": "psychology",
+      "difficulty": "easy"
+    },
+    {
+      "id": "PSY-0112",
+      "question": "(Personalitate) Accept ușor feedback-ul critic.",
+      "options": [
+        "Dezacord",
+        "Neutru",
+        "Acord"
+      ],
+      "answerIndex": 2,
+      "explanation": "Răspunsul indică compatibilitate cu profilul necesar (disciplină, stabilitate, leadership).",
+      "rationales": [
+        "✖ Greșit: 'Dezacord' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: 'Neutru' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: 'Acord'. Răspunsul indică compatibilitate cu profilul necesar (disciplină, stabilitate, leadership)."
+      ],
+      "topic": "Personalitate",
+      "module": "psychology",
+      "difficulty": "easy"
+    },
+    {
+      "id": "PSY-0113",
+      "question": "(Personalitate) Accept ușor feedback-ul critic.",
+      "options": [
+        "Dezacord",
+        "Neutru",
+        "Acord"
+      ],
+      "answerIndex": 2,
+      "explanation": "Răspunsul indică compatibilitate cu profilul necesar (disciplină, stabilitate, leadership).",
+      "rationales": [
+        "✖ Greșit: 'Dezacord' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: 'Neutru' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: 'Acord'. Răspunsul indică compatibilitate cu profilul necesar (disciplină, stabilitate, leadership)."
+      ],
+      "topic": "Personalitate",
+      "module": "psychology",
+      "difficulty": "easy"
+    },
+    {
+      "id": "PSY-0114",
+      "question": "(Personalitate) Îmi planific riguros activitățile.",
+      "options": [
+        "Dezacord",
+        "Neutru",
+        "Acord"
+      ],
+      "answerIndex": 2,
+      "explanation": "Răspunsul indică compatibilitate cu profilul necesar (disciplină, stabilitate, leadership).",
+      "rationales": [
+        "✖ Greșit: 'Dezacord' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: 'Neutru' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: 'Acord'. Răspunsul indică compatibilitate cu profilul necesar (disciplină, stabilitate, leadership)."
+      ],
+      "topic": "Personalitate",
+      "module": "psychology",
+      "difficulty": "easy"
+    },
+    {
+      "id": "PSY-0115",
+      "question": "(Personalitate) Îmi planific riguros activitățile.",
+      "options": [
+        "Dezacord",
+        "Neutru",
+        "Acord"
+      ],
+      "answerIndex": 2,
+      "explanation": "Răspunsul indică compatibilitate cu profilul necesar (disciplină, stabilitate, leadership).",
+      "rationales": [
+        "✖ Greșit: 'Dezacord' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: 'Neutru' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: 'Acord'. Răspunsul indică compatibilitate cu profilul necesar (disciplină, stabilitate, leadership)."
+      ],
+      "topic": "Personalitate",
+      "module": "psychology",
+      "difficulty": "easy"
+    },
+    {
+      "id": "PSY-0116",
+      "question": "(Personalitate) Rămân calm în situații de stres ridicat.",
+      "options": [
+        "Dezacord",
+        "Neutru",
+        "Acord"
+      ],
+      "answerIndex": 2,
+      "explanation": "Răspunsul indică compatibilitate cu profilul necesar (disciplină, stabilitate, leadership).",
+      "rationales": [
+        "✖ Greșit: 'Dezacord' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: 'Neutru' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: 'Acord'. Răspunsul indică compatibilitate cu profilul necesar (disciplină, stabilitate, leadership)."
+      ],
+      "topic": "Personalitate",
+      "module": "psychology",
+      "difficulty": "easy"
+    },
+    {
+      "id": "PSY-0117",
+      "question": "(Personalitate) Îmi asum inițiativa în echipă.",
+      "options": [
+        "Dezacord",
+        "Neutru",
+        "Acord"
+      ],
+      "answerIndex": 2,
+      "explanation": "Răspunsul indică compatibilitate cu profilul necesar (disciplină, stabilitate, leadership).",
+      "rationales": [
+        "✖ Greșit: 'Dezacord' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: 'Neutru' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: 'Acord'. Răspunsul indică compatibilitate cu profilul necesar (disciplină, stabilitate, leadership)."
+      ],
+      "topic": "Personalitate",
+      "module": "psychology",
+      "difficulty": "easy"
+    },
+    {
+      "id": "PSY-0118",
+      "question": "(Personalitate) Îmi planific riguros activitățile.",
+      "options": [
+        "Dezacord",
+        "Neutru",
+        "Acord"
+      ],
+      "answerIndex": 2,
+      "explanation": "Răspunsul indică compatibilitate cu profilul necesar (disciplină, stabilitate, leadership).",
+      "rationales": [
+        "✖ Greșit: 'Dezacord' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: 'Neutru' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: 'Acord'. Răspunsul indică compatibilitate cu profilul necesar (disciplină, stabilitate, leadership)."
+      ],
+      "topic": "Personalitate",
+      "module": "psychology",
+      "difficulty": "easy"
+    },
+    {
+      "id": "PSY-0119",
+      "question": "(Personalitate) Accept ușor feedback-ul critic.",
+      "options": [
+        "Dezacord",
+        "Neutru",
+        "Acord"
+      ],
+      "answerIndex": 2,
+      "explanation": "Răspunsul indică compatibilitate cu profilul necesar (disciplină, stabilitate, leadership).",
+      "rationales": [
+        "✖ Greșit: 'Dezacord' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: 'Neutru' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: 'Acord'. Răspunsul indică compatibilitate cu profilul necesar (disciplină, stabilitate, leadership)."
+      ],
+      "topic": "Personalitate",
+      "module": "psychology",
+      "difficulty": "easy"
+    },
+    {
+      "id": "PSY-0120",
+      "question": "(Personalitate) Îmi asum inițiativa în echipă.",
+      "options": [
+        "Dezacord",
+        "Neutru",
+        "Acord"
+      ],
+      "answerIndex": 2,
+      "explanation": "Răspunsul indică compatibilitate cu profilul necesar (disciplină, stabilitate, leadership).",
+      "rationales": [
+        "✖ Greșit: 'Dezacord' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: 'Neutru' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: 'Acord'. Răspunsul indică compatibilitate cu profilul necesar (disciplină, stabilitate, leadership)."
+      ],
+      "topic": "Personalitate",
+      "module": "psychology",
+      "difficulty": "easy"
+    },
+    {
+      "id": "PSY-0121",
+      "question": "(Personalitate) Accept ușor feedback-ul critic.",
+      "options": [
+        "Dezacord",
+        "Neutru",
+        "Acord"
+      ],
+      "answerIndex": 2,
+      "explanation": "Răspunsul indică compatibilitate cu profilul necesar (disciplină, stabilitate, leadership).",
+      "rationales": [
+        "✖ Greșit: 'Dezacord' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: 'Neutru' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: 'Acord'. Răspunsul indică compatibilitate cu profilul necesar (disciplină, stabilitate, leadership)."
+      ],
+      "topic": "Personalitate",
+      "module": "psychology",
+      "difficulty": "easy"
+    },
+    {
+      "id": "PSY-0122",
+      "question": "(Personalitate) Prefer sarcini cu reguli clare.",
+      "options": [
+        "Dezacord",
+        "Neutru",
+        "Acord"
+      ],
+      "answerIndex": 2,
+      "explanation": "Răspunsul indică compatibilitate cu profilul necesar (disciplină, stabilitate, leadership).",
+      "rationales": [
+        "✖ Greșit: 'Dezacord' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: 'Neutru' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: 'Acord'. Răspunsul indică compatibilitate cu profilul necesar (disciplină, stabilitate, leadership)."
+      ],
+      "topic": "Personalitate",
+      "module": "psychology",
+      "difficulty": "easy"
+    },
+    {
+      "id": "PSY-0123",
+      "question": "(Personalitate) Îmi asum inițiativa în echipă.",
+      "options": [
+        "Dezacord",
+        "Neutru",
+        "Acord"
+      ],
+      "answerIndex": 2,
+      "explanation": "Răspunsul indică compatibilitate cu profilul necesar (disciplină, stabilitate, leadership).",
+      "rationales": [
+        "✖ Greșit: 'Dezacord' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: 'Neutru' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: 'Acord'. Răspunsul indică compatibilitate cu profilul necesar (disciplină, stabilitate, leadership)."
+      ],
+      "topic": "Personalitate",
+      "module": "psychology",
+      "difficulty": "easy"
+    },
+    {
+      "id": "PSY-0124",
+      "question": "(Personalitate) Accept ușor feedback-ul critic.",
+      "options": [
+        "Dezacord",
+        "Neutru",
+        "Acord"
+      ],
+      "answerIndex": 2,
+      "explanation": "Răspunsul indică compatibilitate cu profilul necesar (disciplină, stabilitate, leadership).",
+      "rationales": [
+        "✖ Greșit: 'Dezacord' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: 'Neutru' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: 'Acord'. Răspunsul indică compatibilitate cu profilul necesar (disciplină, stabilitate, leadership)."
+      ],
+      "topic": "Personalitate",
+      "module": "psychology",
+      "difficulty": "easy"
+    },
+    {
+      "id": "PSY-0125",
+      "question": "(Personalitate) Rămân calm în situații de stres ridicat.",
+      "options": [
+        "Dezacord",
+        "Neutru",
+        "Acord"
+      ],
+      "answerIndex": 2,
+      "explanation": "Răspunsul indică compatibilitate cu profilul necesar (disciplină, stabilitate, leadership).",
+      "rationales": [
+        "✖ Greșit: 'Dezacord' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: 'Neutru' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: 'Acord'. Răspunsul indică compatibilitate cu profilul necesar (disciplină, stabilitate, leadership)."
+      ],
+      "topic": "Personalitate",
+      "module": "psychology",
+      "difficulty": "easy"
+    },
+    {
+      "id": "PSY-0126",
+      "question": "(Personalitate) Rămân calm în situații de stres ridicat.",
+      "options": [
+        "Dezacord",
+        "Neutru",
+        "Acord"
+      ],
+      "answerIndex": 2,
+      "explanation": "Răspunsul indică compatibilitate cu profilul necesar (disciplină, stabilitate, leadership).",
+      "rationales": [
+        "✖ Greșit: 'Dezacord' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: 'Neutru' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: 'Acord'. Răspunsul indică compatibilitate cu profilul necesar (disciplină, stabilitate, leadership)."
+      ],
+      "topic": "Personalitate",
+      "module": "psychology",
+      "difficulty": "easy"
+    },
+    {
+      "id": "PSY-0127",
+      "question": "(Personalitate) Îmi planific riguros activitățile.",
+      "options": [
+        "Dezacord",
+        "Neutru",
+        "Acord"
+      ],
+      "answerIndex": 2,
+      "explanation": "Răspunsul indică compatibilitate cu profilul necesar (disciplină, stabilitate, leadership).",
+      "rationales": [
+        "✖ Greșit: 'Dezacord' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: 'Neutru' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: 'Acord'. Răspunsul indică compatibilitate cu profilul necesar (disciplină, stabilitate, leadership)."
+      ],
+      "topic": "Personalitate",
+      "module": "psychology",
+      "difficulty": "easy"
+    },
+    {
+      "id": "PSY-0128",
+      "question": "(Personalitate) Îmi planific riguros activitățile.",
+      "options": [
+        "Dezacord",
+        "Neutru",
+        "Acord"
+      ],
+      "answerIndex": 2,
+      "explanation": "Răspunsul indică compatibilitate cu profilul necesar (disciplină, stabilitate, leadership).",
+      "rationales": [
+        "✖ Greșit: 'Dezacord' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: 'Neutru' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: 'Acord'. Răspunsul indică compatibilitate cu profilul necesar (disciplină, stabilitate, leadership)."
+      ],
+      "topic": "Personalitate",
+      "module": "psychology",
+      "difficulty": "easy"
+    },
+    {
+      "id": "PSY-0129",
+      "question": "(Personalitate) Îmi planific riguros activitățile.",
+      "options": [
+        "Dezacord",
+        "Neutru",
+        "Acord"
+      ],
+      "answerIndex": 2,
+      "explanation": "Răspunsul indică compatibilitate cu profilul necesar (disciplină, stabilitate, leadership).",
+      "rationales": [
+        "✖ Greșit: 'Dezacord' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: 'Neutru' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: 'Acord'. Răspunsul indică compatibilitate cu profilul necesar (disciplină, stabilitate, leadership)."
+      ],
+      "topic": "Personalitate",
+      "module": "psychology",
+      "difficulty": "easy"
+    },
+    {
+      "id": "PSY-0130",
+      "question": "(Personalitate) Prefer sarcini cu reguli clare.",
+      "options": [
+        "Dezacord",
+        "Neutru",
+        "Acord"
+      ],
+      "answerIndex": 2,
+      "explanation": "Răspunsul indică compatibilitate cu profilul necesar (disciplină, stabilitate, leadership).",
+      "rationales": [
+        "✖ Greșit: 'Dezacord' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: 'Neutru' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: 'Acord'. Răspunsul indică compatibilitate cu profilul necesar (disciplină, stabilitate, leadership)."
+      ],
+      "topic": "Personalitate",
+      "module": "psychology",
+      "difficulty": "easy"
+    },
+    {
+      "id": "PSY-0131",
+      "question": "(Situațional) Echipament insuficient înaintea unei misiuni.",
+      "options": [
+        "Amâni fără informare",
+        "Prioritizezi misiunile critice și raportezi lipsa",
+        "Alegi prietenii",
+        "Distribui aleatoriu"
+      ],
+      "answerIndex": 1,
+      "explanation": "Prioritizare + raportare asigură continuitate și transparență.",
+      "rationales": [
+        "✖ Greșit: 'Amâni fără informare' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: 'Prioritizezi misiunile critice și raportezi lipsa'. Prioritizare + raportare asigură continuitate și transparență.",
+        "✖ Greșit: 'Alegi prietenii' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: 'Distribui aleatoriu' — Nu corespunde cadrului/definiției.."
+      ],
+      "topic": "Situațional",
+      "module": "psychology",
+      "difficulty": "hard"
+    },
+    {
+      "id": "PSY-0132",
+      "question": "(Situațional) Conflict între membri ai echipei.",
+      "options": [
+        "Eviți subiectul",
+        "Facilitezi discuția, mediezi și stabilești pași clari",
+        "Critici în scris grupul",
+        "Alegi o parte"
+      ],
+      "answerIndex": 1,
+      "explanation": "Leadership eficient: mediere, reguli clare, urmărire a acțiunilor.",
+      "rationales": [
+        "✖ Greșit: 'Eviți subiectul' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: 'Facilitezi discuția, mediezi și stabilești pași clari'. Leadership eficient: mediere, reguli clare, urmărire a acțiunilor.",
+        "✖ Greșit: 'Critici în scris grupul' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: 'Alegi o parte' — Nu corespunde cadrului/definiției.."
+      ],
+      "topic": "Situațional",
+      "module": "psychology",
+      "difficulty": "hard"
+    },
+    {
+      "id": "PSY-0133",
+      "question": "(Situațional) Un coleg întârzie repetat la apel.",
+      "options": [
+        "Ignori problema",
+        "Verifici cauza și raportezi conform procedurii",
+        "Critici public",
+        "Alegi să-l sancționezi singur"
+      ],
+      "answerIndex": 1,
+      "explanation": "Abordare procedurală + responsabilă: verifici, documentezi, raportezi corect.",
+      "rationales": [
+        "✖ Greșit: 'Ignori problema' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: 'Verifici cauza și raportezi conform procedurii'. Abordare procedurală + responsabilă: verifici, documentezi, raportezi corect.",
+        "✖ Greșit: 'Critici public' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: 'Alegi să-l sancționezi singur' — Nu corespunde cadrului/definiției.."
+      ],
+      "topic": "Situațional",
+      "module": "psychology",
+      "difficulty": "medium"
+    },
+    {
+      "id": "PSY-0134",
+      "question": "(Situațional) Un coleg întârzie repetat la apel.",
+      "options": [
+        "Ignori problema",
+        "Verifici cauza și raportezi conform procedurii",
+        "Critici public",
+        "Alegi să-l sancționezi singur"
+      ],
+      "answerIndex": 1,
+      "explanation": "Abordare procedurală + responsabilă: verifici, documentezi, raportezi corect.",
+      "rationales": [
+        "✖ Greșit: 'Ignori problema' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: 'Verifici cauza și raportezi conform procedurii'. Abordare procedurală + responsabilă: verifici, documentezi, raportezi corect.",
+        "✖ Greșit: 'Critici public' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: 'Alegi să-l sancționezi singur' — Nu corespunde cadrului/definiției.."
+      ],
+      "topic": "Situațional",
+      "module": "psychology",
+      "difficulty": "medium"
+    },
+    {
+      "id": "PSY-0135",
+      "question": "(Situațional) Conflict între membri ai echipei.",
+      "options": [
+        "Eviți subiectul",
+        "Facilitezi discuția, mediezi și stabilești pași clari",
+        "Critici în scris grupul",
+        "Alegi o parte"
+      ],
+      "answerIndex": 1,
+      "explanation": "Leadership eficient: mediere, reguli clare, urmărire a acțiunilor.",
+      "rationales": [
+        "✖ Greșit: 'Eviți subiectul' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: 'Facilitezi discuția, mediezi și stabilești pași clari'. Leadership eficient: mediere, reguli clare, urmărire a acțiunilor.",
+        "✖ Greșit: 'Critici în scris grupul' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: 'Alegi o parte' — Nu corespunde cadrului/definiției.."
+      ],
+      "topic": "Situațional",
+      "module": "psychology",
+      "difficulty": "medium"
+    },
+    {
+      "id": "PSY-0136",
+      "question": "(Situațional) Echipament insuficient înaintea unei misiuni.",
+      "options": [
+        "Amâni fără informare",
+        "Prioritizezi misiunile critice și raportezi lipsa",
+        "Alegi prietenii",
+        "Distribui aleatoriu"
+      ],
+      "answerIndex": 1,
+      "explanation": "Prioritizare + raportare asigură continuitate și transparență.",
+      "rationales": [
+        "✖ Greșit: 'Amâni fără informare' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: 'Prioritizezi misiunile critice și raportezi lipsa'. Prioritizare + raportare asigură continuitate și transparență.",
+        "✖ Greșit: 'Alegi prietenii' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: 'Distribui aleatoriu' — Nu corespunde cadrului/definiției.."
+      ],
+      "topic": "Situațional",
+      "module": "psychology",
+      "difficulty": "hard"
+    },
+    {
+      "id": "PSY-0137",
+      "question": "(Situațional) Un coleg întârzie repetat la apel.",
+      "options": [
+        "Ignori problema",
+        "Verifici cauza și raportezi conform procedurii",
+        "Critici public",
+        "Alegi să-l sancționezi singur"
+      ],
+      "answerIndex": 1,
+      "explanation": "Abordare procedurală + responsabilă: verifici, documentezi, raportezi corect.",
+      "rationales": [
+        "✖ Greșit: 'Ignori problema' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: 'Verifici cauza și raportezi conform procedurii'. Abordare procedurală + responsabilă: verifici, documentezi, raportezi corect.",
+        "✖ Greșit: 'Critici public' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: 'Alegi să-l sancționezi singur' — Nu corespunde cadrului/definiției.."
+      ],
+      "topic": "Situațional",
+      "module": "psychology",
+      "difficulty": "hard"
+    },
+    {
+      "id": "PSY-0138",
+      "question": "(Situațional) Un coleg întârzie repetat la apel.",
+      "options": [
+        "Ignori problema",
+        "Verifici cauza și raportezi conform procedurii",
+        "Critici public",
+        "Alegi să-l sancționezi singur"
+      ],
+      "answerIndex": 1,
+      "explanation": "Abordare procedurală + responsabilă: verifici, documentezi, raportezi corect.",
+      "rationales": [
+        "✖ Greșit: 'Ignori problema' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: 'Verifici cauza și raportezi conform procedurii'. Abordare procedurală + responsabilă: verifici, documentezi, raportezi corect.",
+        "✖ Greșit: 'Critici public' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: 'Alegi să-l sancționezi singur' — Nu corespunde cadrului/definiției.."
+      ],
+      "topic": "Situațional",
+      "module": "psychology",
+      "difficulty": "hard"
+    },
+    {
+      "id": "PSY-0139",
+      "question": "(Situațional) Un coleg întârzie repetat la apel.",
+      "options": [
+        "Ignori problema",
+        "Verifici cauza și raportezi conform procedurii",
+        "Critici public",
+        "Alegi să-l sancționezi singur"
+      ],
+      "answerIndex": 1,
+      "explanation": "Abordare procedurală + responsabilă: verifici, documentezi, raportezi corect.",
+      "rationales": [
+        "✖ Greșit: 'Ignori problema' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: 'Verifici cauza și raportezi conform procedurii'. Abordare procedurală + responsabilă: verifici, documentezi, raportezi corect.",
+        "✖ Greșit: 'Critici public' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: 'Alegi să-l sancționezi singur' — Nu corespunde cadrului/definiției.."
+      ],
+      "topic": "Situațional",
+      "module": "psychology",
+      "difficulty": "medium"
+    },
+    {
+      "id": "PSY-0140",
+      "question": "(Situațional) Un coleg întârzie repetat la apel.",
+      "options": [
+        "Ignori problema",
+        "Verifici cauza și raportezi conform procedurii",
+        "Critici public",
+        "Alegi să-l sancționezi singur"
+      ],
+      "answerIndex": 1,
+      "explanation": "Abordare procedurală + responsabilă: verifici, documentezi, raportezi corect.",
+      "rationales": [
+        "✖ Greșit: 'Ignori problema' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: 'Verifici cauza și raportezi conform procedurii'. Abordare procedurală + responsabilă: verifici, documentezi, raportezi corect.",
+        "✖ Greșit: 'Critici public' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: 'Alegi să-l sancționezi singur' — Nu corespunde cadrului/definiției.."
+      ],
+      "topic": "Situațional",
+      "module": "psychology",
+      "difficulty": "hard"
+    },
+    {
+      "id": "PSY-0141",
+      "question": "(Situațional) Conflict între membri ai echipei.",
+      "options": [
+        "Eviți subiectul",
+        "Facilitezi discuția, mediezi și stabilești pași clari",
+        "Critici în scris grupul",
+        "Alegi o parte"
+      ],
+      "answerIndex": 1,
+      "explanation": "Leadership eficient: mediere, reguli clare, urmărire a acțiunilor.",
+      "rationales": [
+        "✖ Greșit: 'Eviți subiectul' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: 'Facilitezi discuția, mediezi și stabilești pași clari'. Leadership eficient: mediere, reguli clare, urmărire a acțiunilor.",
+        "✖ Greșit: 'Critici în scris grupul' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: 'Alegi o parte' — Nu corespunde cadrului/definiției.."
+      ],
+      "topic": "Situațional",
+      "module": "psychology",
+      "difficulty": "hard"
+    },
+    {
+      "id": "PSY-0142",
+      "question": "(Situațional) Echipament insuficient înaintea unei misiuni.",
+      "options": [
+        "Amâni fără informare",
+        "Prioritizezi misiunile critice și raportezi lipsa",
+        "Alegi prietenii",
+        "Distribui aleatoriu"
+      ],
+      "answerIndex": 1,
+      "explanation": "Prioritizare + raportare asigură continuitate și transparență.",
+      "rationales": [
+        "✖ Greșit: 'Amâni fără informare' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: 'Prioritizezi misiunile critice și raportezi lipsa'. Prioritizare + raportare asigură continuitate și transparență.",
+        "✖ Greșit: 'Alegi prietenii' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: 'Distribui aleatoriu' — Nu corespunde cadrului/definiției.."
+      ],
+      "topic": "Situațional",
+      "module": "psychology",
+      "difficulty": "medium"
+    },
+    {
+      "id": "PSY-0143",
+      "question": "(Situațional) Conflict între membri ai echipei.",
+      "options": [
+        "Eviți subiectul",
+        "Facilitezi discuția, mediezi și stabilești pași clari",
+        "Critici în scris grupul",
+        "Alegi o parte"
+      ],
+      "answerIndex": 1,
+      "explanation": "Leadership eficient: mediere, reguli clare, urmărire a acțiunilor.",
+      "rationales": [
+        "✖ Greșit: 'Eviți subiectul' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: 'Facilitezi discuția, mediezi și stabilești pași clari'. Leadership eficient: mediere, reguli clare, urmărire a acțiunilor.",
+        "✖ Greșit: 'Critici în scris grupul' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: 'Alegi o parte' — Nu corespunde cadrului/definiției.."
+      ],
+      "topic": "Situațional",
+      "module": "psychology",
+      "difficulty": "hard"
+    },
+    {
+      "id": "PSY-0144",
+      "question": "(Situațional) Echipament insuficient înaintea unei misiuni.",
+      "options": [
+        "Amâni fără informare",
+        "Prioritizezi misiunile critice și raportezi lipsa",
+        "Alegi prietenii",
+        "Distribui aleatoriu"
+      ],
+      "answerIndex": 1,
+      "explanation": "Prioritizare + raportare asigură continuitate și transparență.",
+      "rationales": [
+        "✖ Greșit: 'Amâni fără informare' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: 'Prioritizezi misiunile critice și raportezi lipsa'. Prioritizare + raportare asigură continuitate și transparență.",
+        "✖ Greșit: 'Alegi prietenii' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: 'Distribui aleatoriu' — Nu corespunde cadrului/definiției.."
+      ],
+      "topic": "Situațional",
+      "module": "psychology",
+      "difficulty": "medium"
+    },
+    {
+      "id": "PSY-0145",
+      "question": "(Situațional) Conflict între membri ai echipei.",
+      "options": [
+        "Eviți subiectul",
+        "Facilitezi discuția, mediezi și stabilești pași clari",
+        "Critici în scris grupul",
+        "Alegi o parte"
+      ],
+      "answerIndex": 1,
+      "explanation": "Leadership eficient: mediere, reguli clare, urmărire a acțiunilor.",
+      "rationales": [
+        "✖ Greșit: 'Eviți subiectul' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: 'Facilitezi discuția, mediezi și stabilești pași clari'. Leadership eficient: mediere, reguli clare, urmărire a acțiunilor.",
+        "✖ Greșit: 'Critici în scris grupul' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: 'Alegi o parte' — Nu corespunde cadrului/definiției.."
+      ],
+      "topic": "Situațional",
+      "module": "psychology",
+      "difficulty": "hard"
+    },
+    {
+      "id": "PSY-0146",
+      "question": "(Situațional) Conflict între membri ai echipei.",
+      "options": [
+        "Eviți subiectul",
+        "Facilitezi discuția, mediezi și stabilești pași clari",
+        "Critici în scris grupul",
+        "Alegi o parte"
+      ],
+      "answerIndex": 1,
+      "explanation": "Leadership eficient: mediere, reguli clare, urmărire a acțiunilor.",
+      "rationales": [
+        "✖ Greșit: 'Eviți subiectul' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: 'Facilitezi discuția, mediezi și stabilești pași clari'. Leadership eficient: mediere, reguli clare, urmărire a acțiunilor.",
+        "✖ Greșit: 'Critici în scris grupul' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: 'Alegi o parte' — Nu corespunde cadrului/definiției.."
+      ],
+      "topic": "Situațional",
+      "module": "psychology",
+      "difficulty": "hard"
+    },
+    {
+      "id": "PSY-0147",
+      "question": "(Situațional) Conflict între membri ai echipei.",
+      "options": [
+        "Eviți subiectul",
+        "Facilitezi discuția, mediezi și stabilești pași clari",
+        "Critici în scris grupul",
+        "Alegi o parte"
+      ],
+      "answerIndex": 1,
+      "explanation": "Leadership eficient: mediere, reguli clare, urmărire a acțiunilor.",
+      "rationales": [
+        "✖ Greșit: 'Eviți subiectul' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: 'Facilitezi discuția, mediezi și stabilești pași clari'. Leadership eficient: mediere, reguli clare, urmărire a acțiunilor.",
+        "✖ Greșit: 'Critici în scris grupul' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: 'Alegi o parte' — Nu corespunde cadrului/definiției.."
+      ],
+      "topic": "Situațional",
+      "module": "psychology",
+      "difficulty": "medium"
+    },
+    {
+      "id": "PSY-0148",
+      "question": "(Situațional) Echipament insuficient înaintea unei misiuni.",
+      "options": [
+        "Amâni fără informare",
+        "Prioritizezi misiunile critice și raportezi lipsa",
+        "Alegi prietenii",
+        "Distribui aleatoriu"
+      ],
+      "answerIndex": 1,
+      "explanation": "Prioritizare + raportare asigură continuitate și transparență.",
+      "rationales": [
+        "✖ Greșit: 'Amâni fără informare' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: 'Prioritizezi misiunile critice și raportezi lipsa'. Prioritizare + raportare asigură continuitate și transparență.",
+        "✖ Greșit: 'Alegi prietenii' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: 'Distribui aleatoriu' — Nu corespunde cadrului/definiției.."
+      ],
+      "topic": "Situațional",
+      "module": "psychology",
+      "difficulty": "hard"
+    },
+    {
+      "id": "PSY-0149",
+      "question": "(Situațional) Un coleg întârzie repetat la apel.",
+      "options": [
+        "Ignori problema",
+        "Verifici cauza și raportezi conform procedurii",
+        "Critici public",
+        "Alegi să-l sancționezi singur"
+      ],
+      "answerIndex": 1,
+      "explanation": "Abordare procedurală + responsabilă: verifici, documentezi, raportezi corect.",
+      "rationales": [
+        "✖ Greșit: 'Ignori problema' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: 'Verifici cauza și raportezi conform procedurii'. Abordare procedurală + responsabilă: verifici, documentezi, raportezi corect.",
+        "✖ Greșit: 'Critici public' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: 'Alegi să-l sancționezi singur' — Nu corespunde cadrului/definiției.."
+      ],
+      "topic": "Situațional",
+      "module": "psychology",
+      "difficulty": "medium"
+    },
+    {
+      "id": "PSY-0150",
+      "question": "(Situațional) Echipament insuficient înaintea unei misiuni.",
+      "options": [
+        "Amâni fără informare",
+        "Prioritizezi misiunile critice și raportezi lipsa",
+        "Alegi prietenii",
+        "Distribui aleatoriu"
+      ],
+      "answerIndex": 1,
+      "explanation": "Prioritizare + raportare asigură continuitate și transparență.",
+      "rationales": [
+        "✖ Greșit: 'Amâni fără informare' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: 'Prioritizezi misiunile critice și raportezi lipsa'. Prioritizare + raportare asigură continuitate și transparență.",
+        "✖ Greșit: 'Alegi prietenii' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: 'Distribui aleatoriu' — Nu corespunde cadrului/definiției.."
+      ],
+      "topic": "Situațional",
+      "module": "psychology",
+      "difficulty": "medium"
+    },
+    {
+      "id": "PSY-0151",
+      "question": "(Situațional) Echipament insuficient înaintea unei misiuni.",
+      "options": [
+        "Amâni fără informare",
+        "Prioritizezi misiunile critice și raportezi lipsa",
+        "Alegi prietenii",
+        "Distribui aleatoriu"
+      ],
+      "answerIndex": 1,
+      "explanation": "Prioritizare + raportare asigură continuitate și transparență.",
+      "rationales": [
+        "✖ Greșit: 'Amâni fără informare' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: 'Prioritizezi misiunile critice și raportezi lipsa'. Prioritizare + raportare asigură continuitate și transparență.",
+        "✖ Greșit: 'Alegi prietenii' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: 'Distribui aleatoriu' — Nu corespunde cadrului/definiției.."
+      ],
+      "topic": "Situațional",
+      "module": "psychology",
+      "difficulty": "hard"
+    },
+    {
+      "id": "PSY-0152",
+      "question": "(Situațional) Echipament insuficient înaintea unei misiuni.",
+      "options": [
+        "Amâni fără informare",
+        "Prioritizezi misiunile critice și raportezi lipsa",
+        "Alegi prietenii",
+        "Distribui aleatoriu"
+      ],
+      "answerIndex": 1,
+      "explanation": "Prioritizare + raportare asigură continuitate și transparență.",
+      "rationales": [
+        "✖ Greșit: 'Amâni fără informare' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: 'Prioritizezi misiunile critice și raportezi lipsa'. Prioritizare + raportare asigură continuitate și transparență.",
+        "✖ Greșit: 'Alegi prietenii' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: 'Distribui aleatoriu' — Nu corespunde cadrului/definiției.."
+      ],
+      "topic": "Situațional",
+      "module": "psychology",
+      "difficulty": "hard"
+    },
+    {
+      "id": "PSY-0153",
+      "question": "(Situațional) Echipament insuficient înaintea unei misiuni.",
+      "options": [
+        "Amâni fără informare",
+        "Prioritizezi misiunile critice și raportezi lipsa",
+        "Alegi prietenii",
+        "Distribui aleatoriu"
+      ],
+      "answerIndex": 1,
+      "explanation": "Prioritizare + raportare asigură continuitate și transparență.",
+      "rationales": [
+        "✖ Greșit: 'Amâni fără informare' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: 'Prioritizezi misiunile critice și raportezi lipsa'. Prioritizare + raportare asigură continuitate și transparență.",
+        "✖ Greșit: 'Alegi prietenii' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: 'Distribui aleatoriu' — Nu corespunde cadrului/definiției.."
+      ],
+      "topic": "Situațional",
+      "module": "psychology",
+      "difficulty": "medium"
+    },
+    {
+      "id": "PSY-0154",
+      "question": "(Situațional) Echipament insuficient înaintea unei misiuni.",
+      "options": [
+        "Amâni fără informare",
+        "Prioritizezi misiunile critice și raportezi lipsa",
+        "Alegi prietenii",
+        "Distribui aleatoriu"
+      ],
+      "answerIndex": 1,
+      "explanation": "Prioritizare + raportare asigură continuitate și transparență.",
+      "rationales": [
+        "✖ Greșit: 'Amâni fără informare' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: 'Prioritizezi misiunile critice și raportezi lipsa'. Prioritizare + raportare asigură continuitate și transparență.",
+        "✖ Greșit: 'Alegi prietenii' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: 'Distribui aleatoriu' — Nu corespunde cadrului/definiției.."
+      ],
+      "topic": "Situațional",
+      "module": "psychology",
+      "difficulty": "medium"
+    },
+    {
+      "id": "PSY-0155",
+      "question": "(Situațional) Conflict între membri ai echipei.",
+      "options": [
+        "Eviți subiectul",
+        "Facilitezi discuția, mediezi și stabilești pași clari",
+        "Critici în scris grupul",
+        "Alegi o parte"
+      ],
+      "answerIndex": 1,
+      "explanation": "Leadership eficient: mediere, reguli clare, urmărire a acțiunilor.",
+      "rationales": [
+        "✖ Greșit: 'Eviți subiectul' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: 'Facilitezi discuția, mediezi și stabilești pași clari'. Leadership eficient: mediere, reguli clare, urmărire a acțiunilor.",
+        "✖ Greșit: 'Critici în scris grupul' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: 'Alegi o parte' — Nu corespunde cadrului/definiției.."
+      ],
+      "topic": "Situațional",
+      "module": "psychology",
+      "difficulty": "hard"
+    },
+    {
+      "id": "PSY-0156",
+      "question": "(Situațional) Conflict între membri ai echipei.",
+      "options": [
+        "Eviți subiectul",
+        "Facilitezi discuția, mediezi și stabilești pași clari",
+        "Critici în scris grupul",
+        "Alegi o parte"
+      ],
+      "answerIndex": 1,
+      "explanation": "Leadership eficient: mediere, reguli clare, urmărire a acțiunilor.",
+      "rationales": [
+        "✖ Greșit: 'Eviți subiectul' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: 'Facilitezi discuția, mediezi și stabilești pași clari'. Leadership eficient: mediere, reguli clare, urmărire a acțiunilor.",
+        "✖ Greșit: 'Critici în scris grupul' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: 'Alegi o parte' — Nu corespunde cadrului/definiției.."
+      ],
+      "topic": "Situațional",
+      "module": "psychology",
+      "difficulty": "hard"
+    },
+    {
+      "id": "PSY-0157",
+      "question": "(Situațional) Echipament insuficient înaintea unei misiuni.",
+      "options": [
+        "Amâni fără informare",
+        "Prioritizezi misiunile critice și raportezi lipsa",
+        "Alegi prietenii",
+        "Distribui aleatoriu"
+      ],
+      "answerIndex": 1,
+      "explanation": "Prioritizare + raportare asigură continuitate și transparență.",
+      "rationales": [
+        "✖ Greșit: 'Amâni fără informare' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: 'Prioritizezi misiunile critice și raportezi lipsa'. Prioritizare + raportare asigură continuitate și transparență.",
+        "✖ Greșit: 'Alegi prietenii' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: 'Distribui aleatoriu' — Nu corespunde cadrului/definiției.."
+      ],
+      "topic": "Situațional",
+      "module": "psychology",
+      "difficulty": "hard"
+    },
+    {
+      "id": "PSY-0158",
+      "question": "(Situațional) Conflict între membri ai echipei.",
+      "options": [
+        "Eviți subiectul",
+        "Facilitezi discuția, mediezi și stabilești pași clari",
+        "Critici în scris grupul",
+        "Alegi o parte"
+      ],
+      "answerIndex": 1,
+      "explanation": "Leadership eficient: mediere, reguli clare, urmărire a acțiunilor.",
+      "rationales": [
+        "✖ Greșit: 'Eviți subiectul' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: 'Facilitezi discuția, mediezi și stabilești pași clari'. Leadership eficient: mediere, reguli clare, urmărire a acțiunilor.",
+        "✖ Greșit: 'Critici în scris grupul' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: 'Alegi o parte' — Nu corespunde cadrului/definiției.."
+      ],
+      "topic": "Situațional",
+      "module": "psychology",
+      "difficulty": "medium"
+    },
+    {
+      "id": "PSY-0159",
+      "question": "(Situațional) Un coleg întârzie repetat la apel.",
+      "options": [
+        "Ignori problema",
+        "Verifici cauza și raportezi conform procedurii",
+        "Critici public",
+        "Alegi să-l sancționezi singur"
+      ],
+      "answerIndex": 1,
+      "explanation": "Abordare procedurală + responsabilă: verifici, documentezi, raportezi corect.",
+      "rationales": [
+        "✖ Greșit: 'Ignori problema' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: 'Verifici cauza și raportezi conform procedurii'. Abordare procedurală + responsabilă: verifici, documentezi, raportezi corect.",
+        "✖ Greșit: 'Critici public' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: 'Alegi să-l sancționezi singur' — Nu corespunde cadrului/definiției.."
+      ],
+      "topic": "Situațional",
+      "module": "psychology",
+      "difficulty": "hard"
+    },
+    {
+      "id": "PSY-0160",
+      "question": "(Situațional) Un coleg întârzie repetat la apel.",
+      "options": [
+        "Ignori problema",
+        "Verifici cauza și raportezi conform procedurii",
+        "Critici public",
+        "Alegi să-l sancționezi singur"
+      ],
+      "answerIndex": 1,
+      "explanation": "Abordare procedurală + responsabilă: verifici, documentezi, raportezi corect.",
+      "rationales": [
+        "✖ Greșit: 'Ignori problema' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: 'Verifici cauza și raportezi conform procedurii'. Abordare procedurală + responsabilă: verifici, documentezi, raportezi corect.",
+        "✖ Greșit: 'Critici public' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: 'Alegi să-l sancționezi singur' — Nu corespunde cadrului/definiției.."
+      ],
+      "topic": "Situațional",
+      "module": "psychology",
+      "difficulty": "medium"
+    },
+    {
+      "id": "PSY-0161",
+      "question": "(Situațional) Conflict între membri ai echipei.",
+      "options": [
+        "Eviți subiectul",
+        "Facilitezi discuția, mediezi și stabilești pași clari",
+        "Critici în scris grupul",
+        "Alegi o parte"
+      ],
+      "answerIndex": 1,
+      "explanation": "Leadership eficient: mediere, reguli clare, urmărire a acțiunilor.",
+      "rationales": [
+        "✖ Greșit: 'Eviți subiectul' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: 'Facilitezi discuția, mediezi și stabilești pași clari'. Leadership eficient: mediere, reguli clare, urmărire a acțiunilor.",
+        "✖ Greșit: 'Critici în scris grupul' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: 'Alegi o parte' — Nu corespunde cadrului/definiției.."
+      ],
+      "topic": "Situațional",
+      "module": "psychology",
+      "difficulty": "medium"
+    },
+    {
+      "id": "PSY-0162",
+      "question": "(Situațional) Un coleg întârzie repetat la apel.",
+      "options": [
+        "Ignori problema",
+        "Verifici cauza și raportezi conform procedurii",
+        "Critici public",
+        "Alegi să-l sancționezi singur"
+      ],
+      "answerIndex": 1,
+      "explanation": "Abordare procedurală + responsabilă: verifici, documentezi, raportezi corect.",
+      "rationales": [
+        "✖ Greșit: 'Ignori problema' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: 'Verifici cauza și raportezi conform procedurii'. Abordare procedurală + responsabilă: verifici, documentezi, raportezi corect.",
+        "✖ Greșit: 'Critici public' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: 'Alegi să-l sancționezi singur' — Nu corespunde cadrului/definiției.."
+      ],
+      "topic": "Situațional",
+      "module": "psychology",
+      "difficulty": "hard"
+    },
+    {
+      "id": "PSY-0163",
+      "question": "(Situațional) Un coleg întârzie repetat la apel.",
+      "options": [
+        "Ignori problema",
+        "Verifici cauza și raportezi conform procedurii",
+        "Critici public",
+        "Alegi să-l sancționezi singur"
+      ],
+      "answerIndex": 1,
+      "explanation": "Abordare procedurală + responsabilă: verifici, documentezi, raportezi corect.",
+      "rationales": [
+        "✖ Greșit: 'Ignori problema' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: 'Verifici cauza și raportezi conform procedurii'. Abordare procedurală + responsabilă: verifici, documentezi, raportezi corect.",
+        "✖ Greșit: 'Critici public' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: 'Alegi să-l sancționezi singur' — Nu corespunde cadrului/definiției.."
+      ],
+      "topic": "Situațional",
+      "module": "psychology",
+      "difficulty": "hard"
+    },
+    {
+      "id": "PSY-0164",
+      "question": "(Situațional) Echipament insuficient înaintea unei misiuni.",
+      "options": [
+        "Amâni fără informare",
+        "Prioritizezi misiunile critice și raportezi lipsa",
+        "Alegi prietenii",
+        "Distribui aleatoriu"
+      ],
+      "answerIndex": 1,
+      "explanation": "Prioritizare + raportare asigură continuitate și transparență.",
+      "rationales": [
+        "✖ Greșit: 'Amâni fără informare' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: 'Prioritizezi misiunile critice și raportezi lipsa'. Prioritizare + raportare asigură continuitate și transparență.",
+        "✖ Greșit: 'Alegi prietenii' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: 'Distribui aleatoriu' — Nu corespunde cadrului/definiției.."
+      ],
+      "topic": "Situațional",
+      "module": "psychology",
+      "difficulty": "hard"
+    },
+    {
+      "id": "PSY-0165",
+      "question": "(Situațional) Echipament insuficient înaintea unei misiuni.",
+      "options": [
+        "Amâni fără informare",
+        "Prioritizezi misiunile critice și raportezi lipsa",
+        "Alegi prietenii",
+        "Distribui aleatoriu"
+      ],
+      "answerIndex": 1,
+      "explanation": "Prioritizare + raportare asigură continuitate și transparență.",
+      "rationales": [
+        "✖ Greșit: 'Amâni fără informare' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: 'Prioritizezi misiunile critice și raportezi lipsa'. Prioritizare + raportare asigură continuitate și transparență.",
+        "✖ Greșit: 'Alegi prietenii' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: 'Distribui aleatoriu' — Nu corespunde cadrului/definiției.."
+      ],
+      "topic": "Situațional",
+      "module": "psychology",
+      "difficulty": "medium"
+    },
+    {
+      "id": "PSY-0166",
+      "question": "(Situațional) Un coleg întârzie repetat la apel.",
+      "options": [
+        "Ignori problema",
+        "Verifici cauza și raportezi conform procedurii",
+        "Critici public",
+        "Alegi să-l sancționezi singur"
+      ],
+      "answerIndex": 1,
+      "explanation": "Abordare procedurală + responsabilă: verifici, documentezi, raportezi corect.",
+      "rationales": [
+        "✖ Greșit: 'Ignori problema' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: 'Verifici cauza și raportezi conform procedurii'. Abordare procedurală + responsabilă: verifici, documentezi, raportezi corect.",
+        "✖ Greșit: 'Critici public' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: 'Alegi să-l sancționezi singur' — Nu corespunde cadrului/definiției.."
+      ],
+      "topic": "Situațional",
+      "module": "psychology",
+      "difficulty": "medium"
+    },
+    {
+      "id": "PSY-0167",
+      "question": "(Situațional) Un coleg întârzie repetat la apel.",
+      "options": [
+        "Ignori problema",
+        "Verifici cauza și raportezi conform procedurii",
+        "Critici public",
+        "Alegi să-l sancționezi singur"
+      ],
+      "answerIndex": 1,
+      "explanation": "Abordare procedurală + responsabilă: verifici, documentezi, raportezi corect.",
+      "rationales": [
+        "✖ Greșit: 'Ignori problema' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: 'Verifici cauza și raportezi conform procedurii'. Abordare procedurală + responsabilă: verifici, documentezi, raportezi corect.",
+        "✖ Greșit: 'Critici public' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: 'Alegi să-l sancționezi singur' — Nu corespunde cadrului/definiției.."
+      ],
+      "topic": "Situațional",
+      "module": "psychology",
+      "difficulty": "medium"
+    },
+    {
+      "id": "PSY-0168",
+      "question": "(Situațional) Echipament insuficient înaintea unei misiuni.",
+      "options": [
+        "Amâni fără informare",
+        "Prioritizezi misiunile critice și raportezi lipsa",
+        "Alegi prietenii",
+        "Distribui aleatoriu"
+      ],
+      "answerIndex": 1,
+      "explanation": "Prioritizare + raportare asigură continuitate și transparență.",
+      "rationales": [
+        "✖ Greșit: 'Amâni fără informare' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: 'Prioritizezi misiunile critice și raportezi lipsa'. Prioritizare + raportare asigură continuitate și transparență.",
+        "✖ Greșit: 'Alegi prietenii' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: 'Distribui aleatoriu' — Nu corespunde cadrului/definiției.."
+      ],
+      "topic": "Situațional",
+      "module": "psychology",
+      "difficulty": "hard"
+    },
+    {
+      "id": "PSY-0169",
+      "question": "(Situațional) Conflict între membri ai echipei.",
+      "options": [
+        "Eviți subiectul",
+        "Facilitezi discuția, mediezi și stabilești pași clari",
+        "Critici în scris grupul",
+        "Alegi o parte"
+      ],
+      "answerIndex": 1,
+      "explanation": "Leadership eficient: mediere, reguli clare, urmărire a acțiunilor.",
+      "rationales": [
+        "✖ Greșit: 'Eviți subiectul' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: 'Facilitezi discuția, mediezi și stabilești pași clari'. Leadership eficient: mediere, reguli clare, urmărire a acțiunilor.",
+        "✖ Greșit: 'Critici în scris grupul' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: 'Alegi o parte' — Nu corespunde cadrului/definiției.."
+      ],
+      "topic": "Situațional",
+      "module": "psychology",
+      "difficulty": "hard"
+    },
+    {
+      "id": "PSY-0170",
+      "question": "(Situațional) Un coleg întârzie repetat la apel.",
+      "options": [
+        "Ignori problema",
+        "Verifici cauza și raportezi conform procedurii",
+        "Critici public",
+        "Alegi să-l sancționezi singur"
+      ],
+      "answerIndex": 1,
+      "explanation": "Abordare procedurală + responsabilă: verifici, documentezi, raportezi corect.",
+      "rationales": [
+        "✖ Greșit: 'Ignori problema' — Nu corespunde cadrului/definiției..",
+        "✔ Corect: 'Verifici cauza și raportezi conform procedurii'. Abordare procedurală + responsabilă: verifici, documentezi, raportezi corect.",
+        "✖ Greșit: 'Critici public' — Nu corespunde cadrului/definiției..",
+        "✖ Greșit: 'Alegi să-l sancționezi singur' — Nu corespunde cadrului/definiției.."
+      ],
+      "topic": "Situațional",
+      "module": "psychology",
+      "difficulty": "hard"
+    }
+  ],
+  "meta": {
+    "version": "v2.7",
+    "count": 170
+  }
+}

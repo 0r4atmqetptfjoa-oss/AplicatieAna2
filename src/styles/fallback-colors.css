@@ -1,0 +1,4 @@
+/* fallback tokens; import in index.css if needed */
+.text-foreground{color:#fff}
+.text-muted-foreground{color:rgba(255,255,255,.7)}
+.bg-card{background:rgba(20,20,20,.6)}

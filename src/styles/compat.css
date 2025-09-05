@@ -1,0 +1,21 @@
+/* Global fallbacks so text isn't invisible even if Tailwind theme tokens are missing */
+:root {
+  --bg: #0b0f0c;
+  --card: #111a13;
+  --text: #e2f5dd;
+  --muted: #97b49d;
+  --primary: #9acd32;
+  --accent: #6ee7b7;
+  --border: #223125;
+}
+.bg-bg { background-color: var(--bg) !important; }
+.bg-card { background-color: var(--card) !important; }
+.text-text { color: var(--text) !important; }
+.text-muted { color: var(--muted) !important; }
+.border-border { border-color: var(--border) !important; }
+.text-primary { color: var(--primary) !important; }
+.text-accent { color: var(--accent) !important; }
+.btn { color: var(--text); }
+/* Optional gradient helper if theme doesn't provide */
+.from-primary\/30 { --tw-gradient-from: rgba(154,205,50,0.3) var(--tw-gradient-from-position); --tw-gradient-to: rgba(154,205,50,0) var(--tw-gradient-to-position); --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to); }
+.to-accent\/20 { --tw-gradient-to: rgba(110,231,183,0.2) var(--tw-gradient-to-position); }

@@ -1,0 +1,16 @@
+# Dependencies
+node_modules/
+dist/
+.build/
+.netlify/
+
+# Local env files (DO NOT COMMIT SECRETS)
+.env
+.env.local
+.env.*.local
+
+# Editor / system
+.DS_Store
+*.log
+.vscode/
+.idea/

@@ -1,0 +1,1 @@
+export type Question = { id:string; module:'legislation'|'logistics'|'english'|'psychology'; stem:string; options:string[]; answerIndex:number; explanation:string; };

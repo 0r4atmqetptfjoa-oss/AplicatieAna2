@@ -1,0 +1,36 @@
+{
+  "name": "mentor-ana-pwa-v13",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-router-dom": "6.26.1",
+    "framer-motion": "11.0.23",
+    "zustand": "4.5.2",
+    "clsx": "2.1.1",
+    "zod": "3.23.8",
+    "lucide-react": "0.447.0",
+    "dayjs": "1.11.11",
+    "leaflet": "1.9.4",
+    "react-leaflet": "4.2.1"
+  },
+  "devDependencies": {
+    "vite": "5.3.4",
+    "vite-plugin-pwa": "0.20.0",
+    "tailwindcss": "3.4.7",
+    "postcss": "8.4.40",
+    "autoprefixer": "10.4.20",
+    "typescript": "5.3.3",
+    "@types/react": "18.2.79",
+    "@types/react-dom": "18.2.25",
+    "@netlify/functions": "2.6.0",
+    "@vitejs/plugin-react": "4.2.1"
+  }
+}
