@@ -27,7 +27,6 @@ export default function Psychology(){
     return hasCat ? bank.filter(q=> q.category && cats.includes(q.category)) : bank
   }, [bank, cats])
 
-  // Build exam locally: simple shuffle + slice
   const [items, setItems] = useState<PItem[]>([])
   function start(){
     const shuffled = [...pool].sort(()=> Math.random()-0.5)

@@ -1,6 +1,5 @@
-// v2.8 ExamSim patch: seed + difficulty mix + adaptive optional
-import { useEffect, useMemo, useRef, useState } from "react"
-import { buildExam, buildAdaptiveQueue, type Item } from "@/lib/quizEngine"
+import { useEffect, useState } from "react"
+import { buildExam, type Item } from "@/lib/quizEngine"
 
 type Bank = { questions: Item[] }
 async function loadBank(): Promise<Bank> {
@@ -20,12 +19,9 @@ export default function ExamSim() {
   const [score, setScore] = useState(0)
   const [started, setStarted] = useState(false)
   const [seed, setSeed] = useState<number>(Math.floor(Math.random()*100000))
-  const [adaptive, setAdaptive] = useState<boolean>(true)
-  const [time, setTime] = useState<number>(180*60) // 180 min
-
+  
   useEffect(()=>{
     loadBank().then(({questions})=>{
-      // Fixed 30 legislație + 60 specialitate (approx by module tag), difficulty mix
       const legislation = questions.filter(q=>q.module==='legislation')
       const specialty   = questions.filter(q=>q.module==='specialty')
       const picked = [
@@ -37,6 +33,7 @@ export default function ExamSim() {
     })
   }, [seed])
 
+  const [time, setTime] = useState<number>(180*60) // 180 min
   useEffect(()=>{
     if(!started) return
     const id = setInterval(()=> setTime(t=>Math.max(0, t-1)), 1000)

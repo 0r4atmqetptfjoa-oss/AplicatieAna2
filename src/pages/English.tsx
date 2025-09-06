@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react"
+import { useEffect, useState } from "react"
 import type { Item } from "@/lib/quizEngine"
 
 type EngData = { tests: Item[][], meta: any }
