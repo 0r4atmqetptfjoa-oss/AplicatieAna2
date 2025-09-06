@@ -1,4 +1,3 @@
-
 // v2.8 ExamSim patch: seed + difficulty mix + adaptive optional
 import { useEffect, useMemo, useRef, useState } from "react"
 import { buildExam, buildAdaptiveQueue, type Item } from "@/lib/quizEngine"
@@ -6,8 +5,8 @@ import { buildExam, buildAdaptiveQueue, type Item } from "@/lib/quizEngine"
 type Bank = { questions: Item[] }
 async function loadBank(): Promise<Bank> {
   const [leg, spec] = await Promise.all([
-    fetch("/src/data/v12/legislation.json").then(r=>r.json()),
-    fetch("/src/data/v12/logistics.json").then(r=>r.json())
+    fetch("/data/v12/legislation.json").then(r=>r.json()),
+    fetch("/data/v12/logistics.json").then(r=>r.json())
   ])
   const questions = [...(leg?.questions||[]), ...(spec?.questions||[])]
   return { questions }

@@ -12,7 +12,7 @@ export default function Psychology(){
   const [started, setStarted] = useState(false)
 
   useEffect(()=>{
-    fetch("/src/data/v12/psychology.json").then(r=>r.json()).then((d:Bank)=>{
+    fetch("/data/v12/psychology.json").then(r=>r.json()).then((d:Bank)=>{
       setBank((d?.questions||[]) as PItem[])
     })
   }, [])

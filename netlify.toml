@@ -3,10 +3,9 @@
   publish = "dist"
   functions = "netlify/functions"
 
-# security headers (optional)
 [[headers]]
   for = "/*"
   [headers.values]
+    # Am înlocuit regula strictă cu una mai permisivă pentru a permite încărcarea hărților
+    Cross-Origin-Embedder-Policy = "unsafe-none"
     Cross-Origin-Opener-Policy = "same-origin"
-    Cross-Origin-Embedder-Policy = "require-corp"
-    X-Content-Type-Options = "nosniff"

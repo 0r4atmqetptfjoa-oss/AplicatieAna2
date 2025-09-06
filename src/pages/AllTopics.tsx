@@ -4,9 +4,9 @@ import { buildExam, type Item } from "@/lib/quizEngine"
 type Bank = { questions: Item[] }
 async function loadAll(): Promise<Bank> {
   const [leg, spec, psy] = await Promise.all([
-    fetch("/src/data/v12/legislation.json").then(r=>r.json()).catch(()=>({questions:[]})),
-    fetch("/src/data/v12/logistics.json").then(r=>r.json()).catch(()=>({questions:[]})),
-    fetch("/src/data/v12/psychology.json").then(r=>r.json()).catch(()=>({questions:[]}))
+    fetch("/data/v12/legislation.json").then(r=>r.json()).catch(()=>({questions:[]})),
+    fetch("/data/v12/logistics.json").then(r=>r.json()).catch(()=>({questions:[]})),
+    fetch("/data/v12/psychology.json").then(r=>r.json()).catch(()=>({questions:[]}))
   ])
   const questions = [...(leg?.questions||[]), ...(spec?.questions||[]), ...(psy?.questions||[])]
   return { questions }

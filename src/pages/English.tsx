@@ -1,4 +1,3 @@
-
 import { useEffect, useMemo, useState } from "react"
 import type { Item } from "@/lib/quizEngine"
 
@@ -12,7 +11,7 @@ export default function English(){
   const [score, setScore] = useState(0)
 
   useEffect(()=>{
-    fetch("/src/data/v12/english.json").then(r=>r.json()).then(setData)
+    fetch("/data/v12/english.json").then(r=>r.json()).then(setData)
   }, [])
 
   useEffect(()=>{ setQi(0); setSel(null); setScore(0) }, [ti])
