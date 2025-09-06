@@ -19,7 +19,7 @@ export default function ExamSim() {
   const [score, setScore] = useState(0)
   const [started, setStarted] = useState(false)
   const [seed, setSeed] = useState<number>(Math.floor(Math.random()*100000))
-  
+
   useEffect(()=>{
     loadBank().then(({questions})=>{
       const legislation = questions.filter(q=>q.module==='legislation')
@@ -33,7 +33,7 @@ export default function ExamSim() {
     })
   }, [seed])
 
-  const [time, setTime] = useState<number>(180*60) // 180 min
+  const [time, setTime] = useState<number>(180*60)
   useEffect(()=>{
     if(!started) return
     const id = setInterval(()=> setTime(t=>Math.max(0, t-1)), 1000)
