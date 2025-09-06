@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from 'react'
+import { useStore } from '@/store'
+import { haptics } from '@/lib/haptics'
 
 type Counts = { legislation:number, logistics:number, psychology:number, englishTests:number }
 
 async function loadCounts(): Promise<Counts>{
   try{
     const [leg, log, psy, eng] = await Promise.all([
-      fetch("/src/data/v12/legislation.json").then(r=>r.json()).catch(()=>({})),
-      fetch("/src/data/v12/logistics.json").then(r=>r.json()).catch(()=>({})),
-      fetch("/src/data/v12/psychology.json").then(r=>r.json()).catch(()=>({})),
-      fetch("/src/data/v12/english.json").then(r=>r.json()).catch(()=>({})),
+      fetch("/data/v12/legislation.json").then(r=>r.json()).catch(()=>({})),
+      fetch("/data/v12/logistics.json").then(r=>r.json()).catch(()=>({})),
+      fetch("/data/v12/psychology.json").then(r=>r.json()).catch(()=>({})),
+      fetch("/data/v12/english.json").then(r=>r.json()).catch(()=>({})),
     ])
     const cLeg = leg?.meta?.count ?? leg?.questions?.length ?? 0
     const cLog = log?.meta?.count ?? log?.questions?.length ?? 0
@@ -26,44 +28,25 @@ const THEMES = [
 ] as const
 
 export default function Settings(){
-  const [theme, setTheme] = useState<string>(()=> localStorage.getItem('theme') || 'system')
-  const [scale, setScale] = useState<number>(()=> parseFloat(localStorage.getItem('textScale')||'1') || 1)
-  const [haptics, setHaptics] = useState<boolean>(()=> localStorage.getItem('haptics')!=='off')
   const [counts, setCounts] = useState<Counts>({legislation:0, logistics:0, psychology:0, englishTests:0})
-
   useEffect(()=>{ loadCounts().then(setCounts) }, [])
 
-  useEffect(()=>{
-    localStorage.setItem('theme', theme)
-    document.documentElement.dataset.theme = theme
-  }, [theme])
-
-  useEffect(()=>{
-    localStorage.setItem('textScale', String(scale))
-    document.documentElement.style.setProperty('--text-scale', String(scale))
-  }, [scale])
-
-  useEffect(()=>{
-    localStorage.setItem('haptics', haptics?'on':'off')
-  }, [haptics])
+  const { theme, setTheme, scale, setScale, haptics, setHaptics } = useStore()
 
   return (
-    <div className="p-4 space-y-6">
-      <div className="text-xl font-bold">Setări</div>
-
+    <div className="p-4 space-y-4">
       <section className="card">
-        <div className="h2 mb-2">Temă</div>
-        <div className="grid grid-cols-2 gap-2">
-          {THEMES.map(t=> (
+        <div className="h2 mb-2">Temă vizuală</div>
+        <div className="flex flex-wrap items-center gap-2">
+          {THEMES.map(t => (
             <button key={t.id}
               onClick={()=> setTheme(t.id)}
-              className={`btn ${theme===t.id?'btn-primary':'btn-ghost'}`}
-            >
+              className={`btn ${theme === t.id ? 'btn-primary' : 'btn-ghost'}`}>
               {t.label}
             </button>
           ))}
         </div>
-        <div className="text-xs text-muted mt-2">Tema „Army” aplică accente verzi/olive și texturi subtile.</div>
+        <div className="text-xs text-muted mt-2">Tema 'System' se adaptează automat la setările dispozitivului.</div>
       </section>
 
       <section className="card">
