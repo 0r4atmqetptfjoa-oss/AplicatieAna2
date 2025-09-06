@@ -1,4 +1,4 @@
-// src/pages/Fitness.tsx
+// src/pages/Fitness.tsx (v3.1 - Logică de start/stop GPS simplificată)
 import React, { useEffect, useMemo, useRef, useState } from "react"
 import { loadMaps } from "@/lib/maps"
 import { Pt, computeDistance, formatDuration, formatPace, toGPX } from "@/lib/geo"
@@ -14,22 +14,8 @@ type GpsStatus = "strong" | "medium" | "weak" | "off";
 type RunState = "idle" | "running" | "paused";
 
 const GMAP_STYLES: Record<string, any[]> = {
-  dark: [
-    { elementType: "geometry", stylers: [{color: "#1f2937"}] },
-    { elementType: "labels.text.fill", stylers: [{color: "#e5e7eb"}] },
-    { elementType: "labels.text.stroke", stylers: [{color: "#111827"}] },
-    { featureType: "road", elementType: "geometry", stylers: [{color: "#374151"}] },
-    { featureType: "water", elementType: "geometry", stylers: [{color: "#0ea5e9"}] },
-    { featureType: "poi.park", elementType: "geometry", stylers: [{color: "#064e3b"}] },
-  ],
-  army: [
-    { elementType: "geometry", stylers: [{color: "#2b3a20"}] },
-    { elementType: "labels.text.fill", stylers: [{color: "#fef3c7"}] },
-    { elementType: "labels.text.stroke", stylers: [{color: "#1a2314"}] },
-    { featureType: "road", elementType: "geometry", stylers: [{color: "#5b7a3a"}] },
-    { featureType: "water", elementType: "geometry", stylers: [{color: "#264653"}] },
-    { featureType: "poi.park", elementType: "geometry", stylers: [{color: "#3a5a40"}] },
-  ]
+  dark: [ { elementType: "geometry", stylers: [{color: "#1f2937"}] }, { elementType: "labels.text.fill", stylers: [{color: "#e5e7eb"}] }, { elementType: "labels.text.stroke", stylers: [{color: "#111827"}] }, { featureType: "road", elementType: "geometry", stylers: [{color: "#374151"}] }, { featureType: "water", elementType: "geometry", stylers: [{color: "#0ea5e9"}] }, { featureType: "poi.park", elementType: "geometry", stylers: [{color: "#064e3b"}] }, ],
+  army: [ { elementType: "geometry", stylers: [{color: "#2b3a20"}] }, { elementType: "labels.text.fill", stylers: [{color: "#fef3c7"}] }, { elementType: "labels.text.stroke", stylers: [{color: "#1a2314"}] }, { featureType: "road", elementType: "geometry", stylers: [{color: "#5b7a3a"}] }, { featureType: "water", elementType: "geometry", stylers: [{color: "#264653"}] }, { featureType: "poi.park", elementType: "geometry", stylers: [{color: "#3a5a40"}] }, ]
 };
 
 export default function Fitness(){
@@ -37,9 +23,9 @@ export default function Fitness(){
   const [time, setTime] = useState(0);
   const [points, setPoints] = useState<Pt[]>([]);
   const [error, setError] = useState<string>("");
-  const [isTracking, setIsTracking] = useState(false);
   const [gpsStatus, setGpsStatus] = useState<GpsStatus>("off");
   const [mapsKind, setMapsKind] = useState<"google" | "leaflet" | "none">("none");
+  const [isMapReady, setIsMapReady] = useState(false);
   const [styleKey, setStyleKey] = useState<"dark" | "army">("dark");
   const [showHeatmap, setShowHeatmap] = useState(false);
   const [elevationData, setElevationData] = useState<any[]>([]);
@@ -70,45 +56,26 @@ export default function Fitness(){
   useEffect(() => {
     (async () => {
       const loaded = await loadMaps("auto");
+      if (!loaded.api) return;
+
       setMapsKind(loaded.kind);
-      
       const el = document.getElementById("map");
       if (!el || mapRef.current) return;
 
       if (loaded.kind === "google") {
         const g = loaded.api;
         const map = new g.maps.Map(el, {
-          center: {lat: 44.4268, lng: 26.1025},
-          zoom: 15,
-          disableDefaultUI: true,
-          zoomControl: true,
-          mapTypeControl: false,
-          streetViewControl: false,
-          styles: GMAP_STYLES[styleKey]
+          center: {lat: 44.4268, lng: 26.1025}, zoom: 15, disableDefaultUI: true, zoomControl: true,
+          mapTypeControl: false, streetViewControl: false, styles: GMAP_STYLES[styleKey]
         });
-
-        const poly = new g.maps.Polyline({
-          path: [],
-          strokeColor: "#3b82f6",
-          strokeOpacity: 0.9,
-          strokeWeight: 6
-        });
+        const poly = new g.maps.Polyline({ path: [], strokeColor: "#3b82f6", strokeOpacity: 0.9, strokeWeight: 6 });
         poly.setMap(map);
-        
         const marker = new g.maps.Marker({
-          position: {lat: 44.4268, lng: 26.1025},
-          map,
-          icon: {
-            path: g.maps.SymbolPath.CIRCLE,
-            scale: 8,
-            fillColor: "#1d4ed8",
-            fillOpacity: 1,
-            strokeColor: "white",
-            strokeWeight: 3,
-          }
+          position: {lat: 44.4268, lng: 26.1025}, map,
+          icon: { path: g.maps.SymbolPath.CIRCLE, scale: 8, fillColor: "#1d4ed8", fillOpacity: 1, strokeColor: "white", strokeWeight: 3 }
         });
-        
         mapRef.current = map; polyRef.current = poly; markerRef.current = marker;
+        setIsMapReady(true);
       }
     })();
   }, []);
@@ -168,11 +135,18 @@ export default function Fitness(){
           (err) => { setError(err.message); setGpsStatus("off"); },
           { enableHighAccuracy: true, maximumAge: 5000, timeout: 10000 }
         );
-        setIsTracking(true);
       },
       (err) => { setError(err.message); setGpsStatus("off"); },
       { enableHighAccuracy: true }
     );
+  };
+
+  const stopTracking = () => {
+    if (watchId.current != null) {
+      navigator.geolocation.clearWatch(watchId.current);
+      watchId.current = null;
+    }
+    setGpsStatus("off");
   };
   
   const handlePrimaryAction = () => {
@@ -182,7 +156,7 @@ export default function Fitness(){
       heatmapRef.current?.setMap(null);
       directionsRendererRef.current?.setMap(null);
       setRunState("running");
-      if (!isTracking) startTracking();
+      startTracking(); // Pornim automat GPS-ul
     } else if (runState === "running") {
       setRunState("paused");
     } else if (runState === "paused") {
@@ -195,12 +169,13 @@ export default function Fitness(){
       const run: RunSession = {
         id: String(Date.now()), startedAt: startTs.current || Date.now(),
         durationSec: time, distanceM: distance, paceAvg: paceAvg,
-        splits: computeSplits(points, startTs.current)
+        splits: computeSplits(points, startTs.current),
       };
       saveRun(run);
       generateElevationProfile(points);
     }
     setRunState("idle");
+    stopTracking(); // Oprim automat GPS-ul
   };
 
   const generateElevationProfile = (runPoints: Pt[]) => {
@@ -229,20 +204,17 @@ export default function Fitness(){
     
     if (!showHeatmap) {
       const heatmapData = points.map((p, i) => {
-        let weight = 0.5; // Viteză medie
+        let weight = 0.5;
         if(i > 0) {
             const segmentDist = computeDistance([points[i-1], p]);
             const segmentTime = (p.t! - points[i-1].t!) / 1000;
-            const speed = segmentDist / segmentTime; // m/s
-            if(speed > 4) weight = 1.0; // Rapid
-            else if(speed < 2.5) weight = 0.2; // Lent
+            const speed = segmentDist / segmentTime;
+            if(speed > 4) weight = 1.0; else if(speed < 2.5) weight = 0.2;
         }
         return { location: new g.maps.LatLng(p.lat, p.lng), weight };
       });
-
       const heatmap = new g.maps.visualization.HeatmapLayer({
-        data: heatmapData,
-        radius: 20,
+        data: heatmapData, radius: 20,
         gradient: ["rgba(0, 255, 255, 0)", "rgba(0, 255, 255, 1)", "rgba(0, 191, 255, 1)", "rgba(0, 127, 255, 1)", "rgba(0, 63, 255, 1)", "rgba(0, 0, 255, 1)", "rgba(0, 0, 223, 1)", "rgba(0, 0, 191, 1)", "rgba(0, 0, 159, 1)", "rgba(0, 0, 127, 1)", "rgba(63, 0, 91, 1)", "rgba(127, 0, 63, 1)", "rgba(191, 0, 31, 1)", "rgba(255, 0, 0, 1)"]
       });
       heatmap.setMap(mapRef.current);
@@ -295,7 +267,7 @@ export default function Fitness(){
             <StopCircle size={20} /> Oprește & Salvează
           </button>
         )}
-        <button className="btn btn-primary flex items-center gap-2" onClick={handlePrimaryAction}>
+        <button className="btn btn-primary flex items-center gap-2" onClick={handlePrimaryAction} disabled={!isMapReady}>
           {runState === 'idle' && <><Play size={20}/> Start Cursă</>}
           {runState === 'running' && <><Pause size={20}/> Pauză</>}
           {runState === 'paused' && <><Play size={20}/> Reluare</>}
@@ -332,21 +304,20 @@ export default function Fitness(){
                   height="200px"
                   options={{
                       legend: 'none',
-                      hAxis: { title: 'Distanță (km)', textStyle: { color: '#9e9e9e' }, titleTextStyle: { color: '#9e9e9e' } },
-                      vAxis: { title: 'Elevație (m)', textStyle: { color: '#9e9e9e' }, titleTextStyle: { color: '#9e9e9e' } },
-                      colors: ['#8ab4f8'],
+                      hAxis: { title: 'Distanță (km)', textStyle: { color: 'var(--muted)' }, titleTextStyle: { color: 'var(--muted)' } },
+                      vAxis: { title: 'Elevație (m)', textStyle: { color: 'var(--muted)' }, titleTextStyle: { color: 'var(--muted)' } },
+                      colors: ['var(--primary)'],
                       backgroundColor: 'transparent',
                       chartArea: { width: '85%', height: '70%' }
                   }}
               />
           </section>
       )}
-
-      {/* Aici am reparat secțiunea de Istoric */}
+      
       <section className="card">
         <div className="h3 mb-2 flex items-center justify-between">
           <span>Istoric antrenamente</span>
-          {runs.length>0 && <button className="btn btn-ghost btn-sm" onClick={()=>{ clearRuns(); window.location.reload() }}>Șterge istoric</button>}
+          {runs.length > 0 && <button className="btn btn-ghost btn-sm" onClick={()=>{ clearRuns(); window.location.reload(); }}>Șterge istoric</button>}
         </div>
         {runs.length === 0 ? <div className="text-sm text-muted">Nu ai sesiuni salvate.</div> :
           <ul className="text-sm space-y-2">
@@ -365,7 +336,6 @@ export default function Fitness(){
   );
 }
 
-// --- COMPONENTE HELPER (Adăugate înapoi) ---
 function GpsIndicator({ status }: { status: GpsStatus }) {
   const color = {
     strong: "text-green-500",
