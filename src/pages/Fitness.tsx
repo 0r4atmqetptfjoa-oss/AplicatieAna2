@@ -1,4 +1,4 @@
-// src/pages/Fitness.tsx (v3.1 - Logică de start/stop GPS simplificată)
+// src/pages/Fitness.tsx (v3.2 - Corecție pentru activarea butonului Start)
 import React, { useEffect, useMemo, useRef, useState } from "react"
 import { loadMaps } from "@/lib/maps"
 import { Pt, computeDistance, formatDuration, formatPace, toGPX } from "@/lib/geo"
@@ -56,7 +56,10 @@ export default function Fitness(){
   useEffect(() => {
     (async () => {
       const loaded = await loadMaps("auto");
-      if (!loaded.api) return;
+      if (!loaded.api) {
+        setIsMapReady(false); // Nu avem nicio hartă
+        return;
+      }
 
       setMapsKind(loaded.kind);
       const el = document.getElementById("map");
@@ -75,8 +78,19 @@ export default function Fitness(){
           icon: { path: g.maps.SymbolPath.CIRCLE, scale: 8, fillColor: "#1d4ed8", fillOpacity: 1, strokeColor: "white", strokeWeight: 3 }
         });
         mapRef.current = map; polyRef.current = poly; markerRef.current = marker;
-        setIsMapReady(true);
+      } else if (loaded.kind === "leaflet") {
+        const L = loaded.api;
+        const map = L.map(el, { zoomControl: false }).setView([44.4268, 26.1025], 13);
+        L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+          maxZoom: 19, attribution: '&copy; OpenStreetMap',
+        }).addTo(map);
+        const poly = L.polyline([], { color: "#0ea5e9", weight: 5, opacity: 0.8 }).addTo(map);
+        const marker = L.circleMarker([44.4268, 26.1025], { radius: 7, color: "#fff", weight: 2, fillColor: "#22c55e", fillOpacity: 1 }).addTo(map);
+        mapRef.current = map; polyRef.current = poly; markerRef.current = marker;
       }
+      
+      // --- CORECȚIE AICI: Setăm isMapReady indiferent de tipul hărții ---
+      setIsMapReady(true);
     })();
   }, []);
 
@@ -102,6 +116,11 @@ export default function Fitness(){
           const latLng = new g.maps.LatLng(p.lat, p.lng);
           polyRef.current.getPath().push(latLng);
           markerRef.current.setPosition(latLng);
+        } else if (mapsKind === "leaflet") {
+            const L = (window as any).L;
+            const latLng = L.latLng(p.lat, p.lng);
+            polyRef.current.addLatLng(latLng);
+            markerRef.current.setLatLng(latLng);
         }
       } catch {}
 
@@ -121,8 +140,8 @@ export default function Fitness(){
       (pos) => {
         const { latitude: lat, longitude: lng } = pos.coords;
         if(mapRef.current) {
-          mapRef.current.setCenter({ lat, lng });
-          mapRef.current.setZoom(17);
+            if (mapsKind === 'google') mapRef.current.setCenter({ lat, lng });
+            else if (mapsKind === 'leaflet') mapRef.current.setView([lat, lng], 17);
         }
         
         watchId.current = navigator.geolocation.watchPosition(
@@ -156,7 +175,7 @@ export default function Fitness(){
       heatmapRef.current?.setMap(null);
       directionsRendererRef.current?.setMap(null);
       setRunState("running");
-      startTracking(); // Pornim automat GPS-ul
+      startTracking();
     } else if (runState === "running") {
       setRunState("paused");
     } else if (runState === "paused") {
@@ -169,13 +188,13 @@ export default function Fitness(){
       const run: RunSession = {
         id: String(Date.now()), startedAt: startTs.current || Date.now(),
         durationSec: time, distanceM: distance, paceAvg: paceAvg,
-        splits: computeSplits(points, startTs.current),
+        splits: computeSplits(points, startTs.current)
       };
       saveRun(run);
       generateElevationProfile(points);
     }
     setRunState("idle");
-    stopTracking(); // Oprim automat GPS-ul
+    stopTracking();
   };
 
   const generateElevationProfile = (runPoints: Pt[]) => {
