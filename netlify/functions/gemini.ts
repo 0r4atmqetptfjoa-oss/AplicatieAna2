@@ -1,51 +1,84 @@
-// src/lib/gemini.ts
-// Single-key setup: reads API key from Vite env: VITE_API_KEY
-// Safe drop-in. Exports aiAsk() and askAI (alias).
+import type { Handler, HandlerEvent, HandlerContext } from "@netlify/functions";
 
-export const GEMINI_KEY: string | undefined = import.meta.env.VITE_API_KEY;
+const GEMINI_KEY = process.env.GEMINI_API_KEY;
+const GEMINI_ENDPOINT = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent";
 
-const GEMINI_ENDPOINT =
-  "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent";
+const handler: Handler = async (event: HandlerEvent, context: HandlerContext) => {
+  if (event.httpMethod !== "POST") {
+    return {
+      statusCode: 405,
+      body: JSON.stringify({ error: "Metodă nepermisă" }),
+    };
+  }
 
-export type AiAskOptions = {
-  temperature?: number;
-  system?: string;
+  if (!GEMINI_KEY) {
+    return {
+      statusCode: 500,
+      body: JSON.stringify({ error: "Cheia API pentru Gemini nu este configurată pe server." }),
+    };
+  }
+
+  try {
+    const body = JSON.parse(event.body || "{}");
+    const prompt = body.prompt;
+
+    if (!prompt) {
+      return {
+        statusCode: 400,
+        body: JSON.stringify({ error: "Parametrul 'prompt' lipsește din cerere." }),
+      };
+    }
+
+    const requestBody = {
+      contents: [
+        {
+          role: "user",
+          parts: [{ text: prompt }],
+        },
+      ],
+      generationConfig: {
+        temperature: 0.5,
+        topP: 0.9,
+      },
+       safetySettings: [
+        { category: "HARM_CATEGORY_HARASSMENT", threshold: "BLOCK_NONE" },
+        { category: "HARM_CATEGORY_HATE_SPEECH", threshold: "BLOCK_NONE" },
+        { category: "HARM_CATEGORY_SEXUALLY_EXPLICIT", threshold: "BLOCK_NONE" },
+        { category: "HARM_CATEGORY_DANGEROUS_CONTENT", threshold: "BLOCK_NONE" }
+      ]
+    };
+
+    const url = `${GEMINI_ENDPOINT}?key=${GEMINI_KEY}`;
+    const geminiRes = await fetch(url, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(requestBody),
+    });
+
+    if (!geminiRes.ok) {
+      const errorText = await geminiRes.text();
+      console.error("Eroare Gemini API:", errorText);
+      return {
+        statusCode: geminiRes.status,
+        body: JSON.stringify({ error: `Eroare la apelul Gemini API: ${errorText}` }),
+      };
+    }
+
+    const data = await geminiRes.json();
+    const text = data?.candidates?.[0]?.content?.parts?.[0]?.text ?? "";
+
+    return {
+      statusCode: 200,
+      body: JSON.stringify({ text: text.trim() }),
+    };
+
+  } catch (e: any) {
+    console.error("Eroare în funcția Netlify:", e);
+    return {
+      statusCode: 500,
+      body: JSON.stringify({ error: e.message || "Eroare internă de server" }),
+    };
+  }
 };
 
-export async function aiAsk(prompt: string, opts: AiAskOptions = {}): Promise<string> {
-  if (!GEMINI_KEY) {
-    console.warn("VITE_API_KEY is not set. AI features will be disabled.");
-    return "AI este dezactivat (lipsește VITE_API_KEY).";
-  }
-  const body = {
-    contents: [
-      {
-        role: "user",
-        parts: [{ text: prompt }],
-      },
-    ],
-    generationConfig: {
-      temperature: opts.temperature ?? 0.4,
-    },
-  };
-  // Optional system instruction (server supports 'systemInstruction')
-  if (opts.system) {
-    (body as any).systemInstruction = { role: "system", parts: [{ text: opts.system }] };
-  }
-  const url = `${GEMINI_ENDPOINT}?key=${GEMINI_KEY}`;
-  const res = await fetch(url, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(body),
-  });
-  if (!res.ok) {
-    const txt = await res.text().catch(()=> "");
-    throw new Error(`Gemini HTTP ${res.status} – ${txt}`);
-  }
-  const data = await res.json();
-  const text = data?.candidates?.[0]?.content?.parts?.[0]?.text ?? "";
-  return text.trim();
-}
-
-// Backward-compat alias (Mentor.tsx may import { askAI })
-export const askAI = aiAsk;
+export { handler };
