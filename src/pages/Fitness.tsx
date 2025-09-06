@@ -1,11 +1,11 @@
-// src/pages/Fitness.tsx (v3.0 - Îmbunătățit de Gemini cu funcții avansate Google Maps)
+// src/pages/Fitness.tsx
 import React, { useEffect, useMemo, useRef, useState } from "react"
 import { loadMaps } from "@/lib/maps"
 import { Pt, computeDistance, formatDuration, formatPace, toGPX } from "@/lib/geo"
 import { speak, setTtsEnabled } from "@/lib/tts"
 import { loadRuns, saveRun, clearRuns, RunSession } from "@/lib/storage"
 import { Pause, Play, MapPin, StopCircle, Layers, BarChart3, Navigation } from "lucide-react"
-import { Chart } from 'react-google-charts'; // Instalează cu: npm install react-google-charts
+import { Chart } from 'react-google-charts';
 
 const GPS_ACCURACY_THRESHOLD = 35; 
 const MIN_DISTANCE_THRESHOLD = 5; 
@@ -145,7 +145,7 @@ export default function Fitness(){
       return next;
     });
   };
-
+  
   const startTracking = () => {
     if (!("geolocation" in navigator)) { setError("Geolocație indisponibilă"); return; }
     if (watchId.current != null) return;
@@ -195,8 +195,7 @@ export default function Fitness(){
       const run: RunSession = {
         id: String(Date.now()), startedAt: startTs.current || Date.now(),
         durationSec: time, distanceM: distance, paceAvg: paceAvg,
-        splits: computeSplits(points, startTs.current),
-        points: points, // Salvăm punctele pentru funcțiile avansate
+        splits: computeSplits(points, startTs.current)
       };
       saveRun(run);
       generateElevationProfile(points);
@@ -333,9 +332,9 @@ export default function Fitness(){
                   height="200px"
                   options={{
                       legend: 'none',
-                      hAxis: { title: 'Distanță (km)' },
-                      vAxis: { title: 'Elevație (m)' },
-                      colors: ['#3b82f6'],
+                      hAxis: { title: 'Distanță (km)', textStyle: { color: '#9e9e9e' }, titleTextStyle: { color: '#9e9e9e' } },
+                      vAxis: { title: 'Elevație (m)', textStyle: { color: '#9e9e9e' }, titleTextStyle: { color: '#9e9e9e' } },
+                      colors: ['#8ab4f8'],
                       backgroundColor: 'transparent',
                       chartArea: { width: '85%', height: '70%' }
                   }}
@@ -343,9 +342,75 @@ export default function Fitness(){
           </section>
       )}
 
-      {/* Istoric Antrenamente, etc. */}
+      {/* Aici am reparat secțiunea de Istoric */}
+      <section className="card">
+        <div className="h3 mb-2 flex items-center justify-between">
+          <span>Istoric antrenamente</span>
+          {runs.length>0 && <button className="btn btn-ghost btn-sm" onClick={()=>{ clearRuns(); window.location.reload() }}>Șterge istoric</button>}
+        </div>
+        {runs.length === 0 ? <div className="text-sm text-muted">Nu ai sesiuni salvate.</div> :
+          <ul className="text-sm space-y-2">
+            {runs.map(r => (
+              <li key={r.id} className="p-2 rounded-lg bg-card border border-border">
+                <div className="flex justify-between flex-wrap">
+                  <div><b>{new Date(r.startedAt).toLocaleString()}</b></div>
+                  <div className="font-mono">{(r.distanceM / 1000).toFixed(2)} km | {formatDuration(r.durationSec)} | {formatPace(r.paceAvg)}</div>
+                </div>
+              </li>
+            ))}
+          </ul>
+        }
+      </section>
     </main>
   );
 }
 
-// ... restul componentelor (GpsIndicator, computeSplits, Metric, Progress) rămân aici ...
+// --- COMPONENTE HELPER (Adăugate înapoi) ---
+function GpsIndicator({ status }: { status: GpsStatus }) {
+  const color = {
+    strong: "text-green-500",
+    medium: "text-yellow-500",
+    weak: "text-red-500",
+    off: "text-gray-500",
+  }[status];
+  return <MapPin className={color} size={20} />;
+}
+
+const computeSplits = (points: Pt[], startTs: number): { km: number; sec: number }[] => {
+  if (points.length < 2) return [];
+  let out: { km: number; sec: number }[] = [];
+  let acc = 0, lastMark = 0, lastTime = startTs || points[0].t || Date.now();
+  for (let i = 1; i < points.length; i++) {
+    const d = computeDistance([points[i - 1], points[i]]);
+    acc += d;
+    const t = (points[i].t || Date.now());
+    if (acc - lastMark >= 1000) {
+      const sec = Math.round((t - lastTime) / 1000);
+      out.push({ km: Math.round((lastMark + 1000) / 1000), sec });
+      lastMark += 1000;
+      lastTime = t;
+    }
+  }
+  return out;
+};
+
+function Metric({label, value}:{label:string, value:string}){
+  return (
+    <div className="p-3 rounded-xl bg-card border border-border text-center">
+      <div className="text-xs text-muted">{label}</div>
+      <div className="text-xl font-semibold">{value}</div>
+    </div>
+  )
+}
+
+function Progress({label, value}:{label:string, value:number}){
+  return (
+    <div className="p-3 rounded-xl bg-card border border-border col-span-2">
+      <div className="text-xs text-muted mb-1">{label}</div>
+      <div className="w-full bg-border rounded-full h-2.5 overflow-hidden">
+        <div className="bg-primary h-full transition-all duration-500" style={{width: `${value}%`}} />
+      </div>
+      <div className="text-xs mt-1 text-right font-mono">{value}%</div>
+    </div>
+  )
+}
