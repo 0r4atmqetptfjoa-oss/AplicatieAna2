@@ -4,10 +4,21 @@ const GKEY = import.meta.env.VITE_GOOGLE_API_KEY;
 
 type MapsAPI = { kind: "google" | "leaflet" | "none"; api: any };
 
-// Funcție pentru a încărca scriptul Google Maps
+// --- ADAUGAT PENTRU DEBUGGING ---
+// Această funcție va fi apelată automat de scriptul Google Maps dacă există o eroare de autentificare
+(window as any).gm_authFailure = () => {
+  console.error("*******************************************************");
+  console.error("EROARE GOOGLE MAPS: Autentificare eșuată!");
+  console.error("Verifică următoarele:");
+  console.error("1. Cheia API VITE_GOOGLE_API_KEY este corectă în Netlify?");
+  console.error("2. Serviciul 'Maps JavaScript API' este ACTIVAT în Google Cloud?");
+  console.error("3. Nu ai restricții de domeniu (HTTP referrers) care blochează site-ul?");
+  console.error("*******************************************************");
+};
+// --- FINAL ADAUGIRI DEBUGGING ---
+
 async function loadGoogleMaps(): Promise<any> {
   return new Promise((resolve) => {
-    // Verificăm dacă nu a fost deja încărcat
     if ((window as any).google?.maps) return resolve((window as any).google);
 
     const script = document.createElement("script");
@@ -15,26 +26,35 @@ async function loadGoogleMaps(): Promise<any> {
     script.async = true;
     script.defer = true;
     
-    // Google caută această funcție globală după ce se încarcă scriptul
-    (window as any).initMap = () => resolve((window as any).google);
-    script.onload = () => resolve((window as any).google);
-    script.onerror = () => resolve(null); // Returnează null în caz de eroare (ex: cheie API greșită)
+    script.onload = () => {
+        // Verificăm dacă obiectul 'maps' a fost încărcat corect
+        if ((window as any).google && (window as any).google.maps) {
+            console.log("Google Maps script încărcat cu succes.");
+            resolve((window as any).google);
+        } else {
+            console.error("Google Maps script s-a încărcat, dar obiectul 'google.maps' nu este disponibil. Verifică cheia API.");
+            resolve(null);
+        }
+    };
+    
+    script.onerror = (error) => {
+        console.error("Eroare la încărcarea scriptului Google Maps:", error);
+        resolve(null);
+    };
+    
     document.head.appendChild(script);
   });
 }
 
-// Funcția principală care încearcă Google Maps, apoi Leaflet
 export async function loadMaps(pref: "auto" | "google" | "leaflet" = "auto"): Promise<MapsAPI> {
-  // Dacă avem cheie API, încercăm să încărcăm Google Maps
   if (pref === "google" || (pref === "auto" && GKEY)) {
     const api = await loadGoogleMaps();
     if (api) return { kind: "google", api };
   }
   
-  // Dacă Google Maps eșuează sau nu avem cheie, încărcăm Leaflet ca rezervă
+  console.warn("Nu s-a putut încărca Google Maps. Se încarcă harta de rezervă (Leaflet).");
   const api = await loadLeaflet();
   if (api) return { kind: "leaflet", api };
   
-  // Dacă ambele eșuează
   return { kind: "none", api: null };
 }
