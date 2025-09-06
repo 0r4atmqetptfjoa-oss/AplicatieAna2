@@ -1,76 +1,32 @@
 // src/lib/maps.ts
-// Single-key setup: reads API key from Vite env: VITE_API_KEY
-// Exports helpers to load Google Maps JS API safely in PWA.
+import { loadLeaflet } from "./loadLeaflet";
 
-export const MAPS_KEY: string | undefined = import.meta.env.VITE_API_KEY;
+const GKEY = import.meta.env.VITE_GOOGLE_API_KEY;
 
-/** Returns the Maps API key (for Static/Embed/Places requests). */
-export function mapsApiKey(): string {
-  if (!MAPS_KEY) {
-    console.warn("VITE_API_KEY is not set. Maps features may be limited.");
-    return "";
-  }
-  return MAPS_KEY;
-}
+type MapsAPI = { kind: "google" | "leaflet" | "none"; api: any };
 
-/**
- * Dynamically loads Google Maps JavaScript API once and returns the google object.
- * Usage:
- *   const google = await loadGoogleMaps();
- *   const map = new google.maps.Map(el, { center, zoom: 14 });
- */
-export function loadGoogleMaps(params: {
-  libraries?: string[];          // e.g. ['places']
-  language?: string;             // e.g. 'ro'
-  region?: string;               // e.g. 'RO'
-} = {}): Promise<any> {
-  const key = mapsApiKey();
-  if (!key) return Promise.reject(new Error("Missing VITE_API_KEY for Google Maps"));
-
-  if ((window as any)._gmapsReady) {
-    return (window as any)._gmapsReady;
-  }
-
-  (window as any)._gmapsReady = new Promise((resolve, reject) => {
-    // If script already present, hook onload
-    const existing = document.getElementById("google-maps");
-    if (existing) {
-      (existing as HTMLScriptElement).addEventListener("load", () => resolve((window as any).google));
-      (existing as HTMLScriptElement).addEventListener("error", reject);
-      if ((window as any).google?.maps) {
-        resolve((window as any).google);
-      }
-      return;
-    }
-
+async function loadGoogleMaps(): Promise<any> {
+  return new Promise((resolve) => {
+    if ((window as any).google?.maps) return resolve((window as any).google);
     const script = document.createElement("script");
-    script.id = "google-maps";
-    const libs = params.libraries?.length ? `&libraries=${params.libraries.join(",")}` : "";
-    const lang = params.language ? `&language=${params.language}` : "";
-    const region = params.region ? `&region=${params.region}` : "";
-    script.src = `https://maps.googleapis.com/maps/api/js?key=${key}${libs}${lang}${region}`;
+    script.src = `https://maps.googleapis.com/maps/api/js?key=${GKEY}&loading=async`;
     script.async = true;
     script.defer = true;
+    // Google Maps API va căuta o funcție globală numită initMap. O definim temporar.
+    (window as any).initMap = () => resolve((window as any).google);
     script.onload = () => resolve((window as any).google);
-    script.onerror = (e) => reject(e);
+    script.onerror = () => resolve(null);
     document.head.appendChild(script);
   });
-
-  return (window as any)._gmapsReady;
 }
 
-/** Builds a Static Maps image URL (no JS API needed). */
-export function staticMapURL(opts: {
-  center: { lat: number; lng: number };
-  zoom?: number;
-  size?: string; // '600x300'
-  path?: string; // 'color:0x4285F4FF|weight:4|lat,lng|lat,lng'
-  markers?: string; // 'color:red|label:S|lat,lng'
-}): string {
-  const key = mapsApiKey();
-  const zoom = opts.zoom ?? 14;
-  const size = opts.size ?? "640x340";
-  const path = opts.path ? `&path=${encodeURIComponent(opts.path)}` : "";
-  const markers = opts.markers ? `&markers=${encodeURIComponent(opts.markers)}` : "";
-  return `https://maps.googleapis.com/maps/api/staticmap?center=${opts.center.lat},${opts.center.lng}&zoom=${zoom}&size=${size}${path}${markers}&key=${key}`;
+// AM ADĂUGAT 'export' AICI
+export async function loadMaps(pref: "auto" | "google" | "leaflet" = "auto"): Promise<MapsAPI> {
+  if (pref === "google" || (pref === "auto" && GKEY)) {
+    const api = await loadGoogleMaps();
+    if (api) return { kind: "google", api };
+  }
+  const api = await loadLeaflet();
+  if (api) return { kind: "leaflet", api };
+  return { kind: "none", api: null };
 }
