@@ -1,285 +1,185 @@
-// src/pages/Fitness.tsx (v3.2 - Corecție pentru activarea butonului Start)
-import React, { useEffect, useMemo, useRef, useState } from "react"
-import { loadMaps } from "@/lib/maps"
-import { Pt, computeDistance, formatDuration, formatPace, toGPX } from "@/lib/geo"
-import { speak, setTtsEnabled } from "@/lib/tts"
-import { loadRuns, saveRun, clearRuns, RunSession } from "@/lib/storage"
-import { Pause, Play, MapPin, StopCircle, Layers, BarChart3, Navigation } from "lucide-react"
-import { Chart } from 'react-google-charts';
+// src/pages/Fitness.tsx (v5.0 - Final, cu logică duală Google Maps / Leaflet)
+import React, { useEffect, useMemo, useRef, useState } from "react";
+import { loadMaps } from "@/lib/maps";
+import { Pt, computeDistance, formatDuration, formatPace } from "@/lib/geo";
+import { speak, setTtsEnabled } from "@/lib/tts";
+import { loadRuns, saveRun, clearRuns, RunSession } from "@/lib/storage";
+import { Pause, Play, MapPin, StopCircle } from "lucide-react";
 
-const GPS_ACCURACY_THRESHOLD = 35; 
-const MIN_DISTANCE_THRESHOLD = 5; 
+const GPS_ACCURACY_THRESHOLD = 35;
+const MIN_DISTANCE_THRESHOLD = 5;
 
-type GpsStatus = "strong" | "medium" | "weak" | "off";
+type GpsStatus = "puternic" | "mediu" | "slab" | "inactiv";
 type RunState = "idle" | "running" | "paused";
+type MapKind = "google" | "leaflet" | "none";
 
 const GMAP_STYLES: Record<string, any[]> = {
   dark: [ { elementType: "geometry", stylers: [{color: "#1f2937"}] }, { elementType: "labels.text.fill", stylers: [{color: "#e5e7eb"}] }, { elementType: "labels.text.stroke", stylers: [{color: "#111827"}] }, { featureType: "road", elementType: "geometry", stylers: [{color: "#374151"}] }, { featureType: "water", elementType: "geometry", stylers: [{color: "#0ea5e9"}] }, { featureType: "poi.park", elementType: "geometry", stylers: [{color: "#064e3b"}] }, ],
   army: [ { elementType: "geometry", stylers: [{color: "#2b3a20"}] }, { elementType: "labels.text.fill", stylers: [{color: "#fef3c7"}] }, { elementType: "labels.text.stroke", stylers: [{color: "#1a2314"}] }, { featureType: "road", elementType: "geometry", stylers: [{color: "#5b7a3a"}] }, { featureType: "water", elementType: "geometry", stylers: [{color: "#264653"}] }, { featureType: "poi.park", elementType: "geometry", stylers: [{color: "#3a5a40"}] }, ]
 };
 
-export default function Fitness(){
+export default function Fitness() {
   const [runState, setRunState] = useState<RunState>("idle");
   const [time, setTime] = useState(0);
   const [points, setPoints] = useState<Pt[]>([]);
   const [error, setError] = useState<string>("");
-  const [gpsStatus, setGpsStatus] = useState<GpsStatus>("off");
-  const [mapsKind, setMapsKind] = useState<"google" | "leaflet" | "none">("none");
+  const [gpsStatus, setGpsStatus] = useState<GpsStatus>("inactiv");
   const [isMapReady, setIsMapReady] = useState(false);
+  const [mapKind, setMapKind] = useState<MapKind>("none");
   const [styleKey, setStyleKey] = useState<"dark" | "army">("dark");
-  const [showHeatmap, setShowHeatmap] = useState(false);
-  const [elevationData, setElevationData] = useState<any[]>([]);
 
   const runs = loadRuns();
   const [tts, setTts] = useState(true);
 
   const watchId = useRef<number | null>(null);
-  const mapRef = useRef<any>(null);
-  const polyRef = useRef<any>(null);
-  const markerRef = useRef<any>(null);
-  const heatmapRef = useRef<any>(null);
-  const directionsRendererRef = useRef<any>(null);
+  const mapApiRef = useRef<any>({});
   const lastHalfKm = useRef(0);
   const startTs = useRef<number>(0);
-  
+
   const distance = useMemo(() => computeDistance(points), [points]);
-  const paceAvg = useMemo(() => distance > 0 ? time / (distance / 1000) : Infinity, [time, distance]);
+  const paceAvg = useMemo(() => (distance > 0 ? time / (distance / 1000) : Infinity), [time, distance]);
 
-  useEffect(() => {
-    let interval: any = null;
-    if (runState === "running") {
-      interval = setInterval(() => setTime(t => t + 1), 1000);
-    }
-    return () => clearInterval(interval);
-  }, [runState]);
-
+  // Inițializează harta o singură dată
   useEffect(() => {
     (async () => {
-      const loaded = await loadMaps("auto");
-      if (!loaded.api) {
-        setIsMapReady(false); // Nu avem nicio hartă
-        return;
-      }
-
-      setMapsKind(loaded.kind);
       const el = document.getElementById("map");
-      if (!el || mapRef.current) return;
+      if (!el || (el as any)._map_init) return;
+      (el as any)._map_init = true;
+
+      const loaded = await loadMaps();
+      setMapKind(loaded.kind);
 
       if (loaded.kind === "google") {
         const g = loaded.api;
         const map = new g.maps.Map(el, {
           center: {lat: 44.4268, lng: 26.1025}, zoom: 15, disableDefaultUI: true, zoomControl: true,
-          mapTypeControl: false, streetViewControl: false, styles: GMAP_STYLES[styleKey]
+          styles: GMAP_STYLES[styleKey]
         });
-        const poly = new g.maps.Polyline({ path: [], strokeColor: "#3b82f6", strokeOpacity: 0.9, strokeWeight: 6 });
-        poly.setMap(map);
+        const polyline = new g.maps.Polyline({ path: [], strokeColor: "#3b82f6", strokeOpacity: 0.9, strokeWeight: 6, map });
         const marker = new g.maps.Marker({
           position: {lat: 44.4268, lng: 26.1025}, map,
           icon: { path: g.maps.SymbolPath.CIRCLE, scale: 8, fillColor: "#1d4ed8", fillOpacity: 1, strokeColor: "white", strokeWeight: 3 }
         });
-        mapRef.current = map; polyRef.current = poly; markerRef.current = marker;
+        mapApiRef.current = { g, map, marker, polyline };
       } else if (loaded.kind === "leaflet") {
         const L = loaded.api;
         const map = L.map(el, { zoomControl: false }).setView([44.4268, 26.1025], 13);
-        L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-          maxZoom: 19, attribution: '&copy; OpenStreetMap',
-        }).addTo(map);
-        const poly = L.polyline([], { color: "#0ea5e9", weight: 5, opacity: 0.8 }).addTo(map);
-        const marker = L.circleMarker([44.4268, 26.1025], { radius: 7, color: "#fff", weight: 2, fillColor: "#22c55e", fillOpacity: 1 }).addTo(map);
-        mapRef.current = map; polyRef.current = poly; markerRef.current = marker;
+        L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", { attribution: '&copy; OpenStreetMap' }).addTo(map);
+        const polyline = L.polyline([], { color: "#3b82f6", weight: 6, opacity: 0.8 }).addTo(map);
+        const marker = L.circleMarker([44.4268, 26.1025], { radius: 8, color: "#ffffff", weight: 3, fillColor: "#2563eb", fillOpacity: 1 }).addTo(map);
+        mapApiRef.current = { L, map, marker, polyline };
       }
-      
-      // --- CORECȚIE AICI: Setăm isMapReady indiferent de tipul hărții ---
       setIsMapReady(true);
     })();
   }, []);
-
+  
+  // Cronometru
   useEffect(() => {
-    if (mapRef.current && mapsKind === 'google') {
-      mapRef.current.setOptions({ styles: GMAP_STYLES[styleKey] });
+    let interval: any = null;
+    if (runState === "running") interval = setInterval(() => setTime((t) => t + 1), 1000);
+    return () => clearInterval(interval);
+  }, [runState]);
+  
+  // Schimbă stilul hărții Google
+  useEffect(() => {
+    if (mapKind === 'google' && mapApiRef.current.map) {
+      mapApiRef.current.map.setOptions({ styles: GMAP_STYLES[styleKey] });
     }
-  }, [styleKey, mapsKind]);
+  }, [styleKey, mapKind]);
 
   const addPoint = (p: Pt, accuracy: number) => {
-    setGpsStatus(accuracy < 15 ? "strong" : accuracy < 30 ? "medium" : "weak");
+    setGpsStatus(accuracy < 15 ? "puternic" : accuracy < 30 ? "mediu" : "slab");
     if (accuracy > GPS_ACCURACY_THRESHOLD) return;
-
-    setPoints(prev => {
-      if (prev.length > 0 && computeDistance([prev[prev.length - 1], p]) < MIN_DISTANCE_THRESHOLD) {
-        return prev;
-      }
+  
+    setPoints((prev) => {
+      if (prev.length > 0 && computeDistance([prev[prev.length - 1], p]) < MIN_DISTANCE_THRESHOLD) return prev;
       
       const next = [...prev, p];
-      try {
-        if (mapsKind === "google") {
-          const g = (window as any).google;
+      const { map, marker, polyline } = mapApiRef.current;
+      
+      if (mapKind === 'google') {
+          const g = mapApiRef.current.g;
           const latLng = new g.maps.LatLng(p.lat, p.lng);
-          polyRef.current.getPath().push(latLng);
-          markerRef.current.setPosition(latLng);
-        } else if (mapsKind === "leaflet") {
-            const L = (window as any).L;
-            const latLng = L.latLng(p.lat, p.lng);
-            polyRef.current.addLatLng(latLng);
-            markerRef.current.setLatLng(latLng);
-        }
-      } catch {}
-
-      if (tts && next.length > 1 && (computeDistance(next) - lastHalfKm.current >= 500)) {
+          polyline.getPath().push(latLng);
+          marker.setPosition(latLng);
+      } else if (mapKind === 'leaflet') {
+          const L = mapApiRef.current.L;
+          const latLng = L.latLng(p.lat, p.lng);
+          polyline.addLatLng(latLng);
+          marker.setLatLng(latLng);
+      }
+  
+      if (tts && next.length > 1 && computeDistance(next) - lastHalfKm.current >= 500) {
         lastHalfKm.current += 500;
         speak(`Ai trecut de ${(lastHalfKm.current / 1000).toFixed(1)} kilometri`);
       }
       return next;
     });
   };
-  
+
   const startTracking = () => {
-    if (!("geolocation" in navigator)) { setError("Geolocație indisponibilă"); return; }
+    if (!("geolocation" in navigator)) { setError("Geolocația nu este suportată."); return; }
     if (watchId.current != null) return;
     
+    setError("");
     navigator.geolocation.getCurrentPosition(
       (pos) => {
         const { latitude: lat, longitude: lng } = pos.coords;
-        if(mapRef.current) {
-            if (mapsKind === 'google') mapRef.current.setCenter({ lat, lng });
-            else if (mapsKind === 'leaflet') mapRef.current.setView([lat, lng], 17);
-        }
+        const { map } = mapApiRef.current;
+        if (mapKind === 'google') map.setCenter({ lat, lng });
+        else if (mapKind === 'leaflet') map.setView([lat, lng], 17);
         
         watchId.current = navigator.geolocation.watchPosition(
           (pos) => {
-            const { latitude: lat, longitude: lng, accuracy } = pos.coords;
-            if (runState === 'running') {
-              addPoint({ lat, lng, t: Date.now() }, accuracy);
-            }
+            if (runState === "running") addPoint({ lat: pos.coords.latitude, lng: pos.coords.longitude, t: Date.now() }, pos.coords.accuracy);
           },
-          (err) => { setError(err.message); setGpsStatus("off"); },
-          { enableHighAccuracy: true, maximumAge: 5000, timeout: 10000 }
+          (err) => setError(err.message),
+          { enableHighAccuracy: true, timeout: 10000, maximumAge: 5000 }
         );
       },
-      (err) => { setError(err.message); setGpsStatus("off"); },
+      (err) => setError(`Eroare la obținerea locației: ${err.message}`),
       { enableHighAccuracy: true }
     );
   };
 
   const stopTracking = () => {
-    if (watchId.current != null) {
-      navigator.geolocation.clearWatch(watchId.current);
-      watchId.current = null;
-    }
-    setGpsStatus("off");
+    if (watchId.current != null) navigator.geolocation.clearWatch(watchId.current);
+    watchId.current = null;
+    setGpsStatus("inactiv");
   };
-  
+
   const handlePrimaryAction = () => {
     if (runState === "idle") {
-      setTime(0); setPoints([]); lastHalfKm.current = 0; startTs.current = Date.now(); setElevationData([]);
-      polyRef.current?.getPath().clear();
-      heatmapRef.current?.setMap(null);
-      directionsRendererRef.current?.setMap(null);
+      setTime(0); setPoints([]); lastHalfKm.current = 0; startTs.current = Date.now();
+      if(mapKind === 'google') mapApiRef.current.polyline.getPath().clear();
+      else if (mapKind === 'leaflet') mapApiRef.current.polyline.setLatLngs([]);
       setRunState("running");
       startTracking();
-    } else if (runState === "running") {
-      setRunState("paused");
-    } else if (runState === "paused") {
-      setRunState("running");
-    }
+    } else if (runState === "running") setRunState("paused");
+    else if (runState === "paused") setRunState("running");
   };
-  
+
   const handleStop = () => {
     if (points.length >= 2) {
-      const run: RunSession = {
-        id: String(Date.now()), startedAt: startTs.current || Date.now(),
-        durationSec: time, distanceM: distance, paceAvg: paceAvg,
-        splits: computeSplits(points, startTs.current)
-      };
-      saveRun(run);
-      generateElevationProfile(points);
+      saveRun({ id: String(Date.now()), startedAt: startTs.current || Date.now(),
+        durationSec: time, distanceM: distance, paceAvg: paceAvg, splits: [] });
     }
     setRunState("idle");
     stopTracking();
   };
 
-  const generateElevationProfile = (runPoints: Pt[]) => {
-    if (mapsKind !== 'google' || runPoints.length < 2) return;
-    const g = (window as any).google;
-    const elevator = new g.maps.ElevationService();
-    const path = runPoints.map(p => ({ lat: p.lat, lng: p.lng }));
-
-    elevator.getElevationForPath({ path, samples: 100 })
-      .then(({ results }: any) => {
-        if (results) {
-          const data = [["Distanță", "Elevație"]];
-          let currentDist = 0;
-          for(let i=0; i< results.length; i++) {
-            if(i > 0) currentDist += computeDistance([runPoints[i-1], runPoints[i]]);
-            data.push([currentDist / 1000, results[i].elevation]);
-          }
-          setElevationData(data);
-        }
-      }).catch((e:any) => console.error("Eroare la calcularea elevației:", e));
-  };
-  
-  const toggleHeatmap = () => {
-    if (mapsKind !== 'google' || points.length < 2) return;
-    const g = (window as any).google;
-    
-    if (!showHeatmap) {
-      const heatmapData = points.map((p, i) => {
-        let weight = 0.5;
-        if(i > 0) {
-            const segmentDist = computeDistance([points[i-1], p]);
-            const segmentTime = (p.t! - points[i-1].t!) / 1000;
-            const speed = segmentDist / segmentTime;
-            if(speed > 4) weight = 1.0; else if(speed < 2.5) weight = 0.2;
-        }
-        return { location: new g.maps.LatLng(p.lat, p.lng), weight };
-      });
-      const heatmap = new g.maps.visualization.HeatmapLayer({
-        data: heatmapData, radius: 20,
-        gradient: ["rgba(0, 255, 255, 0)", "rgba(0, 255, 255, 1)", "rgba(0, 191, 255, 1)", "rgba(0, 127, 255, 1)", "rgba(0, 63, 255, 1)", "rgba(0, 0, 255, 1)", "rgba(0, 0, 223, 1)", "rgba(0, 0, 191, 1)", "rgba(0, 0, 159, 1)", "rgba(0, 0, 127, 1)", "rgba(63, 0, 91, 1)", "rgba(127, 0, 63, 1)", "rgba(191, 0, 31, 1)", "rgba(255, 0, 0, 1)"]
-      });
-      heatmap.setMap(mapRef.current);
-      heatmapRef.current = heatmap;
-    } else {
-      heatmapRef.current?.setMap(null);
-    }
-    setShowHeatmap(!showHeatmap);
-  };
-  
-  const showRouteToStart = () => {
-    if(mapsKind !== 'google' || points.length < 1) return;
-    const g = (window as any).google;
-    const directionsService = new g.maps.DirectionsService();
-    
-    if(!directionsRendererRef.current) {
-        directionsRendererRef.current = new g.maps.DirectionsRenderer({
-            suppressMarkers: true,
-            polylineOptions: { strokeColor: "#10b981", strokeWeight: 5, strokeOpacity: 0.8 }
-        });
-    }
-    directionsRendererRef.current.setMap(mapRef.current);
-    
-    directionsService.route({
-        origin: { lat: points[points.length-1].lat, lng: points[points.length-1].lng },
-        destination: { lat: points[0].lat, lng: points[0].lng },
-        travelMode: 'WALKING'
-    }).then((response: any) => {
-        directionsRendererRef.current.setDirections(response);
-    });
-  }
-
   return (
     <main className="p-4 space-y-4">
       <section className="card space-y-2">
         <div className="h2">Pregătire Fizică 2km</div>
-        <div className="text-sm text-muted">Modul avansat cu Google Maps, Heatmap viteză și Profil elevație.</div>
+        <div className="text-sm text-muted">Antrenament cu GPS. Tip hartă: <span className="font-semibold capitalize">{mapKind}</span></div>
       </section>
-
       <section className="card grid grid-cols-2 gap-4">
         <Metric label="Timp" value={formatDuration(time)} />
         <Metric label="Distanță" value={`${(distance / 1000).toFixed(2)} km`} />
         <Metric label="Ritm Mediu" value={formatPace(paceAvg)} />
-        <Progress label="Progres 2 km" value={Math.min(100, Math.round((distance/2000)*100))} />
+        <Progress label="Progres 2 km" value={Math.min(100, Math.round((distance / 2000) * 100))} />
       </section>
-
       <section className="card flex items-center gap-3 flex-wrap justify-center">
         {runState !== "idle" && (
           <button className="btn btn-ghost text-red-500 flex items-center gap-2" onClick={handleStop}>
@@ -287,23 +187,17 @@ export default function Fitness(){
           </button>
         )}
         <button className="btn btn-primary flex items-center gap-2" onClick={handlePrimaryAction} disabled={!isMapReady}>
-          {runState === 'idle' && <><Play size={20}/> Start Cursă</>}
-          {runState === 'running' && <><Pause size={20}/> Pauză</>}
-          {runState === 'paused' && <><Play size={20}/> Reluare</>}
+          {runState === 'idle' && <><Play size={20} /> Start Cursă</>}
+          {runState === 'running' && <><Pause size={20} /> Pauză</>}
+          {runState === 'paused' && <><Play size={20} /> Reluare</>}
         </button>
       </section>
-      
       <section className="card p-0 overflow-hidden relative">
-        <div id="map" style={{height: 380, width: "100%"}} />
+        <div id="map" style={{ height: 380, width: "100%" }} />
         <div className="absolute top-2 left-2 bg-card/80 backdrop-blur-sm rounded-lg p-2 flex items-center gap-2 text-sm shadow-lg">
-          <GpsIndicator status={gpsStatus} />
-          <span>GPS: {gpsStatus}</span>
+          <GpsIndicator status={gpsStatus} /> <span>GPS: {gpsStatus}</span>
         </div>
-        <div className="absolute bottom-2 left-2 flex flex-col gap-2">
-            <button title="Arată/Ascunde Heatmap Viteză" onClick={toggleHeatmap} disabled={runState !== 'idle' || points.length < 2} className="btn btn-ghost p-2 h-10 w-10 disabled:opacity-50 bg-card/80 backdrop-blur-sm shadow-lg"><Layers/></button>
-            <button title="Arată ruta spre start" onClick={showRouteToStart} disabled={points.length < 2} className="btn btn-ghost p-2 h-10 w-10 disabled:opacity-50 bg-card/80 backdrop-blur-sm shadow-lg"><Navigation/></button>
-        </div>
-        {mapsKind === 'google' && (
+        {mapKind === 'google' && (
           <div className="absolute top-2 right-2">
             <select className="input text-xs shadow-lg" value={styleKey} onChange={e => setStyleKey(e.target.value as any)}>
               <option value="dark">Stil: Noapte</option>
@@ -311,32 +205,12 @@ export default function Fitness(){
             </select>
           </div>
         )}
+        {error && <div className="absolute bottom-2 left-2 right-2 text-center text-xs bg-red-500/80 text-white p-1 rounded">{error}</div>}
       </section>
-
-      {elevationData.length > 0 && (
-          <section className="card">
-              <div className="h3 mb-2 flex items-center gap-2"><BarChart3 size={20}/> Profil Elevație</div>
-              <Chart
-                  chartType="LineChart"
-                  data={elevationData}
-                  width="100%"
-                  height="200px"
-                  options={{
-                      legend: 'none',
-                      hAxis: { title: 'Distanță (km)', textStyle: { color: 'var(--muted)' }, titleTextStyle: { color: 'var(--muted)' } },
-                      vAxis: { title: 'Elevație (m)', textStyle: { color: 'var(--muted)' }, titleTextStyle: { color: 'var(--muted)' } },
-                      colors: ['var(--primary)'],
-                      backgroundColor: 'transparent',
-                      chartArea: { width: '85%', height: '70%' }
-                  }}
-              />
-          </section>
-      )}
-      
       <section className="card">
         <div className="h3 mb-2 flex items-center justify-between">
           <span>Istoric antrenamente</span>
-          {runs.length > 0 && <button className="btn btn-ghost btn-sm" onClick={()=>{ clearRuns(); window.location.reload(); }}>Șterge istoric</button>}
+          {runs.length > 0 && <button className="btn btn-ghost btn-sm" onClick={() => { clearRuns(); window.location.reload(); }}>Șterge istoric</button>}
         </div>
         {runs.length === 0 ? <div className="text-sm text-muted">Nu ai sesiuni salvate.</div> :
           <ul className="text-sm space-y-2">
@@ -356,50 +230,12 @@ export default function Fitness(){
 }
 
 function GpsIndicator({ status }: { status: GpsStatus }) {
-  const color = {
-    strong: "text-green-500",
-    medium: "text-yellow-500",
-    weak: "text-red-500",
-    off: "text-gray-500",
-  }[status];
-  return <MapPin className={color} size={20} />;
+  const color = { puternic: "text-green-500", mediu: "text-yellow-500", slab: "text-red-500", inactiv: "text-gray-500" }[status];
+  return <MapPin className={`${color} transition-colors`} size={20} />;
 }
-
-const computeSplits = (points: Pt[], startTs: number): { km: number; sec: number }[] => {
-  if (points.length < 2) return [];
-  let out: { km: number; sec: number }[] = [];
-  let acc = 0, lastMark = 0, lastTime = startTs || points[0].t || Date.now();
-  for (let i = 1; i < points.length; i++) {
-    const d = computeDistance([points[i - 1], points[i]]);
-    acc += d;
-    const t = (points[i].t || Date.now());
-    if (acc - lastMark >= 1000) {
-      const sec = Math.round((t - lastTime) / 1000);
-      out.push({ km: Math.round((lastMark + 1000) / 1000), sec });
-      lastMark += 1000;
-      lastTime = t;
-    }
-  }
-  return out;
-};
-
-function Metric({label, value}:{label:string, value:string}){
-  return (
-    <div className="p-3 rounded-xl bg-card border border-border text-center">
-      <div className="text-xs text-muted">{label}</div>
-      <div className="text-xl font-semibold">{value}</div>
-    </div>
-  )
+function Metric({ label, value }: { label: string; value: string }) {
+  return ( <div className="p-3 rounded-xl bg-card border border-border text-center"> <div className="text-xs text-muted">{label}</div> <div className="text-xl font-semibold">{value}</div> </div> );
 }
-
-function Progress({label, value}:{label:string, value:number}){
-  return (
-    <div className="p-3 rounded-xl bg-card border border-border col-span-2">
-      <div className="text-xs text-muted mb-1">{label}</div>
-      <div className="w-full bg-border rounded-full h-2.5 overflow-hidden">
-        <div className="bg-primary h-full transition-all duration-500" style={{width: `${value}%`}} />
-      </div>
-      <div className="text-xs mt-1 text-right font-mono">{value}%</div>
-    </div>
-  )
+function Progress({ label, value }: { label: string; value: number }) {
+  return ( <div className="p-3 rounded-xl bg-card border border-border col-span-2"> <div className="text-xs text-muted mb-1">{label}</div> <div className="w-full bg-border rounded-full h-2.5 overflow-hidden"> <div className="bg-primary h-full transition-all duration-500" style={{ width: `${value}%` }} /> </div> <div className="text-xs mt-1 text-right font-mono">{value}%</div> </div> );
 }
