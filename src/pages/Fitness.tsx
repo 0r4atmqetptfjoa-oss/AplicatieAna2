@@ -1,8 +1,7 @@
 // src/pages/Fitness.tsx
 import { useEffect, useMemo, useRef, useState } from "react"
 import h, { haptics as hNamed } from "@/lib/haptics"
-// Am eliminat temporar importul pentru loadMaps pentru a folosi doar Leaflet
-import { loadLeaflet } from "@/lib/loadLeaflet";
+import { loadMaps } from "@/lib/maps"
 import { Pt, computeDistance, formatDuration, formatPace, toGPX } from "@/lib/geo"
 import { speak, setTtsEnabled, ttsEnabled } from "@/lib/tts"
 import { loadRuns, saveRun, clearRuns, RunSession } from "@/lib/storage"
@@ -11,8 +10,26 @@ const vib = () => { try { (h as any)?.small?.() ?? (hNamed as any)?.small?.() } 
 
 type MapsKind = "google"|"leaflet"|"none"
 
-// Stilurile GMAP nu mai sunt necesare momentan
-// const GMAP_STYLES: Record<string, any[]> = { ... }
+// Simple dark + army styles for Google Maps
+const GMAP_STYLES: Record<string, any[]> = {
+  default: [],
+  dark: [
+    { elementType: "geometry", stylers: [{color: "#1f2937"}] },
+    { elementType: "labels.text.fill", stylers: [{color: "#e5e7eb"}] },
+    { elementType: "labels.text.stroke", stylers: [{color: "#111827"}] },
+    { featureType: "road", elementType: "geometry", stylers: [{color: "#374151"}] },
+    { featureType: "water", elementType: "geometry", stylers: [{color: "#0ea5e9"}] },
+    { featureType: "poi.park", elementType: "geometry", stylers: [{color: "#064e3b"}] },
+  ],
+  army: [
+    { elementType: "geometry", stylers: [{color: "#2b3a20"}] },
+    { elementType: "labels.text.fill", stylers: [{color: "#fef3c7"}] },
+    { elementType: "labels.text.stroke", stylers: [{color: "#1a2314"}] },
+    { featureType: "road", elementType: "geometry", stylers: [{color: "#5b7a3a"}] },
+    { featureType: "water", elementType: "geometry", stylers: [{color: "#264653"}] },
+    { featureType: "poi.park", elementType: "geometry", stylers: [{color: "#3a5a40"}] },
+  ]
+}
 
 export default function Fitness(){
   const [running, setRunning] = useState(false)
@@ -43,13 +60,24 @@ export default function Fitness(){
 
   useEffect(()=>{
     (async ()=>{
-      // Am modificat logica pentru a încărca direct Leaflet, ocolind Google Maps
-      const L = await loadLeaflet();
-      if (L) {
-        setMapsKind("leaflet");
+      const loaded = await loadMaps("auto")
+      setMapsKind(loaded.kind)
+      if (loaded.kind === "google"){
+        const g = loaded.api
+        const map = new g.maps.Map(document.getElementById("map")!, {
+          center: {lat:44.4268, lng:26.1025},
+          zoom: 14,
+          disableDefaultUI: true,
+          styles: GMAP_STYLES[styleKey]
+        })
+        const poly = new g.maps.Polyline({ path: [], strokeColor:"#0ea5e9", strokeWeight:4 })
+        poly.setMap(map)
+        const marker = new g.maps.Marker({ position:{lat:44.4268,lng:26.1025}, map })
+        mapRef.current = map; polyRef.current = poly; markerRef.current = marker
+      } else if (loaded.kind === "leaflet"){
+        const L = loaded.api
         const el = document.getElementById("map")
-        if(!el || mapRef.current) return // Verificăm dacă harta a fost deja inițializată
-        
+        if(!el) return
         const map = L.map(el).setView([44.4268, 26.1025], 13)
         L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
           maxZoom: 19, attribution: '&copy; OpenStreetMap',
@@ -57,17 +85,23 @@ export default function Fitness(){
         const poly = L.polyline([], { color: "#0ea5e9", weight: 4 }).addTo(map)
         const marker = L.circleMarker([44.4268, 26.1025], { radius: 6, color: "#22c55e", weight: 3 }).addTo(map)
         mapRef.current = map; polyRef.current = poly; markerRef.current = marker
-      } else {
-        setMapsKind("none");
       }
     })()
-  }, []) // Dependința de styleKey a fost eliminată deoarece nu se mai aplică la Leaflet
+  }, [styleKey])
 
   const addPoint = (p: Pt) => {
     setPoints(prev => {
       const next = [...prev, p]
       try {
-        if (mapsKind === "leaflet"){
+        if (mapsKind === "google"){
+          const g = (window as any).google
+          if (g && polyRef.current){
+            const path = polyRef.current.getPath()
+            path.push(new g.maps.LatLng(p.lat, p.lng))
+            markerRef.current?.setPosition({lat:p.lat, lng:p.lng})
+            if (next.length === 1) mapRef.current?.setCenter({lat:p.lat, lng:p.lng})
+          }
+        } else if (mapsKind === "leaflet"){
           const L = (window as any).L
           if (L && polyRef.current){
             polyRef.current.addLatLng(L.latLng(p.lat, p.lng))
@@ -84,8 +118,7 @@ export default function Fitness(){
       return next
     })
   }
-  
-  // Restul funcțiilor (startRun, stopRun, etc.) rămân exact la fel
+
   const startRun = () => { vib(); setRunning(true); setTime(0); setPoints([]); lastHalfKm.current = 0; startTs.current = Date.now() }
   const stopRun = () => {
     vib(); setRunning(false);
@@ -162,7 +195,7 @@ export default function Fitness(){
     <main className="p-4 space-y-4">
       <section className="card space-y-2">
         <div className="h2">Țintă: 2 km sub 10:00</div>
-        <div className="text-sm text-muted">Cronometru + GPS + hartă OSM. Audio cues la fiecare 0.5 km.</div>
+        <div className="text-sm text-muted">Cronometru + GPS + hartă Google (dacă ai cheie în <code>VITE_GOOGLE_API_KEY</code>) sau OSM fallback. Audio cues la fiecare 0.5 km.</div>
       </section>
 
       <section className="card grid grid-cols-2 gap-4">
@@ -187,16 +220,21 @@ export default function Fitness(){
           <label className="flex items-center gap-1">
             <input type="checkbox" checked={tts} onChange={e=>setTts(e.target.checked)} /> Audio
           </label>
-           {/* Meniul de stiluri pentru hartă a fost eliminat temporar */}
+          <select className="input" value={styleKey} onChange={e=>setStyleKey(e.target.value as any)}>
+            <option value="default">Map: Default</option>
+            <option value="dark">Map: Dark</option>
+            <option value="army">Map: Army</option>
+          </select>
           <span className="opacity-60">({mapsKind})</span>
         </div>
       </section>
 
       <section className="card p-0 overflow-hidden">
         <div id="map" style={{height: 360, width: "100%"}} />
-        {mapsKind==="none" && <div className="p-3 text-sm text-red-500">Nu s-a putut încărca harta.</div>}
+        {mapsKind==="none" && <div className="p-3 text-sm text-red-500">Nu s-a putut încărca nici Google Maps, nici OSM.</div>}
       </section>
-      
+
+      {/* Splits and history */}
       <section className="card">
         <div className="h3 mb-2">Split-uri</div>
         <Splits points={points} startTs={startTs.current} />
@@ -226,7 +264,7 @@ export default function Fitness(){
     </main>
   )
 }
-// Restul componentelor (computeSplits, Metric, Progress, Splits) rămân exact la fel
+
 function computeSplits(points: Pt[], startTs: number): {km:number; sec:number}[]{
   if(points.length<2) return []
   let out: {km:number; sec:number}[] = []
