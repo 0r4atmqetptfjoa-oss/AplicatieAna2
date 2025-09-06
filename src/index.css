@@ -2,40 +2,70 @@
 @tailwind components;
 @tailwind utilities;
 
+/* NEW PROFESSIONAL THEME by Gemini
+  Paletă de culori modernă, cu contrast ridicat, pentru lizibilitate maximă.
+*/
+
 :root {
   --scale: 1;
-  --bg: #f0f2f5; /* bg-gray-100 */
-  --card: #ffffff;
-  --text: #1f2937; /* bg-gray-800 */
-  --muted: #6b7280; /* bg-gray-500 */
-  --primary: #2563eb; /* blue-600 */
-  --accent: #16a34a; /* green-600 */
-  --border: #e5e7eb; /* bg-gray-200 */
+  /* --- TEMA DE ZI (LIGHT) --- */
+  --bg: #f8f9fa;       /* Un gri foarte deschis, odihnitor pentru ochi */
+  --card: #ffffff;     /* Carduri albe, curate */
+  --text: #212529;     /* Text principal - Negru intens, dar nu complet negru */
+  --muted: #6c757d;    /* Text secundar - Gri pentru contrast echilibrat */
+  --primary: #007bff;   /* Albastru vibrant pentru elementele principale */
+  --accent: #28a745;   /* Verde pentru succes și accente */
+  --border: #dee2e6;   /* O bordură subtilă */
 }
 
-/* --- TEMA NIGHT ÎMBUNĂTĂȚITĂ --- */
 [data-theme='dark'] {
-  --bg: #111827; /* bg-gray-900 */
-  --card: #1f2937; /* bg-gray-800 */
-  --text: #ffffff; /* Text principal - Alb pur pentru contrast maxim */
-  --muted: #9ca3af; /* Text secundar - Gri (gray-400), mult mai luminos */
-  --primary: #facc15; /* yellow-400 */
-  --accent: #4ade80; /* green-400 */
-  --border: #374151; /* bg-gray-700 */
+  /* --- TEMA DE NOAPTE (DARK) --- */
+  --bg: #121212;       /* Un negru profund, standardul pentru teme dark */
+  --card: #1e1e1e;     /* Carduri care ies subtil în evidență */
+  --text: #e8eaed;     /* Text principal - Alb-gri, ușor de citit */
+  --muted: #9e9e9e;    /* Text secundar - Gri, cu contrast bun */
+  --primary: #8ab4f8;   /* Albastru deschis, optimizat pentru fundal întunecat */
+  --accent: #81c995;   /* Verde deschis pentru accente */
+  --border: #3c4043;   /* Bordură subtilă pentru modul dark */
 }
 
-/* --- TEMA ARMY ÎMBUNĂTĂȚITĂ --- */
-[data-theme='army'] {
-  --bg: #1c1f1a;
-  --card: #2a2e29;
-  --text: #f0fff0; /* Text principal - Honeydew (alb-verzui), foarte luminos */
-  --muted: #a9b4a9; /* Text secundar - Gri-verzui, mult mai lizibil */
-  --primary: #9acd32; /* yellowgreen */
-  --accent: #6ee7b7; /* aquamarine */
-  --border: #41463e;
+/* Tranziție fluidă la schimbarea temei */
+*, ::before, ::after {
+  transition: background-color 0.3s ease, color 0.2s ease, border-color 0.3s ease;
 }
 
-/* Stiluri de bază, poți adăuga și altele aici */
+/* Stiluri de bază pentru a asigura consistența */
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.card {
+  @apply bg-card border border-border rounded-2xl p-4;
+}
+
+.btn {
+  @apply px-4 py-2 rounded-lg font-semibold transition-opacity duration-200;
+}
+.btn:disabled {
+  @apply opacity-50 cursor-not-allowed;
+}
+
+.btn-primary {
+  @apply bg-primary text-white;
+}
+.btn-primary:hover {
+  @apply opacity-90;
+}
+
+.btn-ghost {
+  @apply bg-transparent border border-border text-text;
+}
+.btn-ghost:hover {
+  @apply bg-white/10;
+}
+
 .input {
   @apply bg-card border border-border rounded-lg px-3 py-1.5 text-sm;
 }

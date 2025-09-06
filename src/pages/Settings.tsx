@@ -20,18 +20,19 @@ async function loadCounts(): Promise<Counts>{
   }catch{ return { legislation:0, logistics:0, psychology:0, englishTests:0 } }
 }
 
+// --- MODIFICARE AICI: Am simplificat lista de teme ---
 const THEMES = [
-  { id:'system', label:'System' },
   { id:'light', label:'Day' },
   { id:'dark', label:'Night' },
-  { id:'army', label:'Army' },
 ] as const
 
 export default function Settings(){
   const [counts, setCounts] = useState<Counts>({legislation:0, logistics:0, psychology:0, englishTests:0})
   useEffect(()=>{ loadCounts().then(setCounts) }, [])
 
+  // Asigurăm că tema implicită este 'light' dacă nu e setată
   const { theme, setTheme, scale, setScale, haptics, setHaptics } = useStore()
+  const currentTheme = theme === 'army' || theme === 'system' ? 'light' : theme;
 
   return (
     <div className="p-4 space-y-4">
@@ -41,12 +42,11 @@ export default function Settings(){
           {THEMES.map(t => (
             <button key={t.id}
               onClick={()=> setTheme(t.id)}
-              className={`btn ${theme === t.id ? 'btn-primary' : 'btn-ghost'}`}>
+              className={`btn ${currentTheme === t.id ? 'btn-primary' : 'btn-ghost'}`}>
               {t.label}
             </button>
           ))}
         </div>
-        <div className="text-xs text-muted mt-2">Tema 'System' se adaptează automat la setările dispozitivului.</div>
       </section>
 
       <section className="card">
