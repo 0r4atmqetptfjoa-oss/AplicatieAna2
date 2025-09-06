@@ -13,50 +13,29 @@
   --border: #e5e7eb; /* bg-gray-200 */
 }
 
+/* --- TEMA NIGHT ÎMBUNĂTĂȚITĂ --- */
 [data-theme='dark'] {
   --bg: #111827; /* bg-gray-900 */
   --card: #1f2937; /* bg-gray-800 */
-  /* --- MODIFICĂRI AICI --- */
-  --text: #f9fafb; /* Text principal - Alb (gray-50), mai lizibil */
-  --muted: #9ca3af; /* Text secundar - Gri (gray-400), mai luminos */
-  /* --- FINAL MODIFICĂRI --- */
+  --text: #ffffff; /* Text principal - Alb pur pentru contrast maxim */
+  --muted: #9ca3af; /* Text secundar - Gri (gray-400), mult mai luminos */
   --primary: #facc15; /* yellow-400 */
   --accent: #4ade80; /* green-400 */
   --border: #374151; /* bg-gray-700 */
 }
 
+/* --- TEMA ARMY ÎMBUNĂTĂȚITĂ --- */
 [data-theme='army'] {
   --bg: #1c1f1a;
   --card: #2a2e29;
-  --text: #e1e3de;
-  --muted: #8a9187;
+  --text: #f0fff0; /* Text principal - Honeydew (alb-verzui), foarte luminos */
+  --muted: #a9b4a9; /* Text secundar - Gri-verzui, mult mai lizibil */
   --primary: #9acd32; /* yellowgreen */
   --accent: #6ee7b7; /* aquamarine */
   --border: #41463e;
 }
 
-/* Stiluri de bază pentru carduri și butoane */
-.card {
-  @apply bg-card border border-border rounded-2xl p-4;
-}
-
-.btn {
-  @apply px-4 py-2 rounded-lg font-semibold transition-opacity duration-200;
-}
-.btn:disabled {
-  @apply opacity-50 cursor-not-allowed;
-}
-
-.btn-primary {
-  @apply bg-primary text-white;
-}
-.btn-primary:hover {
-  @apply opacity-90;
-}
-
-.btn-ghost {
-  @apply bg-transparent border border-border text-text;
-}
-.btn-ghost:hover {
-  @apply bg-white/10;
+/* Stiluri de bază, poți adăuga și altele aici */
+.input {
+  @apply bg-card border border-border rounded-lg px-3 py-1.5 text-sm;
 }

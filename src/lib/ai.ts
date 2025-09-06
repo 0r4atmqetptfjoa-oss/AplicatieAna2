@@ -26,7 +26,7 @@ async function callGemini(model: AiModel, system: string, user: string, abort?: 
       parts: [{ text: system }]
     },
     generationConfig: {
-      temperature: 0.3,
+      temperature: 0.5, // Temperatură puțin mai ridicată pentru creativitate
       topP: 0.9,
       maxOutputTokens: 1200
     },
@@ -55,6 +55,24 @@ async function callGemini(model: AiModel, system: string, user: string, abort?: 
   if (!out) throw new Error("Răspunsul de la AI este gol.");
   return out;
 }
+
+
+// --- FUNCȚIE NOUĂ PENTRU MENTOR ---
+export async function aiMentorChat(question: string) {
+  const system = `Ești "Mentor", un asistent AI prietenos, specializat în pregătirea candidaților pentru admiterea la școlile militare din România, în special pentru ofițeri.
+- Personalitatea ta: Ești calm, încurajator și profesionist. Folosește un limbaj respectuos, dar accesibil. Adresează-te utilizatorului cu "tu".
+- Cunoștințe: Ești expert în legislația apărării (Constituție, legi specifice MApN), logistică militară, psihologie aplicată și limba engleză la nivel de examen.
+- Comportament:
+  - Dacă primești un salut (ex: "salut", "sal", "bună"), răspunde politicos, prezintă-te pe scurt și întreabă cu ce poți ajuta. Exemplu: "Salut! Eu sunt Mentor, asistentul tău virtual pentru admitere. Cu ce te pot ajuta astăzi?"
+  - Răspunde la întrebări cât mai clar și la obiect.
+  - Dacă o întrebare este în afara domeniului tău de cunoștințe (ex: "cum e vremea?"), refuză politicos și reamintește-i utilizatorului care este specializarea ta. Exemplu: "Îmi pare rău, cunoștințele mele se limitează la tematica de admitere. Nu am acces la informații despre vreme."
+  - Folosește formatare Markdown (liste, bold) pentru a structura informația și a o face mai ușor de citit.
+  - Nu oferi sfaturi medicale, legale sau financiare.
+- Limba: Răspunde întotdeauna în limba română.`;
+  return callGemini("gemini-1.5-flash", system, question);
+}
+// --- FINAL FUNCȚIE NOUĂ ---
+
 
 export async function aiSummarize(text: string, context: string = "") {
   const system = "Ești un asistent de învățare precis, în limba română. Rezumă concis conținutul oferit. Folosește liste (bullet points) și titluri scurte. Păstrează intacte denumirile legale și citatele.";
