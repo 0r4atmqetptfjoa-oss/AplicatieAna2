@@ -108,11 +108,22 @@ export default function AllTopics() {
           <div className="text-base font-medium">{play.q.prompt}</div>
           <div className="space-y-2">
             {play.q.options.map((opt:any, i:number)=>{
-              const state = play.sel===null ? "border" : (i===play.q.answerIndex?"border-green-500 bg-green-50":"border-red-500 bg-red-50")
-              const clickable = play.sel===null ? "cursor-pointer hover:bg-muted" : "opacity-75"
+              const isSelected = play.sel !== null;
+              const isCorrect = isSelected && i === play.q.answerIndex;
+              const isWrong = isSelected && i === play.sel && !isCorrect;
+
+              let stateClasses = "border-border bg-card hover:bg-white/10";
+              if (isCorrect) {
+                stateClasses = "border-green-500 bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-200";
+              } else if (isWrong) {
+                stateClasses = "border-red-500 bg-red-100 dark:bg-red-900/30 text-red-800 dark:text-red-200";
+              }
+              
+              const clickable = play.sel === null ? "cursor-pointer" : "opacity-90";
+
               return (
                 <div key={i}
-                    className={`p-3 rounded border ${state} ${clickable}`}
+                    className={`p-3 rounded-lg border ${stateClasses} ${clickable}`}
                     onClick={()=> play.onAnswer(i)}>
                   {opt}
                 </div>
@@ -121,18 +132,18 @@ export default function AllTopics() {
           </div>
 
           {play.sel!==null && (
-            <div className="text-sm p-3 rounded bg-muted">
+            <div className="text-sm p-3 rounded-lg bg-card mt-3">
               <div className="font-semibold mb-1">Explicație:</div>
-              <div>{play.q.explanation || "—"}</div>
+              <div className="text-muted">{play.q.explanation || "—"}</div>
             </div>
           )}
 
-          <div className="flex items-center justify-between">
-            <div className="text-sm">Scor: {play.finalScore} / {play.total}</div>
+          <div className="flex items-center justify-between pt-2">
+            <div className="text-sm font-semibold">Scor: {play.finalScore} / {play.total}</div>
             {!play.finished ? (
-              <button className="btn btn-primary" onClick={play.next}>Întrebarea următoare</button>
+              <button className="btn btn-primary" onClick={play.next} disabled={play.sel === null}>Întrebarea următoare</button>
             ) : (
-              <div className="text-sm font-semibold">Finalizat — Nota: {((play.finalScore/play.total)*10).toFixed(2)}</div>
+              <div className="text-sm font-bold text-primary">Finalizat — Nota: {((play.finalScore/play.total)*10).toFixed(2)}</div>
             )}
           </div>
         </div>

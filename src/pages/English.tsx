@@ -16,16 +16,16 @@ export default function English(){
 
   useEffect(()=>{ setQi(0); setSel(null); setScore(0) }, [ti])
 
-  if(!data) return <div className="p-4 text-sm">Se încarcă testele de engleză…</div>
+  if(!data) return <div className="p-4 text-sm text-muted">Se încarcă testele de engleză…</div>
 
   if(ti===null){
     return (
       <div className="p-4 space-y-3">
         <div className="text-lg font-semibold">Teste doar engleză — 30 teste</div>
-        <div className="grid grid-cols-2 gap-3">
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
           {data.tests.map((_,i)=>(
             <button key={i}
-              className="py-3 px-4 rounded-xl bg-primary/10 hover:bg-primary/20 border border-primary/30"
+              className="py-3 px-4 rounded-xl bg-card hover:bg-white/10 border border-border"
               onClick={()=> setTi(i)}>
               Test {i+1}
             </button>
@@ -50,24 +50,35 @@ export default function English(){
   }
 
   const finished = qi===test.length-1 && sel!==null
-  const grade = ((score + (finished? (sel===q.answerIndex?1:0):0)) / test.length) * 10
+  const grade = ((score + (sel === q.answerIndex ? 1 : 0)) / test.length) * 10
 
   return (
     <div className="p-4 space-y-4">
       <div className="flex items-center justify-between">
-        <button className="text-sm underline" onClick={()=> setTi(null)}>← Înapoi la lista de teste</button>
-        <div className="text-sm">Progres: {qi+1}/{test.length}</div>
+        <button className="text-sm underline text-muted hover:text-text" onClick={()=> setTi(null)}>← Înapoi la lista de teste</button>
+        <div className="text-sm text-muted">Progres: {qi+1}/{test.length}</div>
       </div>
 
-      {q.passage && <div className="p-3 rounded bg-muted whitespace-pre-wrap">{q.passage}</div>}
+      {q.passage && <div className="p-3 rounded-lg bg-card whitespace-pre-wrap text-muted">{q.passage}</div>}
       <div className="text-base font-medium">{q.prompt}</div>
       <div className="space-y-2">
         {q.options.map((opt, i)=>{
-          const state = sel===null ? "border" : (i===q.answerIndex?"border-green-500 bg-green-50":"border-red-500 bg-red-50")
-          const clickable = sel===null ? "cursor-pointer hover:bg-muted" : "opacity-75"
+          const isSelected = sel !== null;
+          const isCorrect = isSelected && i === q.answerIndex;
+          const isWrong = isSelected && i === sel && !isCorrect;
+
+          let stateClasses = "border-border bg-card hover:bg-white/10";
+          if (isCorrect) {
+            stateClasses = "border-green-500 bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-200";
+          } else if (isWrong) {
+            stateClasses = "border-red-500 bg-red-100 dark:bg-red-900/30 text-red-800 dark:text-red-200";
+          }
+          
+          const clickable = sel === null ? "cursor-pointer" : "opacity-90";
+
           return (
             <div key={i}
-                className={`p-3 rounded border ${state} ${clickable}`}
+                className={`p-3 rounded-lg border ${stateClasses} ${clickable}`}
                 onClick={()=> onAnswer(i)}>
               {opt}
             </div>
@@ -75,23 +86,25 @@ export default function English(){
         })}
       </div>
       {sel!==null && (
-        <div className="text-sm p-3 rounded bg-muted">
+        <div className="text-sm p-3 rounded-lg bg-card mt-3">
           <div className="font-semibold mb-1">Explicație:</div>
-          <div>{q.explanation || "—"}</div>
+          <div className="text-muted">{q.explanation || "—"}</div>
           {q.rationales && (
-            <ul className="list-disc ml-5 mt-2">
+            <ul className="list-disc list-inside ml-1 mt-2 space-y-1 text-muted">
               {q.rationales.map((r,ri)=><li key={ri}>{r}</li>)}
             </ul>
           )}
         </div>
       )}
 
-      <div className="flex items-center justify-between">
-        <div className="text-sm">Scor curent: {score}{sel!==null && (q.answerIndex===sel?"+1":"")} / {test.length}</div>
+      <div className="flex items-center justify-between pt-2">
+        <div className="text-sm font-semibold">Scor curent: {sel === null ? score : (q.answerIndex === sel ? score : score -1)} / {test.length}</div>
         {!finished ? (
-          <button className="px-4 py-2 rounded bg-primary text-primary-foreground" onClick={next}>Întrebarea următoare</button>
+          <button className="btn btn-primary" onClick={next} disabled={sel === null}>Întrebarea următoare</button>
         ) : (
-          <div className="text-sm font-semibold">Finalizat — Nota: {grade.toFixed(2)} — {grade >= 6 ? "Admis" : "Respins"}</div>
+          <div className={`text-sm font-bold ${grade >= 6 ? 'text-green-500' : 'text-red-500'}`}>
+            Finalizat — Nota: {grade.toFixed(2)} — {grade >= 6 ? "Admis" : "Respins"}
+          </div>
         )}
       </div>
     </div>

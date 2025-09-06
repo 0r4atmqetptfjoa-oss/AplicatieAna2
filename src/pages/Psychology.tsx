@@ -55,7 +55,7 @@ export default function Psychology(){
       {!started && (
         <div className="card space-y-3">
           <div className="text-lg font-semibold">Evaluare psihologică — configurare</div>
-          <div className="text-sm">Alege tipurile de itemi și numărul de întrebări.</div>
+          <div className="text-sm text-muted">Alege tipurile de itemi și numărul de întrebări.</div>
           <div className="flex flex-wrap gap-2">
             {(['cognitive','personality','situational'] as const).map(cat=>{
               const labels:any = {cognitive:'Aptitudini cognitive', personality:'Chestionar personalitate', situational:'Test situațional (ofițeri)'}
@@ -68,8 +68,8 @@ export default function Psychology(){
               )
             })}
           </div>
-          <label className="text-sm">Întrebări:
-            <input className="ml-2 w-20 border px-2 py-1 rounded" type="number" min={5} max={120}
+          <label className="text-sm flex items-center gap-2">Întrebări:
+            <input className="input w-20" type="number" min={5} max={120}
                    value={length} onChange={e=> setLength(parseInt(e.target.value||'0'))}/>
           </label>
           <div className="flex justify-end">
@@ -85,18 +85,29 @@ export default function Psychology(){
       {started && items.length>0 && (
         <div className="space-y-3">
           <div className="flex items-center justify-between">
-            <button className="text-sm underline" onClick={()=> window.location.reload()}>← Schimbă setările</button>
-            <div className="text-sm">Progres: {qi+1}/{items.length}</div>
+            <button className="text-sm underline text-muted hover:text-text" onClick={()=> window.location.reload()}>← Schimbă setările</button>
+            <div className="text-sm text-muted">Progres: {qi+1}/{items.length}</div>
           </div>
 
           <div className="text-base font-medium">{q.prompt}</div>
           <div className="space-y-2">
             {q.options.map((opt:any, i:number)=>{
-              const state = sel===null ? "border" : (i===q.answerIndex?"border-green-500 bg-green-50":"border-red-500 bg-red-50")
-              const clickable = sel===null ? "cursor-pointer hover:bg-muted" : "opacity-75"
+              const isSelected = sel !== null;
+              const isCorrect = isSelected && i === q.answerIndex;
+              const isWrong = isSelected && i === sel && !isCorrect;
+
+              let stateClasses = "border-border bg-card hover:bg-white/10";
+              if (isCorrect) {
+                stateClasses = "border-green-500 bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-200";
+              } else if (isWrong) {
+                stateClasses = "border-red-500 bg-red-100 dark:bg-red-900/30 text-red-800 dark:text-red-200";
+              }
+              
+              const clickable = sel === null ? "cursor-pointer" : "opacity-90";
+
               return (
                 <div key={i}
-                    className={`p-3 rounded border ${state} ${clickable}`}
+                    className={`p-3 rounded-lg border ${stateClasses} ${clickable}`}
                     onClick={()=> onAnswer(i)}>
                   {opt}
                 </div>
@@ -105,18 +116,20 @@ export default function Psychology(){
           </div>
 
           {sel!==null && (
-            <div className="text-sm p-3 rounded bg-muted">
+            <div className="text-sm p-3 rounded-lg bg-card mt-3">
               <div className="font-semibold mb-1">Explicație:</div>
-              <div>{q.explanation || "—"}</div>
+              <div className="text-muted">{q.explanation || "—"}</div>
             </div>
           )}
 
-          <div className="flex items-center justify-between">
-            <div className="text-sm">Scor: {finalScore} / {items.length}</div>
-            {qi < items.length-1 ? (
-              <button className="btn btn-primary" onClick={next}>Întrebarea următoare</button>
+          <div className="flex items-center justify-between pt-2">
+            <div className="text-sm font-semibold">Scor: {finalScore} / {items.length}</div>
+            {!finished ? (
+              <button className="btn btn-primary" onClick={next} disabled={sel === null}>Întrebarea următoare</button>
             ) : (
-              <div className="text-sm font-semibold">Finalizat — Nota: {((finalScore/items.length)*10).toFixed(2)} — {((finalScore/items.length)*10)>=6?'Apt':'Necesită re-evaluare'}</div>
+              <div className={`text-sm font-bold ${((finalScore/items.length)*10)>=6?'text-green-500':'text-red-500'}`}>
+                Finalizat — Nota: {((finalScore/items.length)*10).toFixed(2)} — {((finalScore/items.length)*10)>=6?'Apt':'Necesită re-evaluare'}
+              </div>
             )}
           </div>
         </div>
